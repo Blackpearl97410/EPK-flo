@@ -1,5 +1,6 @@
 import type { PropsWithChildren } from "react";
 import { motion, useReducedMotion } from "motion/react";
+import { ScrollExpandVideo } from "./ScrollExpandVideo";
 
 function Reveal({
   children,
@@ -94,9 +95,10 @@ function App() {
               <span>A LIVING EXPERIENCE WHERE ART COMES TO LIFE.</span>
               <span>ART THAT IS NOT MERELY SEEN, BUT EXPERIENCED.</span>
             </p>
-            <a className="video-hero-link" href="#projet">LEARN MORE</a>
+            <a className="video-hero-link" href="#film">LEARN MORE</a>
           </div>
         </section>
+        <ScrollExpandVideo />
         <div className="intro-worknote shell" aria-label="Statut du dossier">
           <span>EPK / VERSION DE TRAVAIL</span>
           <span>BRAIDSPLACE · LA RÉUNION</span>

@@ -26,6 +26,7 @@ Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Gi
 
 - `index.html` : point d'entrée HTML et métadonnées.
 - `src/App.tsx` : sections et textes de l'EPK.
+- `src/ScrollExpandVideo.tsx` : section du film noir et blanc et animation au défilement.
 - `src/styles.css` : identité visuelle responsive et Tailwind.
 - `src/main.tsx` : montage de l'application React.
 - [`contenu/brief.md`](contenu/brief.md) : informations et médias à réunir avec Flo.
@@ -42,11 +43,11 @@ Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Gi
 
 La première vue reprend la composition et les phrases du [modèle Canva transmis par Flo](https://canva.link/jttf7nfxgobcc2n). Le titre utilise **Climate Crisis**, la même police que le modèle, déjà chargée localement. Les petits textes du modèle sont en **Neue Montreal** ; la maquette utilise temporairement **Manrope** avec les mêmes tailles, capitales et espacements. Une licence web Neue Montreal et les fichiers correspondants sont nécessaires pour une reproduction typographique exacte de ces petits textes.
 
-La vidéo source de 91 Mo reste locale et ignorée par Git ; seul son export H.264 de 6,4 Mo est suivi dans le dépôt. La vidéo se lance muette en boucle ; l’image d’attente reste visible si la lecture automatique est bloquée ou si la réduction du mouvement est activée. Une deuxième vidéo en noir et blanc a aussi un export web H.264 de 17 Mo et une affiche dans `public/videos/` ; elle attend son emplacement dans l’EPK. Les sources 4K, les droits, les personnes filmées et les crédits restent à confirmer avant une publication publique.
+La vidéo source de 91 Mo reste locale et ignorée par Git ; seul son export H.264 de 6,4 Mo est suivi dans le dépôt. La vidéo se lance muette en boucle ; l’image d’attente reste visible si la lecture automatique est bloquée ou si la réduction du mouvement est activée. La deuxième vidéo, en noir et blanc, apparaît juste après l’ouverture : son cadre s’agrandit au défilement, puis l’EPK reprend. Elle possède des commandes de lecture et reste fixe quand la réduction du mouvement est activée. Les sources 4K, les droits, les personnes filmées et les crédits restent à confirmer avant une publication publique.
 
 ## Motion design et 21st.dev
 
-L'objectif est de pouvoir intégrer des composants de 21st.dev, conçus pour React/TypeScript et Tailwind, en sélectionnant ceux qui servent l'EPK. La maquette utilise Motion pour l'entrée du titre et des blocs au défilement. **Aucun composant tiers de 21st.dev n'a encore été installé.** Les animations respectent la préférence système de réduction du mouvement.
+La section du film reprend le principe visuel de [Scroll media expansion hero de @arunachalam](https://21st.dev/@arunachalam/components/scroll-expansion-hero), publié sous licence MIT : une vidéo initialement étroite s'agrandit au défilement pendant que son titre s'efface. L'implémentation est locale, en React et Motion, et n'ajoute aucune dépendance Next.js ou composant externe. La maquette utilise aussi Motion pour les blocs au défilement. Les animations respectent la préférence système de réduction du mouvement.
 
 ## Collaboration à distance
 
