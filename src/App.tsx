@@ -1,159 +1,319 @@
-import type { PropsWithChildren } from 'react'
-import { motion, useReducedMotion } from 'motion/react'
+import type { PropsWithChildren } from "react";
+import { motion, useReducedMotion } from "motion/react";
 
-const tracks = [
-  ['01', 'Premier titre à sélectionner'],
-  ['02', 'Deuxième titre à sélectionner'],
-  ['03', 'Troisième titre à sélectionner'],
-]
-
-function Reveal({ children, className = '' }: PropsWithChildren<{ className?: string }>) {
-  const reduceMotion = useReducedMotion()
+function Reveal({
+  children,
+  className = "",
+}: PropsWithChildren<{ className?: string }>) {
+  const reduceMotion = useReducedMotion();
   return (
     <motion.div
       className={className}
       initial={reduceMotion ? false : { opacity: 0, y: 24 }}
       whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true, amount: 0.12 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
-  )
+  );
 }
 
-function App() {
-  const reduceMotion = useReducedMotion()
+const steps = [
+  {
+    city: "Cape Town",
+    note: "Invitation mentionnée dans le dossier de travail du festival · mars 2027",
+    status: "Point d’ancrage",
+  },
+  {
+    city: "Johannesburg",
+    note: "Présentation et collaborations locales envisagées · avril 2027",
+    status: "À confirmer",
+  },
+  {
+    city: "Tanzanie",
+    note: "Échange créatif et accueil envisagés · avril 2027",
+    status: "À confirmer",
+  },
+];
 
+function App() {
+  const reduceMotion = useReducedMotion();
   return (
     <>
-      <a className="skip-link" href="#contenu">Aller au contenu</a>
-      <header className="site-header">
-        <a className="brand" href="#accueil" aria-label="Flo, retour en haut">FLO<span className="brand-dot">.</span><span className="brand-sub">EPK</span></a>
+      <a className="skip-link" href="#contenu">
+        Aller au contenu
+      </a>
+      <header className="site-header shell">
+        <a
+          className="brand"
+          href="#accueil"
+          aria-label="Braidsplace, retour en haut"
+        >
+          BRAIDSPLACE
+          <span className="brand-mark" aria-hidden="true">
+            ✳
+          </span>
+        </a>
         <nav className="main-nav" aria-label="Navigation principale">
-          <a href="#apropos">À propos</a>
-          <a href="#musique">Musique</a>
-          <a href="#visuels">Visuels</a>
-          <a href="#scene">Scène</a>
+          <a href="#projet">Le projet</a>
+          <a href="#format">Le format</a>
+          <a href="#parcours">Parcours</a>
+          <a href="#images">Images</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
-
       <main id="contenu">
-        <section className="hero section-wrap" id="accueil" aria-labelledby="hero-title">
-          <div className="hero-copy">
-            <p className="eyebrow"><span className="eyebrow-line" />Dossier artistique · version de travail</p>
-            <h1 id="hero-title">
-              <motion.span
-                className="hero-title-word"
-                initial={reduceMotion ? false : { clipPath: 'inset(0 100% 0 0)', y: 24 }}
-                animate={{ clipPath: 'inset(0 0 0 0)', y: 0 }}
-                transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
-              >FLO</motion.span><span className="hero-period">.</span>
-            </h1>
-            <p className="hero-lead">Une page pour découvrir l’univers de Flo, écouter sa musique et préparer les prochains échanges professionnels.</p>
-            <p className="editor-note">À personnaliser avec sa présentation, ses photos et ses liens validés.</p>
-            <div className="hero-actions">
-              <a className="button button-primary" href="#musique">Découvrir la musique <span aria-hidden="true">↗</span></a>
-              <a className="text-link" href="#contact">Accéder au contact <span aria-hidden="true">↗</span></a>
+        <section
+          className="hero shell"
+          id="accueil"
+          aria-labelledby="hero-title"
+        >
+          <div className="hero-topline">
+            <span>EPK / VERSION DE TRAVAIL</span>
+            <span>FLORENCE PRÉVOT · LA RÉUNION</span>
+          </div>
+          <div className="hero-layout">
+            <div className="hero-copy">
+              <p className="eyebrow">BRAIDSPLACE PRÉSENTE</p>
+              <h1 id="hero-title">
+                <motion.span
+                  className="title-line"
+                  initial={reduceMotion ? false : { opacity: 0, y: 35 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  LIVING
+                </motion.span>
+                <motion.span
+                  className="title-line"
+                  initial={reduceMotion ? false : { opacity: 0, y: 35 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.12 }}
+                >
+                  HAIR ART
+                  <span className="title-star" aria-hidden="true">
+                    ✳
+                  </span>
+                </motion.span>
+              </h1>
+              <p className="hero-deck">
+                La coiffure devient une <em>œuvre vivante.</em>
+              </p>
+              <p className="hero-description">
+                Une performance visuelle imaginée par Florence Prévot, où
+                coiffure artistique, silhouette, mode et mouvement composent des
+                tableaux vivants.
+              </p>
+              <div className="hero-actions">
+                <a className="button button-primary" href="#projet">
+                  Découvrir le projet <span aria-hidden="true">↗</span>
+                </a>
+                <a className="text-link" href="#contact">
+                  Prendre contact <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+            <div
+              className="hero-frame"
+              role="img"
+              aria-label="Emplacement d’une photographie à valider avec Flo"
+            >
+              <div className="frame-weave" aria-hidden="true">
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+              </div>
+              <div className="frame-label">
+                <span>01 / PORTRAIT</span>
+                <span>PHOTO & CRÉDIT À VALIDER</span>
+              </div>
+              <span className="frame-title" aria-hidden="true">
+                ART
+                <br />
+                IN
+                <br />
+                MOTION
+              </span>
             </div>
           </div>
-          <div className="hero-art" aria-label="Espace réservé au portrait officiel de Flo">
-            <div className="art-orbit art-orbit-one" />
-            <div className="art-orbit art-orbit-two" />
-            <motion.div
-              className="portrait-card"
-              animate={reduceMotion ? undefined : { y: [0, -9, 0], rotate: [-5, -4, -5] }}
-              transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-            >
-              <span className="portrait-number">01 / Portrait</span>
-              <span className="portrait-word" aria-hidden="true">F</span>
-              <span className="portrait-caption">Photo officielle<br />à ajouter</span>
-            </motion.div>
-            <span className="art-caption">VISUEL À VALIDER · FLO</span>
+          <div className="hero-bottomline">
+            <span>COIFFURE · IMAGE · MOUVEMENT</span>
+            <span>DÉFILER POUR EXPLORER ↓</span>
           </div>
-          <div className="hero-index" aria-hidden="true">EPK / 001</div>
         </section>
-
-        <div className="section-divider" aria-hidden="true"><span>FLO / EPK</span><span>PRÉSENTATION ARTISTIQUE</span></div>
-
-        <section className="about section-wrap section-pad" id="apropos" aria-labelledby="about-title">
-          <Reveal className="section-heading">
-            <p className="section-kicker">01 — Son histoire</p>
-            <h2 id="about-title">À propos<span className="accent">.</span></h2>
-          </Reveal>
-          <Reveal className="about-content">
-            <p className="large-copy">La biographie de Flo prendra place ici. Elle présentera son parcours, son univers musical et le projet qu’elle souhaite mettre en avant.</p>
-            <p>Ce texte doit être rédigé à partir de ses informations, puis relu et validé avec elle. La version courte pourra servir aux programmateurs et aux médias ; une version plus détaillée pourra être ajoutée si nécessaire.</p>
-            <span className="status-tag">Biographie à rédiger avec Flo</span>
-          </Reveal>
-        </section>
-
-        <section className="music section-pad" id="musique" aria-labelledby="music-title">
-          <div className="section-wrap">
-            <Reveal className="section-heading section-heading-row">
-              <div><p className="section-kicker">02 — À écouter</p><h2 id="music-title">La musique<span className="accent">.</span></h2></div>
-              <p className="section-aside">Une sélection de titres représentatifs, choisie et ordonnée avec Flo.</p>
+        <section
+          className="manifesto"
+          id="projet"
+          aria-labelledby="project-title"
+        >
+          <div className="shell manifesto-grid">
+            <Reveal>
+              <p className="kicker">01 / L’INTENTION</p>
+              <h2 id="project-title">
+                Une œuvre
+                <br />
+                en <span>mouvement.</span>
+              </h2>
             </Reveal>
-            <div className="track-list" aria-label="Titres à renseigner">
-              {tracks.map(([number, title]) => (
-                <Reveal className="track" key={number}>
-                  <span className="track-no">{number}</span>
-                  <div><h3>{title}</h3><p>Nom, année et lien d’écoute à ajouter</p></div>
-                  <span className="track-state">À compléter</span>
+            <Reveal className="manifesto-copy">
+              <p className="editorial">
+                Une œuvre qui quitte l’image pour prendre vie sur scène.
+              </p>
+              <p>
+                Living Hair Art associe coiffure artistique, mode, image et
+                mouvement. Chaque création capillaire se révèle à travers le
+                corps et la silhouette d’un modèle, dans une succession de
+                tableaux vivants.
+              </p>
+              <p className="small-note">
+                Texte adapté des dossiers de contexte ; formulation finale à
+                valider avec Flo.
+              </p>
+            </Reveal>
+          </div>
+        </section>
+        <section
+          className="format section-pad shell"
+          id="format"
+          aria-labelledby="format-title"
+        >
+          <Reveal className="section-heading">
+            <p className="kicker">02 / LA PERFORMANCE</p>
+            <h2 id="format-title">
+              La scène
+              <br />
+              comme toile<span className="dot">.</span>
+            </h2>
+          </Reveal>
+          <div className="format-grid">
+            <Reveal className="format-number">
+              <strong>
+                20<span>min</span>
+              </strong>
+              <p>Durée approximative de la performance</p>
+            </Reveal>
+            <Reveal className="format-number">
+              <strong>7–10</strong>
+              <p>Modèles selon le lieu et les moyens</p>
+            </Reveal>
+            <Reveal className="format-description">
+              <p>
+                Un format de scène qui peut être présenté seul ou, selon
+                l’espace disponible, accompagné d’une sélection de
+                photographies. Le dispositif précis et les besoins techniques
+                seront définis avec le lieu d’accueil.
+              </p>
+              <span>FORMAT DE TRAVAIL / À CONFIRMER</span>
+            </Reveal>
+          </div>
+        </section>
+        <section
+          className="journey section-pad"
+          id="parcours"
+          aria-labelledby="journey-title"
+        >
+          <div className="shell">
+            <Reveal className="section-heading">
+              <p className="kicker">03 / HORIZON 2027</p>
+              <h2 id="journey-title">
+                Africa Tour<span className="dot">.</span>
+              </h2>
+              <p className="section-intro">
+                De La Réunion vers des scènes et des rencontres créatives en
+                Afrique du Sud et en Tanzanie.
+              </p>
+            </Reveal>
+            <div className="steps">
+              {steps.map((step, index) => (
+                <Reveal className="step" key={step.city}>
+                  <span className="step-index">0{index + 1}</span>
+                  <div>
+                    <h3>{step.city}</h3>
+                    <p>{step.note}</p>
+                  </div>
+                  <span className="step-status">{step.status}</span>
                 </Reveal>
               ))}
             </div>
-            <p className="fine-print">Les boutons d’écoute seront ajoutés lorsque les liens officiels seront fournis.</p>
+            <p className="small-note">
+              Les étapes, dates et accords de production seront vérifiés avant
+              publication de l’EPK.
+            </p>
           </div>
         </section>
-
-        <section className="visuals section-wrap section-pad" id="visuels" aria-labelledby="visuals-title">
-          <Reveal className="section-heading section-heading-row">
-            <div><p className="section-kicker">03 — À voir</p><h2 id="visuals-title">Images & vidéos<span className="accent">.</span></h2></div>
-            <p className="section-aside">Portraits, photos de scène et captations avec crédits et droits vérifiés.</p>
+        <section
+          className="visuals section-pad shell"
+          id="images"
+          aria-labelledby="visuals-title"
+        >
+          <Reveal className="section-heading">
+            <p className="kicker">04 / UNIVERS VISUEL</p>
+            <h2 id="visuals-title">
+              Des tableaux
+              <br />
+              <span>vivants.</span>
+            </h2>
           </Reveal>
-          <div className="media-grid">
-            <Reveal className="media-card media-card-large"><span>01 / PORTRAIT</span><strong>Photo presse<br />à ajouter</strong><small>Crédit photo à renseigner</small></Reveal>
-            <Reveal className="media-card media-card-small"><span>02 / SCÈNE</span><strong>Photo live<br />à ajouter</strong><small>Crédit photo à renseigner</small></Reveal>
-            <Reveal className="media-card media-card-small media-card-accent"><span>03 / VIDÉO</span><strong>Clip ou captation<br />à ajouter</strong><small>Lien officiel à renseigner</small></Reveal>
-          </div>
+          <Reveal className="visual-note">
+            <div className="visual-placeholder">
+              <span>IMAGE 01</span>
+              <strong>
+                LA CRÉATION
+                <br />
+                PREND
+                <br />
+                FORME
+              </strong>
+              <span>PORTRAIT À SÉLECTIONNER</span>
+            </div>
+            <p>
+              Les photographies sources sont dans le dépôt. Sélection, crédits,
+              autorisations des personnes représentées et versions web restent à
+              valider avant leur intégration.
+            </p>
+          </Reveal>
         </section>
-
-        <section className="live section-pad" id="scene" aria-labelledby="live-title">
-          <div className="section-wrap live-grid">
-            <Reveal className="section-heading"><p className="section-kicker">04 — En live</p><h2 id="live-title">Sur scène<span className="accent">.</span></h2></Reveal>
-            <Reveal className="live-content">
-              <p className="large-copy">Une présentation du projet live de Flo sera ajoutée ici après validation de la formule scénique.</p>
-              <dl className="live-facts">
-                <div><dt>Format</dt><dd>À confirmer</dd></div>
-                <div><dt>Durée du set</dt><dd>À confirmer</dd></div>
-                <div><dt>Fiche technique</dt><dd>À fournir si disponible</dd></div>
-              </dl>
+        <section
+          className="contact section-pad"
+          id="contact"
+          aria-labelledby="contact-title"
+        >
+          <div className="shell contact-grid">
+            <Reveal>
+              <p className="kicker">05 / COLLABORER</p>
+              <h2 id="contact-title">
+                Créons
+                <br />
+                <span>ensemble.</span>
+              </h2>
             </Reveal>
-          </div>
-        </section>
-
-        <section className="contact section-pad" id="contact" aria-labelledby="contact-title">
-          <div className="section-wrap contact-grid">
-            <Reveal><p className="section-kicker">05 — Échanger</p><h2 id="contact-title">Contact<span className="accent">.</span></h2><p>Pour la programmation, la presse et les collaborations.</p></Reveal>
-            <Reveal className="contact-card">
-              <span className="contact-label">CONTACT PROFESSIONNEL</span>
-              <p>Nom et adresse de contact à confirmer avec Flo.</p>
-              <span className="status-tag status-tag-light">Coordonnées à valider avant publication</span>
-              <div className="social-placeholder">Liens officiels · à ajouter</div>
+            <Reveal className="contact-copy">
+              <p>
+                Pour les lieux, partenaires et collaborations artistiques autour
+                de Living Hair Art.
+              </p>
+              <div className="contact-rule" />
+              <span>CONTACT PROFESSIONNEL ET LIENS À VALIDER AVEC FLO</span>
             </Reveal>
           </div>
         </section>
       </main>
-
-      <footer className="site-footer section-wrap">
-        <a className="brand" href="#accueil" aria-label="Flo, retour en haut">FLO<span className="brand-dot">.</span></a>
-        <p>EPK en préparation · Contenus à valider avec Flo</p>
+      <footer className="site-footer shell">
+        <a className="brand" href="#accueil">
+          BRAIDSPLACE
+          <span className="brand-mark" aria-hidden="true">
+            ✳
+          </span>
+        </a>
+        <p>EPK en préparation · Contenus et visuels à valider avec Flo</p>
         <a href="#accueil">Retour en haut ↑</a>
       </footer>
     </>
-  )
+  );
 }
-
-export default App
+export default App;
