@@ -78,8 +78,8 @@ function App() {
         >
           <video
             className="video-hero-media"
-            src="/videos/braidsplace-ocean.mp4"
-            poster="/videos/braidsplace-ocean-poster.jpg"
+            src="/videos/braidsplace-cover.mp4"
+            poster="/videos/braidsplace-cover-poster.jpg"
             autoPlay={!reduceMotion}
             muted
             loop
