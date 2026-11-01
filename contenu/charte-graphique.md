@@ -48,7 +48,7 @@ Climate Crisis est une police expressive conçue autour d'un axe temporel lié �
 - Employer de grands portraits verticaux et des recadrages qui laissent entières les coiffures et les silhouettes. Préserver le cadrage du photographe autant que possible.
 - Utiliser de fins filets, des numéros de section et des marges généreuses. Les motifs de tresses ou de courbes restent abstraits et discrets.
 - Garder les textes réels en HTML, jamais incorporés dans une photo. Ajouter crédits et textes alternatifs spécifiques quand les photos seront retenues.
-- La maquette utilise six **versions web optimisées** des photos sources, ainsi qu’une composition fournie pour la séquence après le film. Les crédits, les personnes représentées et les autorisations restent à confirmer avec Flo avant publication.
+- La maquette utilise six **versions web optimisées** des photos sources, ainsi qu’une composition fournie pour la présentation de l’artiste. Les crédits, les personnes représentées et les autorisations restent à confirmer avec Flo avant publication.
 
 ## Mouvement et accessibilité
 

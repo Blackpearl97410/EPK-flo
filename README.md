@@ -27,7 +27,7 @@ Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Gi
 - `index.html` : point d'entrée HTML et métadonnées.
 - `src/App.tsx` : sections et textes de l'EPK.
 - `src/ScrollExpandVideo.tsx` : section du film noir et blanc et animation au défilement.
-- `src/MinimalistHairArt.tsx` : portrait et présentation « L’ARTISTE » après le film.
+- `src/MinimalistHairArt.tsx` : portrait et présentation « L’ARTISTE » après l’ouverture.
 - `src/StatisticsRunway.tsx` : section de statistiques en trois tableaux, pilotée par le défilement.
 - `src/styles.css` : identité visuelle responsive et Tailwind.
 - `src/main.tsx` : montage de l'application React.
@@ -36,7 +36,7 @@ Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Gi
 - `AGENTS.md` : consignes communes pour les deux Codex.
 - [`documents-de-contexte/`](documents-de-contexte/README.md) : PDF transmis pour préparer l’EPK Living Hair Art.
 - [`medias/photos/`](medias/photos/README.md) : photos sources proposées pour l’EPK.
-- [`medias/compositions/`](medias/compositions/README.md) : PNG transmis pour la composition après le film.
+- [`medias/compositions/`](medias/compositions/README.md) : PNG transmis pour la présentation de l’artiste.
 - [`medias/videos-source/`](medias/videos-source/README.md) : vidéos 4K sources conservées localement.
 - `public/videos/` : deux exports vidéo 720p et leurs images d’attente.
 - `public/images/` : versions web légères des photographies sélectionnées pour la maquette.
@@ -46,11 +46,11 @@ Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Gi
 
 La première vue reprend la composition et les phrases du [modèle Canva transmis par Flo](https://canva.link/jttf7nfxgobcc2n). Le titre utilise **Climate Crisis**, la même police que le modèle, déjà chargée localement. Les petits textes du modèle sont en **Neue Montreal** ; la maquette utilise temporairement **Manrope** avec les mêmes tailles, capitales et espacements. Une licence web Neue Montreal et les fichiers correspondants sont nécessaires pour une reproduction typographique exacte de ces petits textes.
 
-La vidéo source de 91 Mo reste locale et ignorée par Git ; seul son export H.264 de 6,4 Mo est suivi dans le dépôt. La vidéo se lance muette en boucle ; l’image d’attente reste visible si la lecture automatique est bloquée ou si la réduction du mouvement est activée. La deuxième vidéo, en noir et blanc, apparaît juste après l’ouverture : son cadre s’agrandit au défilement, puis l’EPK reprend. Elle possède des commandes de lecture et reste fixe quand la réduction du mouvement est activée. Les sources 4K, les droits, les personnes filmées et les crédits restent à confirmer avant une publication publique.
+La vidéo source de 91 Mo reste locale et ignorée par Git ; seul son export H.264 de 6,4 Mo est suivi dans le dépôt. La vidéo se lance muette en boucle ; l’image d’attente reste visible si la lecture automatique est bloquée ou si la réduction du mouvement est activée. La deuxième vidéo, en noir et blanc, occupe la quatrième section, après « L’ARTISTE » et la présentation Living Hair Art : son cadre s’agrandit au défilement, puis l’EPK reprend. Elle possède des commandes de lecture et reste fixe quand la réduction du mouvement est activée. Les sources 4K, les droits, les personnes filmées et les crédits restent à confirmer avant une publication publique.
 
 ## Motion design et 21st.dev
 
-La section du film reprend le principe visuel de [Scroll media expansion hero de @arunachalam](https://21st.dev/@arunachalam/components/scroll-expansion-hero), publié sous licence MIT : une vidéo initialement étroite s'agrandit au défilement pendant que son titre s'efface. La section suivante adapte la composition et l’apparition du [Minimalist Hero de @ravikatiyar162](https://21st.dev/@ravikatiyar162/components/minimalist-hero) avec le portrait fourni par Flo et une présentation « L’ARTISTE » à droite de l’image. Ces adaptations sont locales, en React et Motion, sans nouvelle dépendance. Les animations respectent la préférence système de réduction du mouvement.
+La quatrième section reprend le principe visuel de [Scroll media expansion hero de @arunachalam](https://21st.dev/@arunachalam/components/scroll-expansion-hero), publié sous licence MIT : une vidéo initialement étroite s'agrandit au défilement pendant que son titre s'efface. La deuxième section adapte la composition et l’apparition du [Minimalist Hero de @ravikatiyar162](https://21st.dev/@ravikatiyar162/components/minimalist-hero) avec le portrait fourni par Flo et une présentation « L’ARTISTE » à droite de l’image. Ces adaptations sont locales, en React et Motion, sans nouvelle dépendance. Les animations respectent la préférence système de réduction du mouvement.
 
 La section « Statistics » utilise trois maquettes fournies dans l'ordre rose → blanc → jaune, superposées sur un plateau fixe. Le défilement contrôle leur fondu ; sur mobile, un rappel textuel des chiffres accompagne l'image. En mode de réduction du mouvement, les trois tableaux sont présentés à la suite. Ces maquettes comportent encore du texte incorporé dans les images : pour la version finale, les chiffres devront être confirmés avec Flo et composés en HTML afin de rester entièrement modifiables et accessibles.
 
