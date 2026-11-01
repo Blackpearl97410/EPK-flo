@@ -11,4 +11,11 @@ Ces fichiers WebP conservent le cadrage d'origine et servent à la maquette de l
 | tableau-tresses.webp | ZFZ_6617.jpg |
 | film-backdrop.webp | DSC_4956.jpg |
 
+La séquence « LIVE HAIR ART - » utilise aussi deux compositions fournies par Flo. Leurs PNG sources sont dans `medias/compositions/`.
+
+| Version web | Source |
+| --- | --- |
+| live-hair-art-portrait.webp | live-hair-art-portrait.png (reçu comme `1.png`) |
+| live-hair-art-shape.webp | live-hair-art-shape.png (reçu comme `2.png`) |
+
 Crédits photographiques et autorisations des personnes représentées à compléter avec Flo avant publication. La maquette reste non indexée.

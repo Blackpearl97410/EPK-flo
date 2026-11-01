@@ -1,6 +1,7 @@
 import type { PropsWithChildren } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { ScrollExpandVideo } from "./ScrollExpandVideo";
+import { MinimalistHairArt } from "./MinimalistHairArt";
 
 function Reveal({
   children,
@@ -99,6 +100,7 @@ function App() {
           </div>
         </section>
         <ScrollExpandVideo />
+        <MinimalistHairArt />
         <div className="intro-worknote shell" aria-label="Statut du dossier">
           <span>EPK / VERSION DE TRAVAIL</span>
           <span>BRAIDSPLACE · LA RÉUNION</span>
