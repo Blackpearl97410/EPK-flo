@@ -26,7 +26,7 @@ Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Gi
 
 - `index.html` : point d'entrée HTML et métadonnées.
 - `src/App.tsx` : sections et textes de l'EPK.
-- `src/ScrollExpandVideo.tsx` : section du film noir et blanc et animation au défilement.
+- `src/ScrollExpandVideo.tsx` : section du film en couleur et animation au défilement.
 - `src/MinimalistHairArt.tsx` : portrait et présentation « L’ARTISTE » en troisième section.
 - `src/StatisticsRunway.tsx` : section de statistiques en trois tableaux, pilotée par le défilement.
 - `src/styles.css` : identité visuelle responsive et Tailwind.
@@ -37,7 +37,7 @@ Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Gi
 - [`documents-de-contexte/`](documents-de-contexte/README.md) : PDF transmis pour préparer l’EPK Living Hair Art.
 - [`medias/photos/`](medias/photos/README.md) : photos sources proposées pour l’EPK.
 - [`medias/compositions/`](medias/compositions/README.md) : PNG transmis pour la présentation de l’artiste.
-- [`medias/videos-source/`](medias/videos-source/README.md) : vidéos 4K sources conservées localement.
+- [`medias/videos-source/`](medias/videos-source/README.md) : vidéos sources conservées localement.
 - `public/videos/` : deux exports vidéo 720p et leurs images d’attente.
 - `public/images/` : versions web légères des photographies sélectionnées pour la maquette.
 - [`contenu/selection-photos.md`](contenu/selection-photos.md) : correspondance entre versions web et originaux.
@@ -46,7 +46,9 @@ Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Gi
 
 La première vue reprend la composition et les phrases du [modèle Canva transmis par Flo](https://canva.link/jttf7nfxgobcc2n). Le titre utilise **Climate Crisis**, la même police que le modèle, déjà chargée localement. Les petits textes du modèle sont en **Neue Montreal** ; la maquette utilise temporairement **Manrope** avec les mêmes tailles, capitales et espacements. Une licence web Neue Montreal et les fichiers correspondants sont nécessaires pour une reproduction typographique exacte de ces petits textes.
 
-La vidéo source de 91 Mo reste locale et ignorée par Git ; seul son export H.264 de 6,4 Mo est suivi dans le dépôt. La vidéo se lance muette en boucle ; l’image d’attente reste visible si la lecture automatique est bloquée ou si la réduction du mouvement est activée. Le portrait `adriiii bg.png` apparaît seul, en plein écran, dans la deuxième section. La deuxième vidéo, en noir et blanc, occupe la quatrième section après « L’ARTISTE », sur fond blanc : son cadre s’agrandit au défilement, puis l’EPK reprend. Elle possède des commandes de lecture et reste fixe quand la réduction du mouvement est activée. Les sources 4K, les droits, les personnes filmées et les crédits restent à confirmer avant une publication publique.
+Dans le manifeste de l'ouverture, « ARTISTIC WORLDS. » et « A LIVING EXPERIENCE WHERE ART COMES TO LIFE. » sont surlignés en ocre selon la capture de référence fournie par Flo.
+
+La vidéo source de 91 Mo reste locale et ignorée par Git ; seul son export H.264 de 6,4 Mo est suivi dans le dépôt. La vidéo se lance muette en boucle ; l’image d’attente reste visible si la lecture automatique est bloquée ou si la réduction du mouvement est activée. Le portrait `adriiii bg.png` apparaît seul, en plein écran, dans la deuxième section. La nouvelle vidéo en couleur occupe la quatrième section après « L’ARTISTE », sur fond blanc : son cadre s’agrandit au défilement, puis l’EPK reprend. Elle possède des commandes de lecture et reste fixe quand la réduction du mouvement est activée. Les sources, les droits, les personnes filmées et les crédits restent à confirmer avant une publication publique.
 
 ## Motion design et 21st.dev
 

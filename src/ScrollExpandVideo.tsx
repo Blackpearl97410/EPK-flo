@@ -60,14 +60,14 @@ export function ScrollExpandVideo() {
         >
           <video
             ref={videoRef}
-            src="/videos/braidsplace-noir-blanc.mp4"
-            poster="/videos/braidsplace-noir-blanc-poster.jpg"
+            src="/videos/braidsplace-couleur.mp4"
+            poster="/videos/braidsplace-couleur-poster.jpg"
             preload="metadata"
             playsInline
             muted
             loop
             controls
-            aria-label="Film noir et blanc BRAIDSPLACE : coiffures, modèles et préparation artistique"
+            aria-label="Film en couleur BRAIDSPLACE : coiffures, modèles et préparation artistique"
           />
         </motion.div>
         <motion.h2

@@ -637,8 +637,15 @@ h2 span {
   letter-spacing: .068em;
   text-align: right;
 }
-.video-hero-manifesto span {
+.video-hero-manifesto > span {
   display: block;
+}
+.video-hero-manifesto mark {
+  padding-inline: .08em;
+  background: #b99058;
+  color: #30231e;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 .video-hero-link {
   position: absolute;
@@ -885,7 +892,7 @@ h2 span {
   height: 58%;
   overflow: hidden;
   transform: translate(-50%, -50%);
-  background: #161412 url('/videos/braidsplace-noir-blanc-poster.jpg') center / cover no-repeat;
+  background: #161412 url('/videos/braidsplace-couleur-poster.jpg') center / cover no-repeat;
   box-shadow: 0 28px 80px rgba(0, 0, 0, .35);
 }
 .scroll-video-frame video {
