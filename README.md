@@ -10,12 +10,13 @@ Ouvrir `index.html` dans un navigateur. Pour un aperçu local avec un serveur :
 python3 -m http.server 8000
 ```
 
-Puis ouvrir `http://localhost:8000`. Le site est statique : HTML et CSS, sans installation ni compte requis. Aucun hébergement public n'est configuré.
+Puis ouvrir `http://localhost:8000`. Le site est statique : HTML, CSS et un petit script JavaScript, sans installation ni compte requis. Les contenus restent visibles si JavaScript est désactivé. Aucun hébergement public n'est configuré.
 
 ## Fichiers
 
 - `index.html` : structure et textes de la page.
-- `styles.css` : mise en page, couleurs et adaptation mobile.
+- `styles.css` : mise en page, couleurs, adaptation mobile et animations.
+- `motion.js` : apparition des sections au défilement, sans dépendance.
 - [`contenu/brief.md`](contenu/brief.md) : informations et médias à réunir avec Flo.
 - `AGENTS.md` : consignes communes pour les deux Codex.
 
@@ -39,6 +40,10 @@ git switch -c feat/nom-de-la-tache
 ```
 
 Ne pas déposer de mot de passe, de clé API ou de contenu non autorisé à la publication. Le dépôt GitHub est actuellement public, même si la page n'est pas encore hébergée.
+
+## Motion design
+
+La direction s'inspire du rythme de présentation des composants animés de 21st.dev : révélation du titre, entrées au défilement et micro-interactions. Aucun composant 21st.dev n'est installé : leur catalogue est conçu pour React/TypeScript et Tailwind, tandis que ce projet reste en HTML/CSS/JavaScript natif. Les animations sont décoratives et respectent la préférence système « réduire les animations ».
 
 ## Avant publication
 
