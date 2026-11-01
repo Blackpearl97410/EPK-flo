@@ -30,6 +30,8 @@ Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Gi
 - `src/main.tsx` : montage de l'application React.
 - [`contenu/brief.md`](contenu/brief.md) : informations et médias à réunir avec Flo.
 - `AGENTS.md` : consignes communes pour les deux Codex.
+- [`documents-de-contexte/`](documents-de-contexte/README.md) : PDF transmis pour préparer l’EPK Living Hair Art.
+- [`medias/photos/`](medias/photos/README.md) : photos sources proposées pour l’EPK.
 
 ## Motion design et 21st.dev
 
