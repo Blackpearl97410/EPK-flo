@@ -6,4 +6,4 @@ Ce dossier rassemble les 12 photos fournies par Flo pour préparer l’EPK Livin
 - Série `ZFZ_` : 4 fichiers.
 - Images reçues par WhatsApp : 2 fichiers.
 
-Crédit photo, personnes représentées et autorisations d’utilisation à préciser avec Flo avant d’intégrer les images au site ou à un export public de l’EPK. Les fichiers haute définition sont des sources de travail ; préparer des versions web adaptées avant de les utiliser dans la page.
+Crédit photo, personnes représentées et autorisations d’utilisation à préciser avec Flo avant publication de l’EPK. Les fichiers haute définition sont des sources de travail ; cinq versions web légères sont utilisées dans la maquette non indexée, dans `public/images/`.

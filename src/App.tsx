@@ -37,6 +37,29 @@ const steps = [
   },
 ];
 
+const photographs = [
+  {
+    src: "/images/tableau-rose.webp",
+    alt: "Modèle en tenue rose portant une coiffure sculpturale devant un panneau clair, dans un jardin.",
+    label: "01 / Formes en mouvement",
+  },
+  {
+    src: "/images/tableau-fleur.webp",
+    alt: "Portrait d'un modèle à la coiffure volumineuse, avec une fleur rose et une tenue aux couleurs vives.",
+    label: "02 / Corps et couleur",
+  },
+  {
+    src: "/images/tableau-jaune.webp",
+    alt: "Modèle en tenue jaune dans un intérieur sombre, devant une photographie de coiffure graphique.",
+    label: "03 / Silhouette",
+  },
+  {
+    src: "/images/tableau-tresses.webp",
+    alt: "Modèle en blanc avec une longue coiffure tressée, photographié en extérieur.",
+    label: "04 / Matière vivante",
+  },
+];
+
 function App() {
   const reduceMotion = useReducedMotion();
   return (
@@ -51,9 +74,6 @@ function App() {
           aria-label="Braidsplace, retour en haut"
         >
           BRAIDSPLACE
-          <span className="brand-mark" aria-hidden="true">
-            ✳
-          </span>
         </a>
         <nav className="main-nav" aria-label="Navigation principale">
           <a href="#projet">Le projet</a>
@@ -71,7 +91,7 @@ function App() {
         >
           <div className="hero-topline">
             <span>EPK / VERSION DE TRAVAIL</span>
-            <span>FLORENCE PRÉVOT · LA RÉUNION</span>
+            <span>BRAIDSPLACE · LA RÉUNION</span>
           </div>
           <div className="hero-layout">
             <div className="hero-copy">
@@ -92,18 +112,15 @@ function App() {
                   transition={{ duration: 0.8, delay: 0.12 }}
                 >
                   HAIR ART
-                  <span className="title-star" aria-hidden="true">
-                    ✳
-                  </span>
                 </motion.span>
               </h1>
               <p className="hero-deck">
                 La coiffure devient une <em>œuvre vivante.</em>
               </p>
               <p className="hero-description">
-                Une performance visuelle imaginée par Florence Prévot, où
-                coiffure artistique, silhouette, mode et mouvement composent des
-                tableaux vivants.
+                Une performance visuelle de BRAIDSPLACE, où coiffure
+                artistique, silhouette, mode et mouvement composent des tableaux
+                vivants.
               </p>
               <div className="hero-actions">
                 <a className="button button-primary" href="#projet">
@@ -114,32 +131,15 @@ function App() {
                 </a>
               </div>
             </div>
-            <div
-              className="hero-frame"
-              role="img"
-              aria-label="Emplacement d’une photographie à valider avec Flo"
-            >
-              <div className="frame-weave" aria-hidden="true">
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-              </div>
-              <div className="frame-label">
-                <span>01 / PORTRAIT</span>
-                <span>PHOTO & CRÉDIT À VALIDER</span>
-              </div>
-              <span className="frame-title" aria-hidden="true">
-                ART
-                <br />
-                IN
-                <br />
-                MOTION
-              </span>
-            </div>
+            <figure className="hero-frame">
+              <img
+                src="/images/hero-sculpture.webp"
+                alt="Portrait d'un modèle portant une coiffure sculpturale aux formes organiques, dans la végétation."
+                fetchPriority="high"
+                decoding="async"
+              />
+              <figcaption>01 / LIVING HAIR ART</figcaption>
+            </figure>
           </div>
           <div className="hero-bottomline">
             <span>COIFFURE · IMAGE · MOUVEMENT</span>
@@ -260,21 +260,18 @@ function App() {
             </h2>
           </Reveal>
           <Reveal className="visual-note">
-            <div className="visual-placeholder">
-              <span>IMAGE 01</span>
-              <strong>
-                LA CRÉATION
-                <br />
-                PREND
-                <br />
-                FORME
-              </strong>
-              <span>PORTRAIT À SÉLECTIONNER</span>
+            <div className="photo-grid">
+              {photographs.map((photo) => (
+                <figure className="photo-card" key={photo.src}>
+                  <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
+                  <figcaption>{photo.label}</figcaption>
+                </figure>
+              ))}
             </div>
             <p>
-              Les photographies sources sont dans le dépôt. Sélection, crédits,
-              autorisations des personnes représentées et versions web restent à
-              valider avant leur intégration.
+              Sélection de travail issue des photographies fournies pour
+              l’EPK. Crédits et autorisations d’image à confirmer avant
+              publication.
             </p>
           </Reveal>
         </section>
@@ -306,9 +303,6 @@ function App() {
       <footer className="site-footer shell">
         <a className="brand" href="#accueil">
           BRAIDSPLACE
-          <span className="brand-mark" aria-hidden="true">
-            ✳
-          </span>
         </a>
         <p>EPK en préparation · Contenus et visuels à valider avec Flo</p>
         <a href="#accueil">Retour en haut ↑</a>
