@@ -34,7 +34,7 @@ Employer le brun pour les textes sur ivoire. L'ocre sert aux signes et aux filet
 
 | Rôle | Police | Règle |
 | --- | --- | --- |
-| Signature et grands titres | **Climate Crisis** | Display principal. Titres courts, souvent sur deux lignes ; axe YEAR fixé à 2019 et espacement positif pour préserver la lecture. Jamais pour les paragraphes ou les petits menus. |
+| Signature et grands titres | **Climate Crisis** | Display principal dans sa forme dense d'origine : axe YEAR fixé à 1979. Les lettres gardent un espacement positif pour préserver la lecture. Titres courts, souvent sur deux lignes ; jamais pour les paragraphes ou les petits menus. |
 | Lecture et interface | **Manrope** | Texte courant, navigation, boutons, légendes ; corps 16–18 px, interligne voisin de 1,6. Poids 400 et 700/800 selon la hiérarchie. |
 | Éditorial | **Instrument Serif** | Phrase manifeste, sous-titre ou grand chiffre. Rompt la géométrie du display et rappelle la sensibilité du dossier Cape Town. Usage parcimonieux. |
 

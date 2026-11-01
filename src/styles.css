@@ -77,7 +77,7 @@ p {
   display: inline-flex;
   align-items: center;
   font: 400 clamp(17px, 2vw, 23px)/1 var(--display);
-  font-variation-settings: "YEAR" 2019;
+  font-variation-settings: "YEAR" 1979;
   letter-spacing: 0.035em;
   white-space: nowrap;
 }
@@ -149,7 +149,7 @@ h1,
 h2 {
   font-family: var(--display);
   font-weight: 400;
-  font-variation-settings: "YEAR" 2019;
+  font-variation-settings: "YEAR" 1979;
 }
 h1 {
   font-size: clamp(56px, 6vw, 100px);
@@ -255,7 +255,7 @@ h1 {
 h2 {
   font-size: clamp(30px, 4.2vw, 64px);
   line-height: 1.18;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.035em;
   overflow-wrap: anywhere;
 }
 h2 span {
