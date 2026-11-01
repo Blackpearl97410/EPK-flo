@@ -898,7 +898,6 @@ h2 span {
   position: relative;
   min-height: 520px;
 }
-.minimalist-hair-shape,
 .minimalist-hair-portrait {
   position: absolute;
   display: block;
@@ -907,16 +906,10 @@ h2 span {
   pointer-events: none;
   user-select: none;
 }
-.minimalist-hair-shape {
-  z-index: 0;
-  top: -7%;
-  left: 1%;
-  opacity: .48;
-}
 .minimalist-hair-portrait {
   z-index: 1;
   top: -10%;
-  left: -3%;
+  left: 6%;
 }
 .minimalist-hair-copy {
   position: absolute;
@@ -931,6 +924,12 @@ h2 span {
 }
 .minimalist-hair-copy p {
   margin-bottom: 16px;
+}
+.minimalist-hair-copy h3 {
+  margin-bottom: 14px;
+  font: 400 clamp(21px, 2vw, 30px)/1.1 var(--display);
+  font-variation-settings: "YEAR" 1979;
+  letter-spacing: .035em;
 }
 .minimalist-hair-copy a {
   font-weight: 800;
@@ -972,17 +971,12 @@ h2 span {
   .minimalist-hair-nav a {
     font-size: 10px;
   }
-  .minimalist-hair-shape,
   .minimalist-hair-portrait {
     width: 110vw;
   }
   .minimalist-hair-portrait {
     top: 4%;
-    left: -13%;
-  }
-  .minimalist-hair-shape {
-    top: 7%;
-    left: -9%;
+    left: -4%;
   }
   .minimalist-hair-copy {
     top: 18%;
@@ -1030,18 +1024,13 @@ h2 span {
     max-width: calc(100% - 48px);
     font-size: clamp(38px, 9.2vw, 55px);
   }
-  .minimalist-hair-shape,
   .minimalist-hair-portrait {
     width: 155vw;
     max-width: none;
   }
-  .minimalist-hair-shape {
-    top: 41%;
-    left: -23%;
-  }
   .minimalist-hair-portrait {
     top: 40%;
-    left: -28%;
+    left: -20%;
   }
   .minimalist-hair-footer {
     align-items: flex-start;

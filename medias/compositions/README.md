@@ -1,8 +1,7 @@
 # Compositions pour la maquette
 
-Flo a ajouté deux PNG pour la séquence placée après le film noir et blanc :
+Flo a ajouté un PNG pour la séquence placée après le film noir et blanc :
 
-- `live-hair-art-portrait.png` (fichier reçu : `1.png`) : portrait et panneau brun assemblés.
-- `live-hair-art-shape.png` (fichier reçu : `2.png`) : panneau brun seul.
+- `live-hair-art-portrait.png` (fichier reçu : `me ok.png`) : portrait et panneau brun assemblés. Il remplace les deux visuels de travail précédents (`1.png` et `2.png`).
 
-Les versions WebP utilisées par la page sont dans `public/images/`. Crédits, personnes représentées et droits d’utilisation à confirmer avec Flo avant publication de l’EPK.
+La version WebP utilisée par la page est dans `public/images/`. Crédits, personne représentée et droits d’utilisation à confirmer avec Flo avant publication de l’EPK.

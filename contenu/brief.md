@@ -6,7 +6,7 @@ Ce fichier rassemble les éléments à confirmer avec Flo. Les quatre PDF dans l
 
 - Graphie publique de BRAIDSPLACE et Living Hair Art : à valider
 - Logo officiel éventuel : à demander ; la maquette utilise seulement le nom BRAIDSPLACE
-- Présentation courte et longue de l’artiste : à rédiger avec Flo
+- Présentation courte fournie par Flo pour la maquette : « Originaire de l’île de La Réunion, Floww a ensuite évolué en région parisienne. » Présentation longue et formulation finale à valider avec Flo.
 - Phrase manifeste et vocabulaire à conserver : à choisir avec Flo
 - Territoire de départ : La Réunion, mentionné dans les dossiers ; formulation à valider
 
@@ -26,7 +26,7 @@ Ce fichier rassemble les éléments à confirmer avec Flo. Les quatre PDF dans l
 
 ## Images et presse
 
-- Treize photos sources dans `medias/photos/` ; six versions web sont intégrées à la maquette pour choisir avec Flo. Deux compositions supplémentaires transmises pour la section après le film sont dans `medias/compositions/`.
+- Treize photos sources dans `medias/photos/` ; six versions web sont intégrées à la maquette pour choisir avec Flo. Une composition supplémentaire transmise pour la section après le film est dans `medias/compositions/`.
 - Crédits photo, personnes représentées et autorisations d’utilisation : à confirmer
 - Exports web, cadrages, textes alternatifs : à préparer après sélection
 - Citations, retombées presse, liens officiels et chiffres d'audience : à valider avec leurs sources et leur contexte

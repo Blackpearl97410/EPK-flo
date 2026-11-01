@@ -19,18 +19,10 @@ export function MinimalistHairArt() {
       </div>
 
       <div className="minimalist-hair-stage">
-        <img
-          className="minimalist-hair-shape"
-          src="/images/live-hair-art-shape.webp"
-          alt=""
-          loading="lazy"
-          decoding="async"
-          aria-hidden="true"
-        />
         <motion.img
           className="minimalist-hair-portrait"
           src="/images/live-hair-art-portrait.webp"
-          alt="Portrait noir et blanc d’une personne aux longues tresses, sur une composition brune inclinée."
+          alt="Portrait noir et blanc d’une personne à la coiffure sculpturale, devant un panneau brun incliné."
           loading="lazy"
           decoding="async"
           initial={reveal}
@@ -45,8 +37,9 @@ export function MinimalistHairArt() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
         >
+          <h3>L’ARTISTE</h3>
           <p>
-            Une performance visuelle où coiffure artistique, silhouette, mode et mouvement composent des tableaux vivants.
+            Originaire de l’île de La Réunion, Floww a ensuite évolué en région parisienne.
           </p>
           <a href="#living-hair-art">Découvrir le projet <span aria-hidden="true">↗</span></a>
         </motion.div>
