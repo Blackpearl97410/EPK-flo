@@ -11,7 +11,9 @@
   --brown: #3a291f;
   --clay: #6e4536;
   --gold: #b88e53;
-  --highlight: #b99058;
+  --highlight: #af8c5c;
+  --highlight-ink: #372a20;
+  --film-ivory: #f6f2ec;
   --cream: #fffdf8;
   --line: rgba(58, 41, 31, 0.24);
   --display: "Climate Crisis Variable", Impact, sans-serif;
@@ -872,8 +874,8 @@ h2 span {
 .scroll-video-section {
   height: 210vh;
   height: 210svh;
-  background: #fff;
-  color: var(--brown);
+  background: var(--film-ivory);
+  color: var(--highlight-ink);
 }
 .scroll-video-stage {
   position: sticky;
@@ -882,7 +884,7 @@ h2 span {
   height: 100vh;
   height: 100svh;
   overflow: hidden;
-  background: #fff;
+  background: var(--film-ivory);
 }
 .scroll-video-frame {
   position: absolute;
@@ -910,7 +912,7 @@ h2 span {
   width: min(92%, 950px);
   margin: 0;
   transform: translate(-50%, -50%);
-  color: var(--brown);
+  color: var(--highlight-ink);
   font: 400 clamp(42px, 6vw, 92px)/1.02 var(--display);
   font-variation-settings: 'YEAR' 1979;
   letter-spacing: .035em;
