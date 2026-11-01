@@ -716,10 +716,9 @@ h2 span {
 }
 .scroll-video-backdrop {
   position: absolute;
-  inset: -16px;
+  inset: 0;
   z-index: -1;
-  background: linear-gradient(rgba(25, 20, 18, .48), rgba(25, 20, 18, .58)), url('/images/hero-sculpture.webp') center 42% / cover no-repeat;
-  filter: blur(5px);
+  background: linear-gradient(rgba(25, 20, 18, .28), rgba(25, 20, 18, .4)), url('/images/film-backdrop.webp') center 45% / cover no-repeat;
 }
 .scroll-video-frame {
   position: absolute;
