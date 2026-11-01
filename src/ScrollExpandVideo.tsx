@@ -75,7 +75,7 @@ export function ScrollExpandVideo() {
           id="film-title"
           style={reduceMotion ? undefined : { opacity: titleOpacity }}
         >
-          LIVING<br />HAIR ART
+          <span>Live</span><span>Hair Art</span>
         </motion.h2>
         <motion.p className="scroll-video-prompt" style={reduceMotion ? undefined : { opacity: promptOpacity }}>
           <span>BRAIDSPLACE / FILM</span>

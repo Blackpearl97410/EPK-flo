@@ -11,6 +11,7 @@
   --brown: #3a291f;
   --clay: #6e4536;
   --gold: #b88e53;
+  --highlight: #b99058;
   --cream: #fffdf8;
   --line: rgba(58, 41, 31, 0.24);
   --display: "Climate Crisis Variable", Impact, sans-serif;
@@ -642,7 +643,7 @@ h2 span {
 }
 .video-hero-manifesto mark {
   padding-inline: .08em;
-  background: #b99058;
+  background: var(--highlight);
   color: #30231e;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
@@ -914,8 +915,14 @@ h2 span {
   font-variation-settings: 'YEAR' 1979;
   letter-spacing: .035em;
   text-align: center;
-  text-shadow: 0 0 16px #fff, 0 0 32px #fff;
   pointer-events: none;
+}
+.scroll-video-title span {
+  display: table;
+  max-width: 100%;
+  margin-inline: auto;
+  padding: .03em .13em .08em;
+  background: var(--highlight);
 }
 .scroll-video-prompt {
   position: absolute;
