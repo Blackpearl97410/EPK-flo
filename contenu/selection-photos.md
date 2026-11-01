@@ -17,4 +17,12 @@ La séquence « L’ARTISTE » utilise aussi une composition fournie par Flo. So
 | --- | --- |
 | live-hair-art-portrait.webp | live-hair-art-portrait.png (reçu comme `me ok.png`) |
 
+Les trois tableaux de la section « Statistics » sont des versions WebP des maquettes transmises pour l'animation. Ils ne sont pas des photographies originales et conservent pour l'instant leurs inscriptions dans l'image.
+
+| Version web | Maquette reçue | Ordre |
+| --- | --- | --- |
+| statistics-rose.webp | b38f6916-63b8-4878-bc8b-ab09c58607b9.png | 1 — rose |
+| statistics-blanc.webp | 43878a91-db41-4600-8cc1-bcd4d238b427.png | 2 — blanc |
+| statistics-jaune.webp | 94e191d3-f8cb-487c-9da2-00f5bc87f4d8.png | 3 — jaune |
+
 Crédits photographiques et autorisations des personnes représentées à compléter avec Flo avant publication. La maquette reste non indexée.

@@ -28,6 +28,7 @@ Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Gi
 - `src/App.tsx` : sections et textes de l'EPK.
 - `src/ScrollExpandVideo.tsx` : section du film noir et blanc et animation au défilement.
 - `src/MinimalistHairArt.tsx` : portrait et présentation « L’ARTISTE » après le film.
+- `src/StatisticsRunway.tsx` : section de statistiques en trois tableaux, pilotée par le défilement.
 - `src/styles.css` : identité visuelle responsive et Tailwind.
 - `src/main.tsx` : montage de l'application React.
 - [`contenu/brief.md`](contenu/brief.md) : informations et médias à réunir avec Flo.
@@ -50,6 +51,8 @@ La vidéo source de 91 Mo reste locale et ignorée par Git ; seul son export H.2
 ## Motion design et 21st.dev
 
 La section du film reprend le principe visuel de [Scroll media expansion hero de @arunachalam](https://21st.dev/@arunachalam/components/scroll-expansion-hero), publié sous licence MIT : une vidéo initialement étroite s'agrandit au défilement pendant que son titre s'efface. La section suivante adapte la composition et l’apparition du [Minimalist Hero de @ravikatiyar162](https://21st.dev/@ravikatiyar162/components/minimalist-hero) avec le portrait fourni par Flo et une présentation « L’ARTISTE » à droite de l’image. Ces adaptations sont locales, en React et Motion, sans nouvelle dépendance. Les animations respectent la préférence système de réduction du mouvement.
+
+La section « Statistics » utilise trois maquettes fournies dans l'ordre rose → blanc → jaune, superposées sur un plateau fixe. Le défilement contrôle leur fondu ; sur mobile, un rappel textuel des chiffres accompagne l'image. En mode de réduction du mouvement, les trois tableaux sont présentés à la suite. Ces maquettes comportent encore du texte incorporé dans les images : pour la version finale, les chiffres devront être confirmés avec Flo et composés en HTML afin de rester entièrement modifiables et accessibles.
 
 ## Collaboration à distance
 

@@ -2,6 +2,7 @@ import type { PropsWithChildren } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { ScrollExpandVideo } from "./ScrollExpandVideo";
 import { MinimalistHairArt } from "./MinimalistHairArt";
+import { StatisticsRunway } from "./StatisticsRunway";
 
 function Reveal({
   children,
@@ -277,6 +278,7 @@ function App() {
             </p>
           </Reveal>
         </section>
+        <StatisticsRunway />
         <section
           className="contact section-pad"
           id="contact"
@@ -284,7 +286,7 @@ function App() {
         >
           <div className="shell contact-grid">
             <Reveal>
-              <p className="kicker">05 / COLLABORER</p>
+              <p className="kicker">06 / COLLABORER</p>
               <h2 id="contact-title">
                 Créons
                 <br />

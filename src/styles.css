@@ -720,6 +720,128 @@ h2 span {
   .video-hero-link:hover { transform: none; }
 }
 
+/* Trois tableaux sur une scène fixe, pilotés par la position du défilement. */
+.statistics-runway {
+  background: #20130e;
+  color: var(--ivory);
+}
+.statistics-runway-track {
+  height: 320vh;
+  height: 320svh;
+}
+.statistics-runway-stage {
+  position: sticky;
+  top: 0;
+  isolation: isolate;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  background: #20130e;
+}
+.statistics-runway-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  pointer-events: none;
+}
+.statistics-runway-counter {
+  position: absolute;
+  z-index: 2;
+  right: clamp(18px, 3vw, 52px);
+  bottom: clamp(22px, 3vw, 48px);
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 6px #20130e;
+}
+.statistics-runway-counter span:first-child {
+  border-right: 1px solid var(--gold);
+  padding-right: 22px;
+}
+.statistics-runway-mobile-copy {
+  display: none;
+}
+.statistics-runway-note {
+  padding-block: 18px 22px;
+  margin-bottom: 0;
+  color: #d1ac76;
+  font-size: 12px;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .statistics-runway-frame {
+    object-fit: contain;
+  }
+  .statistics-runway-counter {
+    top: 18px;
+    bottom: auto;
+  }
+  .statistics-runway-counter span:last-child {
+    display: none;
+  }
+  .statistics-runway-counter span:first-child {
+    border: 0;
+    padding: 0;
+  }
+  .statistics-runway-mobile-copy {
+    position: absolute;
+    z-index: 2;
+    right: 18px;
+    bottom: 5%;
+    left: 18px;
+    display: block;
+    border-top: 1px solid var(--gold);
+    padding-top: 13px;
+    text-align: center;
+  }
+  .statistics-runway-mobile-copy strong {
+    display: block;
+    font: 400 19px/1.2 var(--display);
+    font-variation-settings: "YEAR" 1979;
+    letter-spacing: .05em;
+  }
+  .statistics-runway-mobile-copy p {
+    margin: 7px 0 0;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .statistics-runway-mobile-copy span {
+    display: block;
+    font: 400 clamp(23px, 6vw, 34px)/1.2 var(--editorial);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .statistics-runway-track {
+    height: auto;
+  }
+  .statistics-runway-stage {
+    position: relative;
+    display: grid;
+    height: auto;
+  }
+  .statistics-runway-frame {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1586 / 992;
+    object-fit: contain;
+    opacity: 1 !important;
+  }
+  .statistics-runway-mobile-copy {
+    display: none;
+  }
+}
+
 /* Effet d'expansion inspiré de @arunachalam / Scroll media expansion hero (21st.dev, MIT). */
 .scroll-video-section {
   height: 210vh;
