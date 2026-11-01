@@ -147,3 +147,51 @@ h2 { font-size: clamp(54px, 7.5vw, 110px); line-height: .98; letter-spacing: -.0
   html { scroll-behavior: auto; }
   .button, .main-nav a { transition: none; }
 }
+
+/* Mouvement éditorial : révélation du titre, rythme au défilement, micro-interactions. */
+.hero-title-word { display: inline-block; transform-origin: left center; animation: hero-reveal 950ms cubic-bezier(.22,1,.36,1) both; }
+.hero-period { display: inline-block; animation: period-appear 700ms 500ms ease-out both; }
+.hero-lead { animation: intro-rise 750ms 320ms cubic-bezier(.22,1,.36,1) both; }
+.hero-actions { animation: intro-rise 750ms 480ms cubic-bezier(.22,1,.36,1) both; }
+.art-orbit-one { animation: orbit-one 28s linear infinite; }
+.art-orbit-two { animation: orbit-two 36s linear infinite; }
+.portrait-card { animation: portrait-drift 7s ease-in-out infinite; }
+[data-reveal].is-visible { animation: intro-rise 700ms cubic-bezier(.22,1,.36,1) both; }
+.track:nth-child(2).is-visible, .media-card:nth-child(2).is-visible { animation-delay: 80ms; }
+.track:nth-child(3).is-visible, .media-card:nth-child(3).is-visible { animation-delay: 160ms; }
+.track, .media-card, .track h3, .button span, .text-link span { transition: transform .3s ease, background-color .3s ease, color .3s ease; }
+.track:hover { background: rgba(243,238,232,.045); }
+.track:hover h3 { transform: translateX(7px); color: var(--rose); }
+.media-card:hover { transform: translateY(-6px); }
+.button:hover span, .text-link:hover span { transform: translate(3px, -3px); }
+@keyframes hero-reveal {
+  from { clip-path: inset(0 100% 0 0); transform: translateY(24px); }
+  to { clip-path: inset(0 0 0 0); transform: translateY(0); }
+}
+@keyframes period-appear {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes intro-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes orbit-one {
+  from { transform: rotate(-26deg); }
+  to { transform: rotate(334deg); }
+}
+@keyframes orbit-two {
+  from { transform: rotate(31deg); }
+  to { transform: rotate(-329deg); }
+}
+@keyframes portrait-drift {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-9px) rotate(-4deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-word, .hero-period, .hero-lead, .hero-actions,
+  .art-orbit-one, .art-orbit-two, .portrait-card,
+  [data-reveal].is-visible { animation: none; }
+  .track, .media-card, .track h3, .button span, .text-link span { transition: none; }
+  .track:hover h3, .media-card:hover, .button:hover span, .text-link:hover span { transform: none; }
+}
