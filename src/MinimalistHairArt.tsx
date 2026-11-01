@@ -6,7 +6,7 @@ export function MinimalistHairArt() {
   const transition = { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const };
 
   return (
-    <section className="minimalist-hair" aria-labelledby="minimalist-hair-title">
+    <section className="minimalist-hair" id="artiste" aria-labelledby="minimalist-hair-title">
       <div className="minimalist-hair-header">
         <a className="minimalist-hair-brand" href="#accueil">BRAIDSPLACE</a>
         <nav className="minimalist-hair-nav" aria-label="Explorer l’EPK">
