@@ -11,7 +11,7 @@ export function MinimalistHairArt() {
         <a className="minimalist-hair-brand" href="#accueil">BRAIDSPLACE</a>
         <nav className="minimalist-hair-nav" aria-label="Explorer l’EPK">
           <a href="#living-hair-art">LE PROJET</a>
-          <a href="#format">LA PERFORMANCE</a>
+          <a href="#statistiques">STATISTICS</a>
           <a href="#images">LES IMAGES</a>
           <a href="#contact">CONTACT</a>
         </nav>

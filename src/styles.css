@@ -106,7 +106,6 @@ p {
 .kicker,
 .step-index,
 .step-status,
-.format-description > span,
 .contact-copy > span,
 .photo-card figcaption {
   font-size: 11px;
@@ -253,18 +252,11 @@ h1 {
   font-weight: 800;
   letter-spacing: 0.16em;
 }
-.manifesto {
-  padding-block: clamp(95px, 11vw, 185px);
-  background: var(--brown);
-  color: var(--ivory);
-}
-.manifesto-grid,
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 9%;
 }
-.manifesto .kicker,
 .contact .kicker {
   color: #d1ac76;
 }
@@ -277,15 +269,6 @@ h2 {
 h2 span {
   color: var(--gold);
 }
-.manifesto-copy {
-  padding-top: 25px;
-}
-.editorial {
-  font: 400 clamp(37px, 4.2vw, 65px)/1.08 var(--editorial);
-  margin-bottom: 35px;
-}
-.manifesto-copy > p:not(.editorial),
-.format-description p,
 .contact-copy p {
   max-width: 620px;
   font-size: clamp(17px, 1.5vw, 21px);
@@ -295,42 +278,8 @@ h2 span {
   font-size: 12px !important;
   opacity: 0.78;
 }
-.format .section-heading {
-  margin-bottom: 80px;
-}
 .dot {
   color: var(--gold);
-}
-.format-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1.35fr;
-  border-top: 1px solid var(--line);
-}
-.format-grid > div {
-  padding: 38px 35px 0 0;
-}
-.format-grid > div + div {
-  border-left: 1px solid var(--line);
-  padding-left: 35px;
-}
-.format-number strong {
-  display: block;
-  font: 400 clamp(68px, 7vw, 108px)/1 var(--editorial);
-  letter-spacing: -0.04em;
-}
-.format-number strong span {
-  font-size: 0.38em;
-  margin-left: 6px;
-}
-.format-number p {
-  max-width: 190px;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-top: 18px;
-}
-.format-description > span {
-  color: var(--clay);
 }
 .journey {
   background: var(--sand);
@@ -458,16 +407,6 @@ h2 span {
   .photo-intro-title {
     font-size: clamp(45px, 5.6vw, 72px);
   }
-  .format-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .format-description {
-    grid-column: span 2;
-    border-left: 0 !important;
-    border-top: 1px solid var(--line);
-    padding-left: 0 !important;
-    margin-top: 30px;
-  }
 }
 @media (max-width: 760px) {
   .shell {
@@ -505,17 +444,10 @@ h2 span {
   .hero-frame {
     min-height: 430px;
   }
-  .manifesto-grid,
   .contact-grid,
   .visuals {
     grid-template-columns: 1fr;
     gap: 35px;
-  }
-  .manifesto-copy {
-    padding-top: 0;
-  }
-  .format .section-heading {
-    margin-bottom: 50px;
   }
   .step {
     grid-template-columns: 35px 1fr;
@@ -543,15 +475,6 @@ h2 span {
   }
   .hero-frame {
     min-height: 360px;
-  }
-  .format-grid {
-    display: block;
-  }
-  .format-grid > div {
-    border-left: 0 !important;
-    border-top: 1px solid var(--line);
-    padding: 24px 0 !important;
-    margin: 0;
   }
   .photo-grid {
     grid-template-columns: 1fr;

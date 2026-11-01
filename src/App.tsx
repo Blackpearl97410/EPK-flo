@@ -134,7 +134,7 @@ function App() {
                 tableaux vivants.
               </p>
               <div className="hero-actions">
-                <a className="button button-primary" href="#projet">
+                <a className="button button-primary" href="#images">
                   Découvrir le projet <span aria-hidden="true">↗</span>
                 </a>
                 <a className="text-link" href="#contact">
@@ -157,68 +157,56 @@ function App() {
           </div>
         </section>
         <section
-          className="manifesto"
-          id="projet"
-          aria-labelledby="project-title"
-        >
-          <div className="shell manifesto-grid">
-            <Reveal>
-              <p className="kicker">01 / L’INTENTION</p>
-              <h2 id="project-title">
-                Une œuvre
-                <br />
-                en <span>mouvement.</span>
-              </h2>
-            </Reveal>
-            <Reveal className="manifesto-copy">
-              <p className="editorial">
-                Une œuvre qui quitte l’image pour prendre vie sur scène.
-              </p>
-              <p>
-                Living Hair Art associe coiffure artistique, mode, image et
-                mouvement. Chaque création capillaire se révèle à travers le
-                corps et la silhouette d’un modèle, dans une succession de
-                tableaux vivants.
-              </p>
-              <p className="small-note">
-                Texte adapté des dossiers de contexte ; formulation finale à
-                valider avec Flo.
-              </p>
-            </Reveal>
-          </div>
-        </section>
-        <section
-          className="format section-pad shell"
-          id="format"
-          aria-labelledby="format-title"
+          className="visuals section-pad shell"
+          id="images"
+          aria-labelledby="visuals-title"
         >
           <Reveal className="section-heading">
-            <p className="kicker">02 / LA PERFORMANCE</p>
-            <h2 id="format-title">
-              La scène
+            <p className="kicker">01 / UNIVERS VISUEL</p>
+            <h2 id="visuals-title">
+              Des tableaux
               <br />
-              comme toile<span className="dot">.</span>
+              <span>vivants.</span>
             </h2>
           </Reveal>
-          <div className="format-grid">
-            <Reveal className="format-number">
-              <strong>
-                20<span>min</span>
-              </strong>
-              <p>Durée approximative de la performance</p>
+          <Reveal className="visual-note">
+            <div className="photo-grid">
+              {photographs.map((photo) => (
+                <figure className="photo-card" key={photo.src}>
+                  <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
+                  <figcaption>{photo.label}</figcaption>
+                </figure>
+              ))}
+            </div>
+            <p>
+              Sélection de travail issue des photographies fournies pour
+              l’EPK. Crédits et autorisations d’image à confirmer avant
+              publication.
+            </p>
+          </Reveal>
+        </section>
+        <StatisticsRunway />
+        <section
+          className="contact section-pad"
+          id="contact"
+          aria-labelledby="contact-title"
+        >
+          <div className="shell contact-grid">
+            <Reveal>
+              <p className="kicker">02 / COLLABORER</p>
+              <h2 id="contact-title">
+                Créons
+                <br />
+                <span>ensemble.</span>
+              </h2>
             </Reveal>
-            <Reveal className="format-number">
-              <strong>7–10</strong>
-              <p>Modèles selon le lieu et les moyens</p>
-            </Reveal>
-            <Reveal className="format-description">
+            <Reveal className="contact-copy">
               <p>
-                Un format de scène qui peut être présenté seul ou, selon
-                l’espace disponible, accompagné d’une sélection de
-                photographies. Le dispositif précis et les besoins techniques
-                seront définis avec le lieu d’accueil.
+                Pour les lieux, partenaires et collaborations artistiques autour
+                de Living Hair Art.
               </p>
-              <span>FORMAT DE TRAVAIL / À CONFIRMER</span>
+              <div className="contact-rule" />
+              <span>CONTACT PROFESSIONNEL ET LIENS À VALIDER AVEC FLO</span>
             </Reveal>
           </div>
         </section>
@@ -254,60 +242,6 @@ function App() {
               Les étapes, dates et accords de production seront vérifiés avant
               publication de l’EPK.
             </p>
-          </div>
-        </section>
-        <section
-          className="visuals section-pad shell"
-          id="images"
-          aria-labelledby="visuals-title"
-        >
-          <Reveal className="section-heading">
-            <p className="kicker">04 / UNIVERS VISUEL</p>
-            <h2 id="visuals-title">
-              Des tableaux
-              <br />
-              <span>vivants.</span>
-            </h2>
-          </Reveal>
-          <Reveal className="visual-note">
-            <div className="photo-grid">
-              {photographs.map((photo) => (
-                <figure className="photo-card" key={photo.src}>
-                  <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
-                  <figcaption>{photo.label}</figcaption>
-                </figure>
-              ))}
-            </div>
-            <p>
-              Sélection de travail issue des photographies fournies pour
-              l’EPK. Crédits et autorisations d’image à confirmer avant
-              publication.
-            </p>
-          </Reveal>
-        </section>
-        <StatisticsRunway />
-        <section
-          className="contact section-pad"
-          id="contact"
-          aria-labelledby="contact-title"
-        >
-          <div className="shell contact-grid">
-            <Reveal>
-              <p className="kicker">06 / COLLABORER</p>
-              <h2 id="contact-title">
-                Créons
-                <br />
-                <span>ensemble.</span>
-              </h2>
-            </Reveal>
-            <Reveal className="contact-copy">
-              <p>
-                Pour les lieux, partenaires et collaborations artistiques autour
-                de Living Hair Art.
-              </p>
-              <div className="contact-rule" />
-              <span>CONTACT PROFESSIONNEL ET LIENS À VALIDER AVEC FLO</span>
-            </Reveal>
           </div>
         </section>
       </main>
