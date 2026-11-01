@@ -34,13 +34,13 @@ Employer le brun pour les textes sur ivoire. L'ocre sert aux signes et aux filet
 
 | Rôle | Police | Règle |
 | --- | --- | --- |
-| Signature et grands titres | **Climate Crisis** | Display principal. Titres courts, souvent sur deux lignes ; axe YEAR fixé à 1979 pour une forme dense et stable. Jamais pour les paragraphes ou les petits menus. |
+| Signature et grands titres | **Climate Crisis** | Display principal. Titres courts, souvent sur deux lignes ; axe YEAR fixé à 2019 et espacement positif pour préserver la lecture. Jamais pour les paragraphes ou les petits menus. |
 | Lecture et interface | **Manrope** | Texte courant, navigation, boutons, légendes ; corps 16–18 px, interligne voisin de 1,6. Poids 400 et 700/800 selon la hiérarchie. |
 | Éditorial | **Instrument Serif** | Phrase manifeste, sous-titre ou grand chiffre. Rompt la géométrie du display et rappelle la sensibilité du dossier Cape Town. Usage parcimonieux. |
 
 Climate Crisis est une police expressive conçue autour d'un axe temporel lié à la glace arctique. Ici, on utilise **sa silhouette statique** pour sa force plastique ; ne pas animer l'axe YEAR comme une donnée propre à BRAIDSPLACE. Les trois familles sont chargées localement depuis les dépendances du projet, sous licence OFL. Les glyphes français et leurs accents doivent rester lisibles à toutes les tailles.
 
-Échelle indicative : H1 36–100 px selon l'écran, H2 32–70 px, phrase éditoriale 29–65 px, corps 16–18 px, repères 11–12 px. Conserver une marge de sécurité autour de Climate Crisis : ses formes épaisses saturent vite les petits écrans.
+Échelle indicative : H1 30–100 px selon l'écran, H2 30–64 px, phrase éditoriale 29–65 px, corps 16–18 px, repères 11–12 px. Prévoir un espacement positif autour des lettres de Climate Crisis et vérifier chaque titre sur téléphone : ses formes se touchent vite.
 
 ## Composition et images
 
@@ -48,7 +48,7 @@ Climate Crisis est une police expressive conçue autour d'un axe temporel lié �
 - Employer de grands portraits verticaux et des recadrages qui laissent entières les coiffures et les silhouettes. Préserver le cadrage du photographe autant que possible.
 - Utiliser de fins filets, des numéros de section et des marges généreuses. Les motifs de tresses ou de courbes restent abstraits et discrets.
 - Garder les textes réels en HTML, jamais incorporés dans une photo. Ajouter crédits et textes alternatifs spécifiques quand les photos seront retenues.
-- Pour l'instant, la maquette affiche des **emplacements de photo** : les crédits, les personnes représentées, les autorisations et les versions web des originaux restent à confirmer avec Flo.
+- La maquette utilise cinq **versions web optimisées** des photos sources, dont un portrait en ouverture et quatre tableaux. Les crédits, les personnes représentées et les autorisations restent à confirmer avec Flo avant publication.
 
 ## Mouvement et accessibilité
 
@@ -56,7 +56,7 @@ Révéler les blocs au défilement par une courte translation et un fondu. Une e
 
 ## Points à valider avec Flo
 
-1. BRAIDSPLACE et Living Hair Art comme graphies publiques, et l'éventuelle existence d'un logo officiel. Le signe ✳ dans la maquette est provisoire.
+1. BRAIDSPLACE et Living Hair Art comme graphies publiques, et l'éventuelle existence d'un logo officiel. La maquette n'ajoute pas de signe décoratif au nom.
 2. Palette et trio typographique dans la maquette, après visualisation sur téléphone.
 3. Sélection des portraits, crédits, autorisations d'image et versions adaptées au web.
 4. Formulations sur la tournée, le festival, les formats et les collaborations ; contact professionnel à afficher.

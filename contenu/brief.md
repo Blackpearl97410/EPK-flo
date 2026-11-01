@@ -4,8 +4,8 @@ Ce fichier rassemble les éléments à confirmer avec Flo. Les quatre PDF dans l
 
 ## Identité et propos
 
-- Graphie publique de BRAIDSPLACE, Living Hair Art et Florence Prévot : à valider
-- Logo officiel éventuel : à demander ; le signe de la maquette est provisoire
+- Graphie publique de BRAIDSPLACE et Living Hair Art : à valider
+- Logo officiel éventuel : à demander ; la maquette utilise seulement le nom BRAIDSPLACE
 - Présentation courte et longue de l’artiste : à rédiger avec Flo
 - Phrase manifeste et vocabulaire à conserver : à choisir avec Flo
 - Territoire de départ : La Réunion, mentionné dans les dossiers ; formulation à valider
@@ -26,7 +26,7 @@ Ce fichier rassemble les éléments à confirmer avec Flo. Les quatre PDF dans l
 
 ## Images et presse
 
-- Douze photos sources dans medias/photos : sélection avec Flo
+- Douze photos sources dans medias/photos ; cinq versions web sont intégrées à la maquette pour choisir avec Flo
 - Crédits photo, personnes représentées et autorisations d’utilisation : à confirmer
 - Exports web, cadrages, textes alternatifs : à préparer après sélection
 - Citations, retombées presse, liens officiels et chiffres d'audience : à valider avec leurs sources et leur contexte

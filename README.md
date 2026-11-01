@@ -2,7 +2,7 @@
 
 Dépôt partagé pour construire l'EPK web de Flo. **Choix technique validé : React + Vite + TypeScript + Tailwind CSS**, avec Motion pour les animations. Vite produit une page statique déployable ; aucun serveur applicatif n'est nécessaire.
 
-La page actuelle est une **maquette de travail** pour BRAIDSPLACE / Living Hair Art. Le projet est une performance visuelle de Florence Prévot ; les contenus, visuels et coordonnées doivent être confirmés par Flo avant publication. Le dépôt GitHub est actuellement public.
+La page actuelle est une **maquette de travail** pour BRAIDSPLACE / Living Hair Art. Le projet est une performance visuelle ; les contenus, visuels et coordonnées doivent être confirmés par Flo avant publication. Le dépôt GitHub est actuellement public.
 
 ## Démarrer
 
@@ -33,6 +33,8 @@ Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Gi
 - `AGENTS.md` : consignes communes pour les deux Codex.
 - [`documents-de-contexte/`](documents-de-contexte/README.md) : PDF transmis pour préparer l’EPK Living Hair Art.
 - [`medias/photos/`](medias/photos/README.md) : photos sources proposées pour l’EPK.
+- `public/images/` : versions web légères des photographies sélectionnées pour la maquette.
+- [`contenu/selection-photos.md`](contenu/selection-photos.md) : correspondance entre versions web et originaux.
 
 ## Motion design et 21st.dev
 
