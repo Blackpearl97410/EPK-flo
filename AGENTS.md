@@ -1,9 +1,9 @@
 # Consignes pour Codex — EPK Flo
 
-- Ce dépôt est la source commune du projet. Toutes les modifications de l’EPK HTML doivent être versionnées ici.
-- Avant de travailler, lire `README.md` et `contenu/brief.md`, puis partir de la dernière version de `main`.
-- Travailler sur une branche par tâche et proposer les changements par pull request pour relecture.
-- Le site est statique : conserver une structure HTML sémantique, une mise en page responsive et des liens accessibles. Les animations sont décoratives : respecter `prefers-reduced-motion` et garder le contenu accessible sans JavaScript. Éviter les dépendances sans besoin concret.
-- Ne pas inventer de biographie, de parcours, de chiffres, de citations, de liens ou d’autorisations d’utilisation. Marquer les informations absentes « à valider ».
-- Ne pas publier de coordonnées personnelles, de photos ou d’enregistrements sans validation de Flo et vérification des droits nécessaires.
-- Garder les textes modifiables dans le dépôt, avec les sources et crédits des médias. Ne retirer la mention « version de travail » et la balise `noindex` qu'au moment de publier la version validée.
+- Ce dépôt est la source commune de l'EPK. **Pile choisie : React + Vite + TypeScript + Tailwind CSS**, avec Motion pour les animations. Ne pas revenir à une page HTML autonome sans décision explicite.
+- Avant de travailler, lire `README.md` et `contenu/brief.md`, récupérer la dernière version de `main` et travailler sur une branche par tâche. Proposer les changements par pull request.
+- Les composants de 21st.dev peuvent être ajoutés un par un en adaptant leur code au site. Garder la provenance et les dépendances documentées ; éviter d'installer une bibliothèque entière pour un effet isolé.
+- Conserver une structure sémantique, une mise en page responsive, des liens accessibles et la préférence `prefers-reduced-motion`. Les animations ne doivent pas empêcher l'accès au contenu.
+- Ne pas inventer de biographie, de parcours, de chiffres, de citations, de liens ou d'autorisations d'utilisation. Marquer les informations absentes « à valider ».
+- Ne pas publier de coordonnées personnelles, de photos ou d'enregistrements sans validation de Flo et vérification des droits.
+- Garder les textes et crédits modifiables dans le dépôt. Ne retirer la mention « version de travail » et la balise `noindex` qu'au moment de publier la version validée.
