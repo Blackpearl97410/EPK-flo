@@ -33,8 +33,16 @@ Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Gi
 - `AGENTS.md` : consignes communes pour les deux Codex.
 - [`documents-de-contexte/`](documents-de-contexte/README.md) : PDF transmis pour préparer l’EPK Living Hair Art.
 - [`medias/photos/`](medias/photos/README.md) : photos sources proposées pour l’EPK.
+- [`medias/videos-source/`](medias/videos-source/README.md) : vidéos 4K sources conservées localement.
+- `public/videos/` : deux exports vidéo 720p et leurs images d’attente.
 - `public/images/` : versions web légères des photographies sélectionnées pour la maquette.
 - [`contenu/selection-photos.md`](contenu/selection-photos.md) : correspondance entre versions web et originaux.
+
+## Introduction vidéo
+
+La première vue reprend la composition et les phrases du [modèle Canva transmis par Flo](https://canva.link/jttf7nfxgobcc2n). Le titre utilise **Climate Crisis**, la même police que le modèle, déjà chargée localement. Les petits textes du modèle sont en **Neue Montreal** ; la maquette utilise temporairement **Manrope** avec les mêmes tailles, capitales et espacements. Une licence web Neue Montreal et les fichiers correspondants sont nécessaires pour une reproduction typographique exacte de ces petits textes.
+
+La vidéo source de 91 Mo reste locale et ignorée par Git ; seul son export H.264 de 6,4 Mo est suivi dans le dépôt. La vidéo se lance muette en boucle ; l’image d’attente reste visible si la lecture automatique est bloquée ou si la réduction du mouvement est activée. Une deuxième vidéo en noir et blanc a aussi un export web H.264 de 17 Mo et une affiche dans `public/videos/` ; elle attend son emplacement dans l’EPK. Les sources 4K, les droits, les personnes filmées et les crédits restent à confirmer avant une publication publique.
 
 ## Motion design et 21st.dev
 

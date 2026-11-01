@@ -3,3 +3,6 @@ dist/
 *.tsbuildinfo
 *.local
 .DS_Store
+
+# Original 4K video remains local; the optimized web export is versioned.
+medias/videos-source/*.mp4

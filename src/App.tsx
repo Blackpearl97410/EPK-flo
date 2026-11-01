@@ -67,85 +67,40 @@ function App() {
       <a className="skip-link" href="#contenu">
         Aller au contenu
       </a>
-      <header className="site-header shell">
-        <a
-          className="brand"
-          href="#accueil"
-          aria-label="Braidsplace, retour en haut"
-        >
-          BRAIDSPLACE
-        </a>
-        <nav className="main-nav" aria-label="Navigation principale">
-          <a href="#projet">Le projet</a>
-          <a href="#format">Le format</a>
-          <a href="#parcours">Parcours</a>
-          <a href="#images">Images</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </header>
       <main id="contenu">
         <section
-          className="hero shell"
+          className="video-hero"
           id="accueil"
           aria-labelledby="hero-title"
         >
-          <div className="hero-topline">
-            <span>EPK / VERSION DE TRAVAIL</span>
-            <span>BRAIDSPLACE · LA RÉUNION</span>
-          </div>
-          <div className="hero-layout">
-            <div className="hero-copy">
-              <p className="eyebrow">BRAIDSPLACE PRÉSENTE</p>
-              <h1 id="hero-title">
-                <motion.span
-                  className="title-line"
-                  initial={reduceMotion ? false : { opacity: 0, y: 35 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                >
-                  LIVING
-                </motion.span>
-                <motion.span
-                  className="title-line"
-                  initial={reduceMotion ? false : { opacity: 0, y: 35 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.12 }}
-                >
-                  HAIR ART
-                </motion.span>
-              </h1>
-              <p className="hero-deck">
-                La coiffure devient une <em>œuvre vivante.</em>
-              </p>
-              <p className="hero-description">
-                Une performance visuelle de BRAIDSPLACE, où coiffure
-                artistique, silhouette, mode et mouvement composent des tableaux
-                vivants.
-              </p>
-              <div className="hero-actions">
-                <a className="button button-primary" href="#projet">
-                  Découvrir le projet <span aria-hidden="true">↗</span>
-                </a>
-                <a className="text-link" href="#contact">
-                  Prendre contact <span aria-hidden="true">↗</span>
-                </a>
-              </div>
-            </div>
-            <figure className="hero-frame">
-              <img
-                src="/images/hero-sculpture.webp"
-                alt="Portrait d'un modèle portant une coiffure sculpturale aux formes organiques, dans la végétation."
-                fetchPriority="high"
-                decoding="async"
-              />
-              <figcaption>01 / LIVING HAIR ART</figcaption>
-            </figure>
-          </div>
-          <div className="hero-bottomline">
-            <span>COIFFURE · IMAGE · MOUVEMENT</span>
-            <span>DÉFILER POUR EXPLORER ↓</span>
+          <video
+            className="video-hero-media"
+            src="/videos/braidsplace-ocean.mp4"
+            poster="/videos/braidsplace-ocean-poster.jpg"
+            autoPlay={!reduceMotion}
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+            tabIndex={-1}
+          />
+          <div className="video-hero-content">
+            <p className="video-hero-stamp">THIS IS</p>
+            <h1 id="hero-title">BRAIDSPLACE</h1>
+            <p className="video-hero-manifesto">
+              <span>BEYOND HAIRSTYLING. BEYOND AN EXHIBITION.</span>
+              <span>A MEETING OF ARTISTIC WORLDS.</span>
+              <span>A LIVING EXPERIENCE WHERE ART COMES TO LIFE.</span>
+              <span>ART THAT IS NOT MERELY SEEN, BUT EXPERIENCED.</span>
+            </p>
+            <a className="video-hero-link" href="#projet">LEARN MORE</a>
           </div>
         </section>
+        <div className="intro-worknote shell" aria-label="Statut du dossier">
+          <span>EPK / VERSION DE TRAVAIL</span>
+          <span>BRAIDSPLACE · LA RÉUNION</span>
+        </div>
         <section
           className="manifesto"
           id="projet"
