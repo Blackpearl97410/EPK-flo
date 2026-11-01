@@ -11,7 +11,7 @@ Ces fichiers WebP conservent le cadrage d'origine et servent à la maquette de l
 | tableau-tresses.webp | ZFZ_6617.jpg |
 | film-backdrop.webp | DSC_4956.jpg |
 
-La séquence « LIVE HAIR ART - » utilise aussi une composition fournie par Flo. Son PNG source est dans `medias/compositions/`.
+La séquence « L’ARTISTE » utilise aussi une composition fournie par Flo. Son PNG source est dans `medias/compositions/`.
 
 | Version web | Source |
 | --- | --- |
