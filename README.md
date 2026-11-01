@@ -9,7 +9,7 @@ La page actuelle est une **maquette de travail**. Biographie, musique, visuels e
 Node.js 20.19+ ou 22.12+ est requis par Vite. Dans le dossier du dépôt :
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -47,7 +47,7 @@ git pull
 git switch -c feat/nom-de-la-tache
 ```
 
-La maquette React/Vite se trouve pour l'instant dans la pull request en brouillon `feat/epk-html`. Pour l'essayer avant fusion : `git switch feat/epk-html`.
+La maquette React/Vite est sur `main`. Chaque nouvelle modification part d'une branche dédiée.
 
 Flo valide les contenus et la direction artistique. La personne chargée des mises à jour techniques après publication et l'hébergement restent à définir.
 
@@ -59,7 +59,7 @@ Remplacer les éléments « à compléter » par des contenus approuvés. Vérif
 
 - [x] Dépôt partagé initialisé
 - [x] Pile React + Vite + TypeScript + Tailwind CSS choisie
-- [x] Maquette responsive migrée sur cette pile dans une branche de travail
+- [x] Maquette responsive migrée sur cette pile et fusionnée dans `main`
 - [ ] Accès de Flo comme collaboratrice GitHub confirmé
 - [ ] Identité, bio, musique, visuels et contact validés avec droits d'utilisation
 - [ ] Composants 21st.dev choisis et adaptés si utiles
