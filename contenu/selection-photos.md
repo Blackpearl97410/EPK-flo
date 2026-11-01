@@ -9,7 +9,7 @@ Ces fichiers WebP conservent le cadrage d'origine et servent à la maquette de l
 | tableau-fleur.webp | DSC_4829.jpg |
 | tableau-jaune.webp | DSC_4891-2.jpg |
 | tableau-tresses.webp | ZFZ_6617.jpg |
-| film-backdrop-adriiii.webp | adriiii bg.png |
+| portrait-adriiii.webp | adriiii bg.png |
 
 La séquence « L’ARTISTE » utilise aussi une composition fournie par Flo. Son PNG source est dans `medias/compositions/`.
 
