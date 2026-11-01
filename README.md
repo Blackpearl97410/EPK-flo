@@ -38,7 +38,7 @@ Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Gi
 - [`medias/photos/`](medias/photos/README.md) : photos sources proposées pour l’EPK.
 - [`medias/compositions/`](medias/compositions/README.md) : PNG transmis pour la présentation de l’artiste.
 - [`medias/videos-source/`](medias/videos-source/README.md) : vidéos sources conservées localement.
-- `public/videos/` : exports vidéo web (720p en ouverture, 1080p en quatrième section) et leurs images d’attente.
+- `public/videos/` : exports vidéo web (couverture 1174 × 782, film de la quatrième section 1080p) et leurs images d’attente.
 - `public/images/` : versions web légères des photographies sélectionnées pour la maquette.
 - [`contenu/selection-photos.md`](contenu/selection-photos.md) : correspondance entre versions web et originaux.
 
@@ -48,7 +48,7 @@ La première vue reprend la composition et les phrases du [modèle Canva transmi
 
 Dans le manifeste de l'ouverture, « ARTISTIC WORLDS. » et « A LIVING EXPERIENCE WHERE ART COMES TO LIFE. » sont surlignés en ocre selon la capture de référence fournie par Flo.
 
-La vidéo source de 91 Mo reste locale et ignorée par Git ; seul son export H.264 de 6,4 Mo est suivi dans le dépôt. La vidéo se lance muette en boucle ; l’image d’attente reste visible si la lecture automatique est bloquée ou si la réduction du mouvement est activée. Le portrait `adriiii bg.png` apparaît seul, en plein écran, dans la deuxième section. La nouvelle vidéo en couleur occupe la quatrième section après « L’ARTISTE », sur fond ivoire : son export 1080p s’agrandit au défilement, puis l’EPK reprend. Le titre « Live Hair Art » en Climate Crisis reprend l'ocre du surlignage de l'ouverture derrière les mots, avec les initiales en majuscules. Les couleurs prélevées sur la capture de Flo sont l’ocre `#AF8C5C`, le brun `#372A20` et l’ivoire `#F6F2EC`. La vidéo possède des commandes de lecture et reste fixe quand la réduction du mouvement est activée. Les sources, les droits, les personnes filmées et les crédits restent à confirmer avant une publication publique.
+La couverture utilise la dernière vidéo de cinq secondes fournie par Flo. La source reste locale et ignorée par Git ; son export H.264 suivi dans le dépôt a été allégé et sa piste audio retirée. La vidéo se lance muette en boucle derrière les textes existants ; l’image d’attente reste visible si la lecture automatique est bloquée ou si la réduction du mouvement est activée. Le portrait `adriiii bg.png` apparaît seul, en plein écran, dans la deuxième section. La vidéo en couleur de la quatrième section, après « L’ARTISTE », reste sur fond ivoire : son export 1080p s’agrandit au défilement, puis l’EPK reprend. Le titre « Live Hair Art » en Climate Crisis reprend l'ocre du surlignage de l'ouverture derrière les mots, avec les initiales en majuscules. Les couleurs prélevées sur la capture de Flo sont l’ocre `#AF8C5C`, le brun `#372A20` et l’ivoire `#F6F2EC`. La vidéo de la quatrième section possède des commandes de lecture et reste fixe quand la réduction du mouvement est activée. Les sources, les droits, les personnes filmées et les crédits restent à confirmer avant une publication publique.
 
 ## Motion design et 21st.dev
 
