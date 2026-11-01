@@ -27,6 +27,7 @@ Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Gi
 - `index.html` : point d'entrée HTML et métadonnées.
 - `src/App.tsx` : sections et textes de l'EPK.
 - `src/ScrollExpandVideo.tsx` : section du film noir et blanc et animation au défilement.
+- `src/MinimalistHairArt.tsx` : composition « LIVE HAIR ART - » après le film.
 - `src/styles.css` : identité visuelle responsive et Tailwind.
 - `src/main.tsx` : montage de l'application React.
 - [`contenu/brief.md`](contenu/brief.md) : informations et médias à réunir avec Flo.
@@ -34,6 +35,7 @@ Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Gi
 - `AGENTS.md` : consignes communes pour les deux Codex.
 - [`documents-de-contexte/`](documents-de-contexte/README.md) : PDF transmis pour préparer l’EPK Living Hair Art.
 - [`medias/photos/`](medias/photos/README.md) : photos sources proposées pour l’EPK.
+- [`medias/compositions/`](medias/compositions/README.md) : PNG transmis pour la composition après le film.
 - [`medias/videos-source/`](medias/videos-source/README.md) : vidéos 4K sources conservées localement.
 - `public/videos/` : deux exports vidéo 720p et leurs images d’attente.
 - `public/images/` : versions web légères des photographies sélectionnées pour la maquette.
@@ -47,7 +49,7 @@ La vidéo source de 91 Mo reste locale et ignorée par Git ; seul son export H.2
 
 ## Motion design et 21st.dev
 
-La section du film reprend le principe visuel de [Scroll media expansion hero de @arunachalam](https://21st.dev/@arunachalam/components/scroll-expansion-hero), publié sous licence MIT : une vidéo initialement étroite s'agrandit au défilement pendant que son titre s'efface. L'implémentation est locale, en React et Motion, et n'ajoute aucune dépendance Next.js ou composant externe. La maquette utilise aussi Motion pour les blocs au défilement. Les animations respectent la préférence système de réduction du mouvement.
+La section du film reprend le principe visuel de [Scroll media expansion hero de @arunachalam](https://21st.dev/@arunachalam/components/scroll-expansion-hero), publié sous licence MIT : une vidéo initialement étroite s'agrandit au défilement pendant que son titre s'efface. La section suivante adapte la composition du [Minimalist Hero de @ravikatiyar162](https://21st.dev/@ravikatiyar162/components/minimalist-hero) avec le portrait fourni par Flo et le titre « LIVE HAIR ART - ». Ces adaptations sont locales, en React et Motion, sans nouvelle dépendance. Les animations respectent la préférence système de réduction du mouvement.
 
 ## Collaboration à distance
 

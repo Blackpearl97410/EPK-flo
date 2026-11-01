@@ -6,7 +6,7 @@ Cette direction est **déduite des documents de contexte**, pas une identité of
 
 - Les dossiers sponsors, Johannesburg et Tanzanie associent une page **ivoire**, des textes **brun profond**, des filets **ocre**, des aplats **terre cuite** et des portraits verticaux. Leur mise en page est éditoriale : marges généreuses, repères numérotés, texte court à côté d'une image forte.
 - Le document Cape Town pousse davantage l'affiche : titre condensé, composition asymétrique, photographies en série et mots superposés. Il utilise notamment TAN St Canard, Cochin, Antonio et Poppins. Ce ne sont pas des polices imposées pour le site.
-- Les douze photographies sources montrent des coiffures sculpturales, des silhouettes et des fonds naturels ou intérieurs. Le rose vif et le vert acide y apparaissent **dans les œuvres et les vêtements** : ils restent des accents photographiques, sans devenir les couleurs principales de l'interface.
+- Les treize photographies sources montrent des coiffures sculpturales, des silhouettes et des fonds naturels ou intérieurs. Le rose vif et le vert acide y apparaissent **dans les œuvres et les vêtements** : ils restent des accents photographiques, sans devenir les couleurs principales de l'interface.
 - Le propos commun est **la coiffure comme œuvre vivante, portée par le corps et le mouvement**. L'EPK présente une performance visuelle.
 
 Sources : les quatre PDF de [documents-de-contexte](../documents-de-contexte/README.md) et les photographies de [medias/photos](../medias/photos/README.md). Les PDF sont des éditions de travail. Une affirmation sur les dates, le festival, les chiffres ou les partenariats doit être vérifiée auprès de Flo avant publication.
@@ -48,7 +48,7 @@ Climate Crisis est une police expressive conçue autour d'un axe temporel lié �
 - Employer de grands portraits verticaux et des recadrages qui laissent entières les coiffures et les silhouettes. Préserver le cadrage du photographe autant que possible.
 - Utiliser de fins filets, des numéros de section et des marges généreuses. Les motifs de tresses ou de courbes restent abstraits et discrets.
 - Garder les textes réels en HTML, jamais incorporés dans une photo. Ajouter crédits et textes alternatifs spécifiques quand les photos seront retenues.
-- La maquette utilise cinq **versions web optimisées** des photos sources, dont un portrait en ouverture et quatre tableaux. Les crédits, les personnes représentées et les autorisations restent à confirmer avec Flo avant publication.
+- La maquette utilise six **versions web optimisées** des photos sources, ainsi qu’une composition fournie pour la séquence après le film. Les crédits, les personnes représentées et les autorisations restent à confirmer avec Flo avant publication.
 
 ## Mouvement et accessibilité
 

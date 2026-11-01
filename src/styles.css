@@ -847,3 +847,197 @@ h2 span {
     display: none;
   }
 }
+
+/* Composition inspirée du « Minimalist Hero » de @ravikatiyar162 (21st.dev). */
+.minimalist-hair {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: auto minmax(520px, 1fr) auto;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--cream);
+  color: #1d1714;
+}
+.minimalist-hair-header,
+.minimalist-hair-footer {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-inline: clamp(24px, 3.8vw, 64px);
+}
+.minimalist-hair-header {
+  min-height: 98px;
+}
+.minimalist-hair-brand {
+  font: 400 clamp(17px, 1.8vw, 24px)/1 var(--display);
+  font-variation-settings: "YEAR" 1979;
+  letter-spacing: .035em;
+}
+.minimalist-hair-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: clamp(14px, 2.3vw, 38px);
+}
+.minimalist-hair-nav a,
+.minimalist-hair-footer {
+  font: 700 11px/1.4 var(--body);
+  letter-spacing: .13em;
+}
+.minimalist-hair-nav a:hover,
+.minimalist-hair-copy a:hover {
+  text-decoration: underline;
+  text-underline-offset: .3em;
+}
+.minimalist-hair-stage {
+  position: relative;
+  min-height: 520px;
+}
+.minimalist-hair-portrait {
+  position: absolute;
+  display: block;
+  width: min(90vw, 1500px);
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+.minimalist-hair-portrait {
+  z-index: 1;
+  top: -10%;
+  left: 6%;
+}
+.minimalist-hair-copy {
+  position: absolute;
+  z-index: 2;
+  top: 31%;
+  left: clamp(24px, 3.8vw, 64px);
+  width: min(300px, 25vw);
+  padding: 18px 18px 18px 0;
+  background: linear-gradient(90deg, var(--cream) 78%, rgba(255, 253, 248, .78));
+  font-size: clamp(13px, 1.1vw, 16px);
+  line-height: 1.55;
+}
+.minimalist-hair-copy p {
+  margin-bottom: 16px;
+}
+.minimalist-hair-copy h3 {
+  margin-bottom: 14px;
+  font: 400 clamp(21px, 2vw, 30px)/1.1 var(--display);
+  font-variation-settings: "YEAR" 1979;
+  letter-spacing: .035em;
+}
+.minimalist-hair-copy a {
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: .3em;
+}
+.minimalist-hair-title {
+  position: absolute;
+  z-index: 3;
+  top: 39%;
+  left: 57%;
+  width: max-content;
+  max-width: 42%;
+  margin: 0;
+  color: #1d1714;
+  font: 400 clamp(45px, 5.4vw, 88px)/1.03 var(--display);
+  font-variation-settings: "YEAR" 1979;
+  letter-spacing: .015em;
+  text-shadow: 2px 2px 0 var(--cream), -2px -2px 0 var(--cream), 2px -2px 0 var(--cream), -2px 2px 0 var(--cream);
+}
+.minimalist-hair-title span {
+  display: block;
+  white-space: nowrap;
+}
+.minimalist-hair-footer {
+  min-height: 70px;
+  color: var(--clay);
+}
+@media (max-width: 900px) {
+  .minimalist-hair {
+    grid-template-rows: auto minmax(570px, 1fr) auto;
+  }
+  .minimalist-hair-header {
+    min-height: 88px;
+  }
+  .minimalist-hair-nav {
+    gap: 14px;
+  }
+  .minimalist-hair-nav a {
+    font-size: 10px;
+  }
+  .minimalist-hair-portrait {
+    width: 110vw;
+  }
+  .minimalist-hair-portrait {
+    top: 4%;
+    left: -4%;
+  }
+  .minimalist-hair-copy {
+    top: 18%;
+    width: min(270px, 35vw);
+  }
+  .minimalist-hair-title {
+    top: 52%;
+    left: 50%;
+    font-size: clamp(40px, 6.5vw, 65px);
+  }
+}
+@media (max-width: 600px) {
+  .minimalist-hair {
+    grid-template-rows: auto minmax(610px, 1fr) auto;
+  }
+  .minimalist-hair-header {
+    display: block;
+    min-height: 0;
+    padding-block: 25px 16px;
+  }
+  .minimalist-hair-nav {
+    justify-content: flex-start;
+    margin-top: 18px;
+  }
+  .minimalist-hair-nav a {
+    font-size: 9px;
+  }
+  .minimalist-hair-stage {
+    min-height: 610px;
+  }
+  .minimalist-hair-copy {
+    top: 2%;
+    left: 24px;
+    width: min(310px, calc(100% - 48px));
+    padding: 0;
+    background: none;
+    font-size: 13px;
+  }
+  .minimalist-hair-copy p {
+    margin-bottom: 8px;
+  }
+  .minimalist-hair-title {
+    top: 26%;
+    left: 24px;
+    max-width: calc(100% - 48px);
+    font-size: clamp(38px, 9.2vw, 55px);
+  }
+  .minimalist-hair-portrait {
+    width: 155vw;
+    max-width: none;
+  }
+  .minimalist-hair-portrait {
+    top: 40%;
+    left: -20%;
+  }
+  .minimalist-hair-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+    min-height: 0;
+    padding-block: 16px 25px;
+    font-size: 9px;
+  }
+}
