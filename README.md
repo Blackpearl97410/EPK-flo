@@ -1,26 +1,67 @@
 # EPK Flo
 
-Dépôt partagé pour concevoir et mettre à jour l'EPK de Flo.
+Dépôt partagé pour construire l'EPK web de Flo. **Choix technique validé : React + Vite + TypeScript + Tailwind CSS**, avec Motion pour les animations. Vite produit une page statique déployable ; aucun serveur applicatif n'est nécessaire.
 
-## Objectif
+La page actuelle est une **maquette de travail**. Biographie, musique, visuels et coordonnées doivent être confirmés par Flo avant publication. Le dépôt GitHub est actuellement public.
 
-Rassembler les contenus validés, les médias et la réalisation de l'EPK dans un seul projet versionné. Le format final (site, PDF ou les deux) sera décidé avec Flo avant l'implémentation.
+## Démarrer
+
+Node.js 20.19+ ou 22.12+ est requis par Vite. Dans le dossier du dépôt :
+
+```bash
+npm install
+npm run dev
+```
+
+Ouvrir l'adresse locale affichée par Vite. Pour vérifier la version de production :
+
+```bash
+npm run build
+npm run preview
+```
+
+Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Git.
+
+## Organisation
+
+- `index.html` : point d'entrée HTML et métadonnées.
+- `src/App.tsx` : sections et textes de l'EPK.
+- `src/styles.css` : identité visuelle responsive et Tailwind.
+- `src/main.tsx` : montage de l'application React.
+- [`contenu/brief.md`](contenu/brief.md) : informations et médias à réunir avec Flo.
+- `AGENTS.md` : consignes communes pour les deux Codex.
+
+## Motion design et 21st.dev
+
+L'objectif est de pouvoir intégrer des composants de 21st.dev, conçus pour React/TypeScript et Tailwind, en sélectionnant ceux qui servent l'EPK. La maquette actuelle utilise Motion pour une révélation du titre, des entrées au défilement et de légers mouvements. **Aucun composant tiers de 21st.dev n'a encore été installé.** Les animations respectent la préférence système de réduction du mouvement.
 
 ## Collaboration à distance
 
-Alexandre et Flo utilisent chacun leur propre compte GitHub et leur propre Codex, reliés à ce même dépôt. Chacun travaille sur une branche dédiée, puis ouvre une pull request vers `main`. L'autre relit et valide avant fusion. `main` représente la version commune validée.
+Alexandre et Flo utilisent chacun leur compte GitHub et leur Codex sur ce même dépôt. Chacun part de la dernière version de `main`, travaille sur une branche dédiée et ouvre une pull request. L'autre relit avant fusion ; `main` représente la version commune validée.
 
-Avant de commencer une nouvelle tâche, récupérer les dernières modifications de `main`. Éviter de modifier simultanément le même fichier sans coordination. Ne jamais déposer de mot de passe, de clé API ou de contenu non autorisé à la publication.
+```bash
+git clone https://github.com/Blackpearl97410/EPK-flo.git
+cd EPK-flo
+git switch main
+git pull
+git switch -c feat/nom-de-la-tache
+```
 
-## Contenus à réunir
+La maquette React/Vite se trouve pour l'instant dans la pull request en brouillon `feat/epk-html`. Pour l'essayer avant fusion : `git switch feat/epk-html`.
 
-Le [brief de contenu](contenu/brief.md) sert de liste de collecte et de validation. Les textes, photos, liens et coordonnées définitifs seront ajoutés après accord de Flo.
+Flo valide les contenus et la direction artistique. La personne chargée des mises à jour techniques après publication et l'hébergement restent à définir.
+
+## Avant publication
+
+Remplacer les éléments « à compléter » par des contenus approuvés. Vérifier droits et crédits des médias, liens, contact, mobile et accessibilité. Retirer la balise `noindex` et la mention « version de travail » quand Flo valide la mise en ligne. Ne jamais committer de mot de passe, de clé API ou de média non autorisé à la publication.
 
 ## État
 
 - [x] Dépôt partagé initialisé
+- [x] Pile React + Vite + TypeScript + Tailwind CSS choisie
+- [x] Maquette responsive migrée sur cette pile dans une branche de travail
 - [ ] Accès de Flo comme collaboratrice GitHub confirmé
-- [ ] Format final choisi
-- [ ] Contenus et médias transmis avec droits d'utilisation
-- [ ] Première version de l'EPK produite et relue par Flo
-- [ ] Version finale publiée ou exportée
+- [ ] Identité, bio, musique, visuels et contact validés avec droits d'utilisation
+- [ ] Composants 21st.dev choisis et adaptés si utiles
+- [ ] Version personnalisée relue par Flo
+- [ ] Hébergement et maintenance décidés, puis publication

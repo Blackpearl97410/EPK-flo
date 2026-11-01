@@ -1,6 +1,6 @@
 # Brief de l’EPK de Flo
 
-Ce fichier rassemble les informations à confirmer avec Flo. Ne pas publier les éléments marqués « à valider ».
+Ce fichier rassemble les informations à confirmer avec Flo pour personnaliser l'EPK web React/Vite. Ne pas publier les éléments marqués « à valider ».
 
 ## Identité
 
@@ -39,7 +39,8 @@ Ce fichier rassemble les informations à confirmer avec Flo. Ne pas publier les 
 
 ## Validation
 
-- Format souhaité : site, PDF ou les deux
-- Public principal : programmateurs, médias, partenaires, autres
+- Format choisi : site web responsive React + Vite + TypeScript + Tailwind CSS
+- Public principal : programmateurs, médias, partenaires, autres — à préciser
 - Personne qui valide les textes et les visuels : Flo
 - Date cible de première version : à définir
+- Hébergement et adresse finale : à décider après validation des contenus
