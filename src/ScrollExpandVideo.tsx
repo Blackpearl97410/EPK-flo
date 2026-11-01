@@ -17,7 +17,6 @@ export function ScrollExpandVideo() {
   const frameRadius = useTransform(scrollYProgress, [0, 0.72], ["18px", "0px"]);
   const titleOpacity = useTransform(scrollYProgress, [0, 0.28, 0.52], [1, 1, 0]);
   const promptOpacity = useTransform(scrollYProgress, [0, 0.18, 0.4], [1, 1, 0]);
-  const backdropOpacity = useTransform(scrollYProgress, [0, 0.72], [1, 0.18]);
 
   useEffect(() => {
     const query = window.matchMedia("(max-width: 700px)");
@@ -55,11 +54,6 @@ export function ScrollExpandVideo() {
   return (
     <section className="scroll-video-section" id="film" ref={sectionRef} aria-labelledby="film-title">
       <div className="scroll-video-stage">
-        <motion.div
-          className="scroll-video-backdrop"
-          style={reduceMotion ? undefined : { opacity: backdropOpacity }}
-          aria-hidden="true"
-        />
         <motion.div
           className="scroll-video-frame"
           style={reduceMotion ? undefined : { width: frameWidth, height: frameHeight, borderRadius: frameRadius }}

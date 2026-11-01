@@ -97,10 +97,18 @@ function App() {
               <span>A LIVING EXPERIENCE WHERE ART COMES TO LIFE.</span>
               <span>ART THAT IS NOT MERELY SEEN, BUT EXPERIENCED.</span>
             </p>
-            <a className="video-hero-link" href="#artiste">LEARN MORE</a>
+            <a className="video-hero-link" href="#portrait">LEARN MORE</a>
           </div>
         </section>
+        <section className="film-photo-section" id="portrait" aria-label="Portrait de la série Living Hair Art">
+          <img
+            src="/images/portrait-adriiii.webp"
+            alt="Portrait d’une personne devant un panneau blanc, avec de longues tresses sculpturales."
+            decoding="async"
+          />
+        </section>
         <MinimalistHairArt />
+        <ScrollExpandVideo />
         <div className="intro-worknote shell" aria-label="Statut du dossier">
           <span>EPK / VERSION DE TRAVAIL</span>
           <span>BRAIDSPLACE · LA RÉUNION</span>
@@ -148,7 +156,6 @@ function App() {
             <span>DÉFILER POUR EXPLORER ↓</span>
           </div>
         </section>
-        <ScrollExpandVideo />
         <section
           className="manifesto"
           id="projet"
