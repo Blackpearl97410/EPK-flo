@@ -94,13 +94,56 @@ function App() {
               <span>A LIVING EXPERIENCE WHERE ART COMES TO LIFE.</span>
               <span>ART THAT IS NOT MERELY SEEN, BUT EXPERIENCED.</span>
             </p>
-            <a className="video-hero-link" href="#projet">LEARN MORE</a>
+            <a className="video-hero-link" href="#living-hair-art">LEARN MORE</a>
           </div>
         </section>
         <div className="intro-worknote shell" aria-label="Statut du dossier">
           <span>EPK / VERSION DE TRAVAIL</span>
           <span>BRAIDSPLACE · LA RÉUNION</span>
         </div>
+        <section
+          className="photo-intro shell"
+          id="living-hair-art"
+          aria-labelledby="living-hair-art-title"
+        >
+          <div className="hero-layout">
+            <div className="hero-copy">
+              <p className="eyebrow">BRAIDSPLACE PRÉSENTE</p>
+              <h2 className="photo-intro-title" id="living-hair-art-title">
+                <span className="title-line">LIVING</span>
+                <span className="title-line">HAIR ART</span>
+              </h2>
+              <p className="hero-deck">
+                La coiffure devient une <em>œuvre vivante.</em>
+              </p>
+              <p className="hero-description">
+                Une performance visuelle de BRAIDSPLACE, où coiffure
+                artistique, silhouette, mode et mouvement composent des
+                tableaux vivants.
+              </p>
+              <div className="hero-actions">
+                <a className="button button-primary" href="#projet">
+                  Découvrir le projet <span aria-hidden="true">↗</span>
+                </a>
+                <a className="text-link" href="#contact">
+                  Prendre contact <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+            <figure className="hero-frame">
+              <img
+                src="/images/hero-sculpture.webp"
+                alt="Portrait d'un modèle portant une coiffure sculpturale aux formes organiques, dans la végétation."
+                decoding="async"
+              />
+              <figcaption>01 / LIVING HAIR ART</figcaption>
+            </figure>
+          </div>
+          <div className="hero-bottomline">
+            <span>COIFFURE · IMAGE · MOUVEMENT</span>
+            <span>DÉFILER POUR EXPLORER ↓</span>
+          </div>
+        </section>
         <section
           className="manifesto"
           id="projet"
