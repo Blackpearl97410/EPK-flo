@@ -925,6 +925,7 @@ h2 span {
   margin-inline: auto;
   padding: .03em .13em .08em;
   background: var(--highlight);
+  color: var(--highlight-ink);
 }
 .scroll-video-prompt {
   position: absolute;
