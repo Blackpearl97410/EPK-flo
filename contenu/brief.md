@@ -26,7 +26,7 @@ Ce fichier rassemble les éléments à confirmer avec Flo. Les quatre PDF dans l
 
 ## Images et presse
 
-- Treize photos sources dans `medias/photos/` ; six versions web sont intégrées à la maquette pour choisir avec Flo. Une composition supplémentaire transmise pour la section après le film est dans `medias/compositions/`.
+- Quatorze photos sources dans `medias/photos/` ; six versions web sont intégrées à la maquette pour choisir avec Flo. Une composition supplémentaire transmise pour la section après le film est dans `medias/compositions/`.
 - Crédits photo, personnes représentées et autorisations d’utilisation : à confirmer
 - Exports web, cadrages, textes alternatifs : à préparer après sélection
 - Citations, retombées presse, liens officiels et chiffres d'audience : à valider avec leurs sources et leur contexte

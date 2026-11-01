@@ -6,7 +6,7 @@ Cette direction est **déduite des documents de contexte**, pas une identité of
 
 - Les dossiers sponsors, Johannesburg et Tanzanie associent une page **ivoire**, des textes **brun profond**, des filets **ocre**, des aplats **terre cuite** et des portraits verticaux. Leur mise en page est éditoriale : marges généreuses, repères numérotés, texte court à côté d'une image forte.
 - Le document Cape Town pousse davantage l'affiche : titre condensé, composition asymétrique, photographies en série et mots superposés. Il utilise notamment TAN St Canard, Cochin, Antonio et Poppins. Ce ne sont pas des polices imposées pour le site.
-- Les treize photographies sources montrent des coiffures sculpturales, des silhouettes et des fonds naturels ou intérieurs. Le rose vif et le vert acide y apparaissent **dans les œuvres et les vêtements** : ils restent des accents photographiques, sans devenir les couleurs principales de l'interface.
+- Les quatorze photographies sources montrent des coiffures sculpturales, des silhouettes et des fonds naturels ou intérieurs. Le rose vif et le vert acide y apparaissent **dans les œuvres et les vêtements** : ils restent des accents photographiques, sans devenir les couleurs principales de l'interface.
 - Le propos commun est **la coiffure comme œuvre vivante, portée par le corps et le mouvement**. L'EPK présente une performance visuelle.
 
 Sources : les quatre PDF de [documents-de-contexte](../documents-de-contexte/README.md) et les photographies de [medias/photos](../medias/photos/README.md). Les PDF sont des éditions de travail. Une affirmation sur les dates, le festival, les chiffres ou les partenariats doit être vérifiée auprès de Flo avant publication.
