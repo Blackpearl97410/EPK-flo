@@ -862,7 +862,7 @@ h2 span {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(rgba(25, 20, 18, .28), rgba(25, 20, 18, .4)), url('/images/film-backdrop.webp') center 45% / cover no-repeat;
+  background: linear-gradient(rgba(25, 20, 18, .28), rgba(25, 20, 18, .4)), url('/images/film-backdrop-adriiii.webp') 45% center / cover no-repeat;
 }
 .scroll-video-frame {
   position: absolute;
@@ -917,6 +917,9 @@ h2 span {
   pointer-events: none;
 }
 @media (max-width: 700px) {
+  .scroll-video-backdrop {
+    background-position: center, 38% center;
+  }
   .scroll-video-title {
     width: 94%;
     font-size: clamp(31px, 9vw, 58px);
@@ -940,7 +943,7 @@ h2 span {
     padding: 65px 20px;
   }
   .scroll-video-backdrop {
-    opacity: .35;
+    opacity: .75;
   }
   .scroll-video-title,
   .scroll-video-frame,
