@@ -42,9 +42,9 @@ const steps = [
 
 const photographs = [
   {
-    src: "/images/tableau-rose.webp",
-    alt: "Modèle en tenue rose portant une coiffure sculpturale devant un panneau clair, dans un jardin.",
-    label: "01 / Formes en mouvement",
+    src: "/images/tableau-tresses-graphiques.webp",
+    alt: "Modèle appuyé à une rambarde, coiffure tressée en grandes courbes devant un panneau clair.",
+    label: "01 / Lignes capillaires",
   },
   {
     src: "/images/tableau-fleur.webp",
@@ -52,14 +52,14 @@ const photographs = [
     label: "02 / Corps et couleur",
   },
   {
-    src: "/images/tableau-jaune.webp",
-    alt: "Modèle en tenue jaune dans un intérieur sombre, devant une photographie de coiffure graphique.",
-    label: "03 / Silhouette",
+    src: "/images/tableau-portrait-nb-femme.webp",
+    alt: "Portrait noir et blanc d'un modèle à la coiffure afro volumineuse, devant un panneau clair.",
+    label: "03 / Portrait en clair-obscur",
   },
   {
-    src: "/images/tableau-tresses.webp",
-    alt: "Modèle en blanc avec une longue coiffure tressée, photographié en extérieur.",
-    label: "04 / Matière vivante",
+    src: "/images/tableau-portrait-nb-homme.webp",
+    alt: "Portrait noir et blanc d'un modèle en chemise blanche, avec une coiffure afro sculpturale.",
+    label: "04 / Volume et contraste",
   },
 ];
 

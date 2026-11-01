@@ -9,7 +9,12 @@ Ces fichiers WebP conservent le cadrage d'origine et servent à la maquette de l
 | tableau-fleur.webp | DSC_4829.jpg |
 | tableau-jaune.webp | DSC_4891-2.jpg |
 | tableau-tresses.webp | ZFZ_6617.jpg |
+| tableau-tresses-graphiques.webp | DSC_4723.jpg |
+| tableau-portrait-nb-femme.webp | WhatsApp Image 2026-09-10 at 14.36.45 (1).jpeg |
+| tableau-portrait-nb-homme.webp | WhatsApp Image 2026-09-10 at 14.36.46 (1).jpeg |
 | portrait-adriiii.webp | adriiii bg.png |
+
+La galerie « Des tableaux vivants » utilise `tableau-tresses-graphiques.webp`, `tableau-fleur.webp` et les deux portraits noir et blanc. Les anciennes versions `tableau-rose.webp`, `tableau-jaune.webp` et `tableau-tresses.webp` restent dans le dépôt comme sélection de travail, mais ne sont plus affichées dans la galerie : leurs modèles figurent déjà dans « Statistics ».
 
 La séquence « L’ARTISTE » utilise aussi une composition fournie par Flo. Son PNG source est dans `medias/compositions/`.
 
