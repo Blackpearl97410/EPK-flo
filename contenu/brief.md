@@ -1,46 +1,40 @@
-# Brief de l’EPK de Flo
+# Brief de l’EPK BRAIDSPLACE / Living Hair Art
 
-Ce fichier rassemble les informations à confirmer avec Flo pour personnaliser l'EPK web React/Vite. Ne pas publier les éléments marqués « à valider ».
+Ce fichier rassemble les éléments à confirmer avec Flo. Les quatre PDF dans le dossier de contexte sont des sources de travail, et les photographies ne sont pas encore autorisées pour la page publique.
 
-## Identité
+## Identité et propos
 
-- Nom d’artiste et graphie officielle : à valider
-- Phrase de présentation (une ligne) : à rédiger
-- Ville / territoire : à valider
-- Styles et influences : à valider
-- Langue(s) : à valider
+- Graphie publique de BRAIDSPLACE, Living Hair Art et Florence Prévot : à valider
+- Logo officiel éventuel : à demander ; le signe de la maquette est provisoire
+- Présentation courte et longue de l’artiste : à rédiger avec Flo
+- Phrase manifeste et vocabulaire à conserver : à choisir avec Flo
+- Territoire de départ : La Réunion, mentionné dans les dossiers ; formulation à valider
 
-## Présentation
+## Performance
 
-- Biographie courte (environ 80 à 120 mots) : à rédiger
-- Biographie longue : à rédiger si utile
-- Parcours, projets, collaborations et dates marquantes : à documenter
-- Actualité à mettre en avant : à valider
+- Proposition décrite dans les dossiers : coiffure artistique, image, mode, silhouette et mouvement
+- Durée annoncée : environ 20 minutes, à confirmer
+- Modèles annoncés : 7 à 10 selon le lieu et les moyens, à confirmer
+- Dispositif scénique, technique, scénographie, éventuelle exposition photo et film : à détailler
+- Partenaires, créations et crédits individuels : à confirmer
 
-## Musique et scène
+## Parcours 2027
 
-- Liens vers 2 à 4 titres représentatifs : à fournir
-- Liens vers clips ou captations live : à fournir
-- Spectacle / formation scénique / durée du set : à préciser
-- Fiche technique et besoins d’accueil : à fournir si disponibles
+- Cape Town International Jazz Festival : invitation décrite dans les PDF ; vérifier le statut et la formulation publique
+- Johannesburg et Tanzanie en avril : pistes de présentation et collaborations, non contractualisées selon les dossiers
+- Dates exactes, lieux, budget et accords : à vérifier avant toute publication
 
-## Visuels et presse
+## Images et presse
 
-- Portraits et photos de scène en haute définition : à fournir
-- Crédits photo et autorisations d’utilisation : à confirmer
-- Logo, couleurs ou références visuelles : à fournir si existants
-- Articles, interviews, citations et liens presse : à fournir
+- Douze photos sources dans medias/photos : sélection avec Flo
+- Crédits photo, personnes représentées et autorisations d’utilisation : à confirmer
+- Exports web, cadrages, textes alternatifs : à préparer après sélection
+- Citations, retombées presse, liens officiels et chiffres d'audience : à valider avec leurs sources et leur contexte
 
-## Contact et liens
+## Contact et validation
 
 - Contact professionnel à afficher : à valider
-- Réseaux sociaux et plateformes musicales : à fournir
-- Ville ou zone de diffusion et demandes visées : à préciser
-
-## Validation
-
-- Format choisi : site web responsive React + Vite + TypeScript + Tailwind CSS
-- Public principal : programmateurs, médias, partenaires, autres — à préciser
-- Personne qui valide les textes et les visuels : Flo
-- Date cible de première version : à définir
+- Liens officiels BRAIDSPLACE : à fournir
+- Public principal de l'EPK : lieux, programmateurs, partenaires et presse, à hiérarchiser avec Flo
+- Direction graphique de travail : voir charte-graphique.md, à approuver après visualisation
 - Hébergement et adresse finale : à décider après validation des contenus
