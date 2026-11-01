@@ -93,8 +93,8 @@ function App() {
             <h1 id="hero-title">BRAIDSPLACE</h1>
             <p className="video-hero-manifesto">
               <span>BEYOND HAIRSTYLING. BEYOND AN EXHIBITION.</span>
-              <span>A MEETING OF ARTISTIC WORLDS.</span>
-              <span>A LIVING EXPERIENCE WHERE ART COMES TO LIFE.</span>
+              <span>A MEETING OF <mark>ARTISTIC WORLDS.</mark></span>
+              <span><mark>A LIVING EXPERIENCE WHERE ART COMES TO LIFE.</mark></span>
               <span>ART THAT IS NOT MERELY SEEN, BUT EXPERIENCED.</span>
             </p>
             <a className="video-hero-link" href="#portrait">LEARN MORE</a>
