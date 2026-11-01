@@ -8,6 +8,7 @@
   <meta name="theme-color" content="#211d24">
   <title>Flo — EPK (version de travail)</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="motion.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -26,7 +27,7 @@
     <section class="hero section-wrap" id="accueil" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow"><span class="eyebrow-line"></span>Dossier artistique · version de travail</p>
-        <h1 id="hero-title">FLO<span class="hero-period">.</span></h1>
+        <h1 id="hero-title"><span class="hero-title-word">FLO</span><span class="hero-period">.</span></h1>
         <p class="hero-lead">Une page pour découvrir l’univers de Flo, écouter sa musique et préparer les prochains échanges professionnels.</p>
         <p class="editor-note">À personnaliser avec sa présentation, ses photos et ses liens validés.</p>
         <div class="hero-actions">
@@ -50,11 +51,11 @@
     <div class="section-divider" aria-hidden="true"><span>FLO / EPK</span><span>PRÉSENTATION ARTISTIQUE</span></div>
 
     <section class="about section-wrap section-pad" id="apropos" aria-labelledby="about-title">
-      <div class="section-heading">
+      <div class="section-heading" data-reveal>
         <p class="section-kicker">01 — Son histoire</p>
         <h2 id="about-title">À propos<span class="accent">.</span></h2>
       </div>
-      <div class="about-content">
+      <div class="about-content" data-reveal>
         <p class="large-copy">La biographie de Flo prendra place ici. Elle présentera son parcours, son univers musical et le projet qu’elle souhaite mettre en avant.</p>
         <p>Ce texte doit être rédigé à partir de ses informations, puis relu et validé avec elle. La version courte pourra servir aux programmateurs et aux médias ; une version plus détaillée pourra être ajoutée si nécessaire.</p>
         <span class="status-tag">Biographie à rédiger avec Flo</span>
@@ -63,7 +64,7 @@
 
     <section class="music section-pad" id="musique" aria-labelledby="music-title">
       <div class="section-wrap">
-        <div class="section-heading section-heading-row">
+        <div class="section-heading section-heading-row" data-reveal>
           <div>
             <p class="section-kicker">02 — À écouter</p>
             <h2 id="music-title">La musique<span class="accent">.</span></h2>
@@ -71,16 +72,16 @@
           <p class="section-aside">Une sélection de titres représentatifs, choisie et ordonnée avec Flo.</p>
         </div>
         <div class="track-list" aria-label="Titres à renseigner">
-          <div class="track"><span class="track-no">01</span><div><h3>Premier titre à sélectionner</h3><p>Nom, année et lien d’écoute à ajouter</p></div><span class="track-state">À compléter</span></div>
-          <div class="track"><span class="track-no">02</span><div><h3>Deuxième titre à sélectionner</h3><p>Nom, année et lien d’écoute à ajouter</p></div><span class="track-state">À compléter</span></div>
-          <div class="track"><span class="track-no">03</span><div><h3>Troisième titre à sélectionner</h3><p>Nom, année et lien d’écoute à ajouter</p></div><span class="track-state">À compléter</span></div>
+          <div class="track" data-reveal><span class="track-no">01</span><div><h3>Premier titre à sélectionner</h3><p>Nom, année et lien d’écoute à ajouter</p></div><span class="track-state">À compléter</span></div>
+          <div class="track" data-reveal><span class="track-no">02</span><div><h3>Deuxième titre à sélectionner</h3><p>Nom, année et lien d’écoute à ajouter</p></div><span class="track-state">À compléter</span></div>
+          <div class="track" data-reveal><span class="track-no">03</span><div><h3>Troisième titre à sélectionner</h3><p>Nom, année et lien d’écoute à ajouter</p></div><span class="track-state">À compléter</span></div>
         </div>
         <p class="fine-print">Les boutons d’écoute seront ajoutés lorsque les liens officiels seront fournis.</p>
       </div>
     </section>
 
     <section class="visuals section-wrap section-pad" id="visuels" aria-labelledby="visuals-title">
-      <div class="section-heading section-heading-row">
+      <div class="section-heading section-heading-row" data-reveal>
         <div>
           <p class="section-kicker">03 — À voir</p>
           <h2 id="visuals-title">Images & vidéos<span class="accent">.</span></h2>
@@ -88,19 +89,19 @@
         <p class="section-aside">Portraits, photos de scène et captations avec crédits et droits vérifiés.</p>
       </div>
       <div class="media-grid">
-        <div class="media-card media-card-large"><span>01 / PORTRAIT</span><strong>Photo presse<br>à ajouter</strong><small>Crédit photo à renseigner</small></div>
-        <div class="media-card media-card-small"><span>02 / SCÈNE</span><strong>Photo live<br>à ajouter</strong><small>Crédit photo à renseigner</small></div>
-        <div class="media-card media-card-small media-card-accent"><span>03 / VIDÉO</span><strong>Clip ou captation<br>à ajouter</strong><small>Lien officiel à renseigner</small></div>
+        <div data-reveal class="media-card media-card-large"><span>01 / PORTRAIT</span><strong>Photo presse<br>à ajouter</strong><small>Crédit photo à renseigner</small></div>
+        <div data-reveal class="media-card media-card-small"><span>02 / SCÈNE</span><strong>Photo live<br>à ajouter</strong><small>Crédit photo à renseigner</small></div>
+        <div data-reveal class="media-card media-card-small media-card-accent"><span>03 / VIDÉO</span><strong>Clip ou captation<br>à ajouter</strong><small>Lien officiel à renseigner</small></div>
       </div>
     </section>
 
     <section class="live section-pad" id="scene" aria-labelledby="live-title">
       <div class="section-wrap live-grid">
-        <div class="section-heading">
+        <div class="section-heading" data-reveal>
           <p class="section-kicker">04 — En live</p>
           <h2 id="live-title">Sur scène<span class="accent">.</span></h2>
         </div>
-        <div class="live-content">
+        <div class="live-content" data-reveal>
           <p class="large-copy">Une présentation du projet live de Flo sera ajoutée ici après validation de la formule scénique.</p>
           <dl class="live-facts">
             <div><dt>Format</dt><dd>À confirmer</dd></div>
@@ -118,7 +119,7 @@
           <h2 id="contact-title">Contact<span class="accent">.</span></h2>
           <p>Pour la programmation, la presse et les collaborations.</p>
         </div>
-        <div class="contact-card">
+        <div class="contact-card" data-reveal>
           <span class="contact-label">CONTACT PROFESSIONNEL</span>
           <p>Nom et adresse de contact à confirmer avec Flo.</p>
           <span class="status-tag status-tag-light">Coordonnées à valider avant publication</span>
