@@ -160,6 +160,19 @@ h1 {
 .title-line {
   display: block;
 }
+.photo-intro {
+  padding-bottom: clamp(35px, 5vw, 80px);
+}
+.photo-intro .hero-layout {
+  padding-top: 22px;
+}
+.photo-intro-title {
+  font-size: clamp(56px, 6vw, 100px);
+  line-height: 1.12;
+  letter-spacing: 0.035em;
+  margin-bottom: 38px;
+  overflow-wrap: normal;
+}
 .hero-deck {
   font: 400 clamp(29px, 3.4vw, 53px)/1.06 var(--editorial);
   max-width: 620px;
@@ -439,6 +452,9 @@ h2 span {
   h1 {
     font-size: clamp(45px, 5.6vw, 72px);
   }
+  .photo-intro-title {
+    font-size: clamp(45px, 5.6vw, 72px);
+  }
   .format-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -480,6 +496,9 @@ h2 span {
   h1 {
     font-size: clamp(45px, 11vw, 85px);
   }
+  .photo-intro-title {
+    font-size: clamp(45px, 11vw, 85px);
+  }
   .hero-frame {
     min-height: 430px;
   }
@@ -514,6 +533,9 @@ h2 span {
     display: none;
   }
   h1 {
+    font-size: clamp(30px, 9vw, 42px);
+  }
+  .photo-intro-title {
     font-size: clamp(30px, 9vw, 42px);
   }
   .hero-frame {
