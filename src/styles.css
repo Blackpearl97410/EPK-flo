@@ -104,8 +104,6 @@ p {
 .hero-bottomline,
 .eyebrow,
 .kicker,
-.step-index,
-.step-status,
 .contact-copy > span {
   font-size: 11px;
   font-weight: 800;
@@ -281,49 +279,112 @@ h2 span {
   color: var(--gold);
 }
 .journey {
+  overflow: hidden;
   background: var(--sand);
 }
-.journey .section-heading {
-  margin-bottom: 60px;
+.tour-heading {
+  margin-bottom: clamp(38px, 5vw, 80px);
 }
-.journey h2 span {
-  color: var(--brown);
+.tour-heading .kicker {
+  margin-bottom: 12px;
+  font: 400 18px/1.3 "Cochin", var(--editorial), Georgia, serif;
+  letter-spacing: .08em;
 }
-.section-intro {
-  max-width: 560px;
-  font-size: 19px;
-  margin: 28px 0 0;
+.tour-heading h2 {
+  margin-bottom: 0;
+  font: 400 clamp(45px, 7vw, 110px)/1.08 var(--display);
+  font-variation-settings: "YEAR" 1979;
+  letter-spacing: .035em;
 }
-.step {
+.tour-layout {
   display: grid;
-  grid-template-columns: 55px 1fr auto;
+  grid-template-columns: minmax(0, 1.3fr) minmax(310px, .7fr);
   align-items: center;
-  gap: 30px;
-  border-top: 1px solid var(--line);
-  padding: 30px 0;
+  gap: clamp(28px, 5vw, 90px);
 }
-.step:last-child {
+.tour-map-frame {
+  overflow: hidden;
+  border: 1px solid rgba(58, 41, 31, .22);
+  background: #f8f2e9;
+  box-shadow: 0 28px 70px rgba(58, 41, 31, .12);
+}
+.tour-map {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.tour-route-guide,
+.tour-route-line {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.tour-route-guide {
+  stroke: #fff7e6;
+  stroke-width: 10;
+  opacity: .9;
+}
+.tour-route-line {
+  stroke: var(--clay);
+  stroke-width: 5;
+}
+.tour-map-halo {
+  fill: #f8f2e9;
+  stroke: var(--clay);
+  stroke-width: 3;
+}
+.tour-map-dot {
+  fill: var(--clay);
+}
+.tour-stops {
+  display: grid;
+  gap: clamp(18px, 3vw, 44px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tour-stop {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  align-items: start;
+  column-gap: 16px;
+  padding-bottom: clamp(18px, 3vw, 34px);
   border-bottom: 1px solid var(--line);
 }
-.step-index,
-.step-status {
+.tour-stop-mark {
+  width: 13px;
+  height: 13px;
+  margin-top: 10px;
+  border: 3px solid var(--clay);
+  border-radius: 50%;
+  background: var(--sand);
+}
+.tour-stop h3 {
+  margin: 0 0 10px;
+  font: 400 clamp(24px, 2.8vw, 43px)/1.18 var(--display);
+  font-variation-settings: "YEAR" 1979;
+  letter-spacing: .025em;
+  overflow-wrap: anywhere;
+}
+.tour-stop p,
+.tour-stop-status {
+  margin: 0;
+  font: 400 clamp(20px, 2vw, 27px)/1.2 "Cochin", var(--editorial), Georgia, serif;
+}
+.tour-stop-status {
+  grid-column: 2;
+  margin-top: 8px;
   color: var(--clay);
 }
-.step h3 {
-  font: 400 clamp(33px, 4vw, 57px)/1.1 var(--editorial);
-  margin: 0 0 7px;
-}
-.step p {
-  font-size: 13px;
-  margin: 0;
-}
-.step-status {
-  border: 1px solid var(--line);
-  padding: 8px 11px;
-  white-space: nowrap;
-}
-.journey .small-note {
-  margin-top: 20px;
+@media (max-width: 900px) {
+  .tour-layout {
+    grid-template-columns: 1fr;
+  }
+  .tour-map-frame,
+  .tour-stops {
+    width: min(100%, 680px);
+    margin-inline: auto;
+  }
 }
 .visuals {
   display: block;
@@ -486,14 +547,6 @@ h2 span {
   .photo-grid {
     --gallery-card-width: 78vw;
   }
-  .step {
-    grid-template-columns: 35px 1fr;
-    gap: 16px;
-  }
-  .step-status {
-    grid-column: 2;
-    justify-self: start;
-  }
   .site-footer {
     flex-wrap: wrap;
     padding-block: 30px;
@@ -637,7 +690,7 @@ h2 span {
 }
 .intro-worknote {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 20px;
   padding-block: 22px;
   color: var(--clay);
@@ -739,34 +792,15 @@ h2 span {
   text-transform: uppercase;
   text-shadow: 0 1px 6px #20130e;
 }
-.statistics-runway-counter span:first-child {
-  border-right: 1px solid var(--gold);
-  padding-right: 22px;
-}
 .statistics-runway-mobile-copy {
   display: none;
-}
-.statistics-runway-note {
-  padding-block: 18px 22px;
-  margin-bottom: 0;
-  color: #d1ac76;
-  font-size: 12px;
-  text-align: center;
 }
 @media (max-width: 700px) {
   .statistics-runway-frame {
     object-fit: contain;
   }
   .statistics-runway-counter {
-    top: 18px;
-    bottom: auto;
-  }
-  .statistics-runway-counter span:last-child {
     display: none;
-  }
-  .statistics-runway-counter span:first-child {
-    border: 0;
-    padding: 0;
   }
   .statistics-runway-mobile-copy {
     position: absolute;
@@ -820,6 +854,30 @@ h2 span {
 }
 
 .film-photo-section {
+  display: grid;
+  grid-template-columns: minmax(0, 45%) minmax(0, 55%);
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--cream);
+}
+.film-photo-copy {
+  align-self: center;
+  max-width: 760px;
+  padding: clamp(38px, 5vw, 86px);
+  font: 400 clamp(21px, 2.1vw, 32px)/1.34 var(--editorial);
+}
+.film-photo-copy p:last-child {
+  margin-bottom: 0;
+}
+.film-photo-copy p + p {
+  margin-top: .85em;
+}
+.film-photo-copy strong {
+  color: var(--clay);
+  font-weight: 700;
+}
+.film-photo-frame {
   height: 100vh;
   height: 100svh;
   overflow: hidden;
@@ -829,11 +887,20 @@ h2 span {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 45% center;
+  object-position: 37% center;
 }
-@media (max-width: 700px) {
+@media (max-width: 760px) {
+  .film-photo-section {
+    grid-template-columns: 1fr;
+  }
+  .film-photo-copy {
+    padding: 72px 24px 44px;
+  }
+  .film-photo-frame {
+    height: min(72vh, 690px);
+  }
   .film-photo-section img {
-    object-position: 38% center;
+    object-position: 34% center;
   }
 }
 
@@ -1004,8 +1071,7 @@ h2 span {
   font: 700 11px/1.4 var(--body);
   letter-spacing: .13em;
 }
-.minimalist-hair-nav a:hover,
-.minimalist-hair-copy a:hover {
+.minimalist-hair-nav a:hover {
   text-decoration: underline;
   text-underline-offset: .3em;
 }
@@ -1013,7 +1079,7 @@ h2 span {
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 67%) minmax(0, 33%);
-  min-height: 620px;
+  min-height: 750px;
 }
 .minimalist-hair-portrait {
   position: absolute;
@@ -1037,7 +1103,7 @@ h2 span {
   line-height: 1.55;
 }
 .minimalist-hair-copy p {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 .minimalist-hair-copy h2 {
   margin-bottom: 20px;
@@ -1045,21 +1111,17 @@ h2 span {
   font-variation-settings: "YEAR" 1979;
   letter-spacing: .035em;
 }
-.minimalist-hair-copy a {
-  font-weight: 800;
-  text-decoration: underline;
-  text-underline-offset: .3em;
-}
 .minimalist-hair-footer {
+  justify-content: flex-end;
   min-height: 70px;
   color: var(--clay);
 }
 @media (max-width: 900px) {
   .minimalist-hair {
-    grid-template-rows: auto minmax(570px, 1fr) auto;
+    grid-template-rows: auto minmax(720px, 1fr) auto;
   }
   .minimalist-hair-stage {
-    min-height: 570px;
+    min-height: 720px;
   }
   .minimalist-hair-header {
     min-height: 88px;
@@ -1077,6 +1139,7 @@ h2 span {
 }
 @media (max-width: 600px) {
   .minimalist-hair {
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto auto auto;
   }
   .minimalist-hair-header {
@@ -1094,7 +1157,10 @@ h2 span {
   .minimalist-hair-stage {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    min-width: 0;
     min-height: 0;
+    overflow: hidden;
   }
   .minimalist-hair-portrait {
     position: relative;
@@ -1105,6 +1171,7 @@ h2 span {
   }
   .minimalist-hair-copy {
     align-self: stretch;
+    max-width: calc(100% - 48px);
     margin: 8px 24px 42px;
     font-size: 14px;
   }

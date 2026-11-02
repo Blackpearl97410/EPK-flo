@@ -43,14 +43,18 @@ export function MinimalistHairArt() {
         >
           <h2 id="minimalist-hair-title">L’ARTISTE</h2>
           <p>
-            Originaire de l’île de La Réunion, Floww a ensuite évolué en région parisienne.
+            Originaire de La Réunion, je puise mon inspiration dans mes racines, mes voyages et les cultures qui m’entourent.
           </p>
-          <a href="#images">Découvrir la galerie <span aria-hidden="true">↗</span></a>
+          <p>
+            À travers l’art capillaire, je cherche à raconter des histoires, à faire dialoguer les identités et à repousser les frontières de la création.
+          </p>
+          <p>
+            Mon envie : partager un art vivant, libre et sans frontières, qui rassemble, transmet et fait ressentir.
+          </p>
         </motion.div>
       </motion.div>
 
       <div className="minimalist-hair-footer">
-        <span>COIFFURE · IMAGE · MOUVEMENT</span>
         <span>BRAIDSPLACE · LA RÉUNION</span>
       </div>
     </section>

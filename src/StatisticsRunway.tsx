@@ -79,7 +79,6 @@ export function StatisticsRunway() {
           ))}
           {!reduceMotion && (
             <div className="statistics-runway-counter">
-              <span>0{active + 1} / 03</span>
               <span>Défiler pour découvrir ↓</span>
             </div>
           )}
@@ -90,9 +89,6 @@ export function StatisticsRunway() {
           </div>
         </div>
       </div>
-      <p className="statistics-runway-note shell">
-        Images et chiffres de la maquette à valider avec Flo avant publication.
-      </p>
     </section>
   );
 }
