@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { ScrollExpandVideo } from "./ScrollExpandVideo";
 import { MinimalistHairArt } from "./MinimalistHairArt";
 import { StatisticsRunway } from "./StatisticsRunway";
+import { AfricaTour } from "./AfricaTour";
 
 function Reveal({
   children,
@@ -21,24 +22,6 @@ function Reveal({
     </motion.div>
   );
 }
-
-const steps = [
-  {
-    place: "Cape Town",
-    note: "Mars 2027",
-    status: "Validé",
-  },
-  {
-    place: "Johannesburg",
-    note: "Avril 2027",
-    status: "À venir",
-  },
-  {
-    place: "Tanzanie",
-    note: "Avril 2027",
-    status: "À venir",
-  },
-];
 
 const photographs = [
   {
@@ -124,13 +107,34 @@ function App() {
             <a className="video-hero-link" href="#portrait">LEARN MORE</a>
           </div>
         </section>
-        <section className="film-photo-section" id="portrait" aria-label="Portrait de la série Living Hair Art">
-          <img
-            src="/images/portrait-adriiii.webp"
-            alt="Portrait d’une personne devant un panneau blanc, avec de longues tresses sculpturales."
-            decoding="async"
-          />
-        </section>
+        <motion.section
+          className="film-photo-section"
+          id="portrait"
+          aria-label="Bienvenue dans l’EPK"
+          initial={reduceMotion ? false : { opacity: 0 }}
+          whileInView={reduceMotion ? undefined : { opacity: 1 }}
+          viewport={{ once: true, amount: 0.16 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+        >
+          <div className="film-photo-copy">
+            <p>
+              Bienvenue dans cet EPK, une invitation à entrer dans l’univers de <strong>Flo</strong>, artiste capillaire et directrice artistique, où la coiffure dépasse sa fonction première pour devenir une véritable forme d’expression.
+            </p>
+            <p>
+              À travers ses créations, Flo explore les liens entre <strong>art, culture, identité et mouvement</strong>.
+            </p>
+            <p>
+              Un univers singulier où chaque création raconte une histoire, où les cheveux deviennent matière artistique et où l’art ne se regarde pas seulement, mais se vit.
+            </p>
+          </div>
+          <div className="film-photo-frame">
+            <img
+              src="/images/portrait-adriiii.webp"
+              alt="Portrait d’une personne devant un panneau blanc, avec de longues tresses sculpturales."
+              decoding="async"
+            />
+          </div>
+        </motion.section>
         <MinimalistHairArt />
         <ScrollExpandVideo />
         <section
@@ -182,40 +186,8 @@ function App() {
           </Reveal>
         </section>
         <StatisticsRunway />
-        <section
-          className="journey section-pad"
-          id="parcours"
-          aria-labelledby="journey-title"
-        >
-          <div className="shell">
-            <Reveal className="section-heading">
-              <p className="kicker">AFRICA TOUR / 2027</p>
-              <h2 id="journey-title">
-                BRAIDSPLACE<br /><span>Africa Tour</span>
-              </h2>
-              <p className="section-intro">
-                Cape Town en mars, puis Johannesburg et la Tanzanie en avril 2027.
-              </p>
-            </Reveal>
-            <div className="steps">
-              {steps.map((step, index) => (
-                <Reveal className="step" key={step.place}>
-                  <span className="step-index">0{index + 1}</span>
-                  <div>
-                    <h3>{step.place}</h3>
-                    <p>{step.note}</p>
-                  </div>
-                  <span className="step-status">{step.status}</span>
-                </Reveal>
-              ))}
-            </div>
-            <p className="small-note">
-              Détails des lieux et accords de production à confirmer avant publication.
-            </p>
-          </div>
-        </section>
-        <div className="intro-worknote shell" aria-label="Statut du dossier">
-          <span>EPK / VERSION DE TRAVAIL</span>
+        <AfricaTour />
+        <div className="intro-worknote shell">
           <span>BRAIDSPLACE · LA RÉUNION</span>
         </div>
       </main>
