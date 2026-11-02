@@ -20,9 +20,10 @@ Ce fichier rassemble les éléments à confirmer avec Flo. Les quatre PDF dans l
 
 ## Parcours 2027
 
-- Cape Town International Jazz Festival : invitation décrite dans les PDF ; vérifier le statut et la formulation publique
-- Johannesburg et Tanzanie en avril : pistes de présentation et collaborations, non contractualisées selon les dossiers
-- Dates exactes, lieux, budget et accords : à vérifier avant toute publication
+- Cape Town : mars 2027, statut « Validé » communiqué par Flo ; préciser le lieu, l’événement et les accords avant publication.
+- Johannesburg : avril 2027, statut « À venir » communiqué par Flo ; programme et lieu à préciser.
+- Tanzanie : avril 2027, statut « À venir » communiqué par Flo ; programme et lieu à préciser.
+- Dates exactes, lieux, budget et accords : à documenter avant toute publication.
 
 ## Images et presse
 

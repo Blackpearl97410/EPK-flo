@@ -24,19 +24,19 @@ function Reveal({
 
 const steps = [
   {
-    city: "Cape Town",
-    note: "Invitation mentionnée dans le dossier de travail du festival · mars 2027",
-    status: "Point d’ancrage",
+    place: "Cape Town",
+    note: "Mars 2027",
+    status: "Validé",
   },
   {
-    city: "Johannesburg",
-    note: "Présentation et collaborations locales envisagées · avril 2027",
-    status: "À confirmer",
+    place: "Johannesburg",
+    note: "Avril 2027",
+    status: "À venir",
   },
   {
-    city: "Tanzanie",
-    note: "Échange créatif et accueil envisagés · avril 2027",
-    status: "À confirmer",
+    place: "Tanzanie",
+    note: "Avril 2027",
+    status: "À venir",
   },
 ];
 
@@ -109,65 +109,18 @@ function App() {
         </section>
         <MinimalistHairArt />
         <ScrollExpandVideo />
-        <div className="intro-worknote shell" aria-label="Statut du dossier">
-          <span>EPK / VERSION DE TRAVAIL</span>
-          <span>BRAIDSPLACE · LA RÉUNION</span>
-        </div>
-        <section
-          className="photo-intro shell"
-          id="living-hair-art"
-          aria-labelledby="living-hair-art-title"
-        >
-          <div className="hero-layout">
-            <div className="hero-copy">
-              <p className="eyebrow">BRAIDSPLACE PRÉSENTE</p>
-              <h2 className="photo-intro-title" id="living-hair-art-title">
-                <span className="title-line">LIVING</span>
-                <span className="title-line">HAIR ART</span>
-              </h2>
-              <p className="hero-deck">
-                La coiffure devient une <em>œuvre vivante.</em>
-              </p>
-              <p className="hero-description">
-                Une performance visuelle de BRAIDSPLACE, où coiffure
-                artistique, silhouette, mode et mouvement composent des
-                tableaux vivants.
-              </p>
-              <div className="hero-actions">
-                <a className="button button-primary" href="#images">
-                  Découvrir le projet <span aria-hidden="true">↗</span>
-                </a>
-                <a className="text-link" href="#contact">
-                  Prendre contact <span aria-hidden="true">↗</span>
-                </a>
-              </div>
-            </div>
-            <figure className="hero-frame">
-              <img
-                src="/images/hero-sculpture.webp"
-                alt="Portrait d'un modèle portant une coiffure sculpturale aux formes organiques, dans la végétation."
-                decoding="async"
-              />
-              <figcaption>01 / LIVING HAIR ART</figcaption>
-            </figure>
-          </div>
-          <div className="hero-bottomline">
-            <span>COIFFURE · IMAGE · MOUVEMENT</span>
-            <span>DÉFILER POUR EXPLORER ↓</span>
-          </div>
-        </section>
         <section
           className="visuals section-pad shell"
           id="images"
           aria-labelledby="visuals-title"
         >
           <Reveal className="section-heading">
-            <p className="kicker">01 / UNIVERS VISUEL</p>
             <h2 id="visuals-title">
-              Des tableaux
+              Un concept :
               <br />
-              <span>vivants.</span>
+              <span>rendre les choses vivante</span>
             </h2>
+            <p className="kicker gallery-subtitle">GALLERY</p>
           </Reveal>
           <Reveal className="visual-note">
             <div className="photo-grid">
@@ -187,51 +140,26 @@ function App() {
         </section>
         <StatisticsRunway />
         <section
-          className="contact section-pad"
-          id="contact"
-          aria-labelledby="contact-title"
-        >
-          <div className="shell contact-grid">
-            <Reveal>
-              <p className="kicker">02 / COLLABORER</p>
-              <h2 id="contact-title">
-                Créons
-                <br />
-                <span>ensemble.</span>
-              </h2>
-            </Reveal>
-            <Reveal className="contact-copy">
-              <p>
-                Pour les lieux, partenaires et collaborations artistiques autour
-                de Living Hair Art.
-              </p>
-              <div className="contact-rule" />
-              <span>CONTACT PROFESSIONNEL ET LIENS À VALIDER AVEC FLO</span>
-            </Reveal>
-          </div>
-        </section>
-        <section
           className="journey section-pad"
           id="parcours"
           aria-labelledby="journey-title"
         >
           <div className="shell">
             <Reveal className="section-heading">
-              <p className="kicker">03 / HORIZON 2027</p>
+              <p className="kicker">AFRICA TOUR / 2027</p>
               <h2 id="journey-title">
-                Africa Tour<span className="dot">.</span>
+                BRAIDSPLACE<br /><span>Africa Tour</span>
               </h2>
               <p className="section-intro">
-                De La Réunion vers des scènes et des rencontres créatives en
-                Afrique du Sud et en Tanzanie.
+                Cape Town en mars, puis Johannesburg et la Tanzanie en avril 2027.
               </p>
             </Reveal>
             <div className="steps">
               {steps.map((step, index) => (
-                <Reveal className="step" key={step.city}>
+                <Reveal className="step" key={step.place}>
                   <span className="step-index">0{index + 1}</span>
                   <div>
-                    <h3>{step.city}</h3>
+                    <h3>{step.place}</h3>
                     <p>{step.note}</p>
                   </div>
                   <span className="step-status">{step.status}</span>
@@ -239,11 +167,14 @@ function App() {
               ))}
             </div>
             <p className="small-note">
-              Les étapes, dates et accords de production seront vérifiés avant
-              publication de l’EPK.
+              Détails des lieux et accords de production à confirmer avant publication.
             </p>
           </div>
         </section>
+        <div className="intro-worknote shell" aria-label="Statut du dossier">
+          <span>EPK / VERSION DE TRAVAIL</span>
+          <span>BRAIDSPLACE · LA RÉUNION</span>
+        </div>
       </main>
       <footer className="site-footer shell">
         <a className="brand" href="#accueil">
