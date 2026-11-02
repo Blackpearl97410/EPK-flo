@@ -287,6 +287,9 @@ h2 span {
 .journey .section-heading {
   margin-bottom: 60px;
 }
+.journey h2 span {
+  color: var(--brown);
+}
 .section-intro {
   max-width: 560px;
   font-size: 19px;
@@ -327,6 +330,15 @@ h2 span {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: 8%;
+}
+.visuals .section-heading h2 {
+  margin-bottom: 0;
+}
+.visuals h2 span {
+  color: var(--clay);
+}
+.gallery-subtitle {
+  margin: 24px 0 0;
 }
 .visual-note {
   max-width: 660px;
@@ -660,6 +672,13 @@ h2 span {
 .statistics-runway {
   background: #20130e;
   color: var(--ivory);
+}
+.statistics-heading {
+  margin-bottom: 0;
+  padding-block: clamp(52px, 7vw, 108px);
+  font: 400 clamp(30px, 6vw, 88px)/1 var(--display);
+  font-variation-settings: "YEAR" 1979;
+  letter-spacing: .035em;
 }
 .statistics-runway-track {
   height: 320vh;

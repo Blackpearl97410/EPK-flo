@@ -10,10 +10,9 @@ export function MinimalistHairArt() {
       <div className="minimalist-hair-header">
         <a className="minimalist-hair-brand" href="#accueil">BRAIDSPLACE</a>
         <nav className="minimalist-hair-nav" aria-label="Explorer l’EPK">
-          <a href="#living-hair-art">LE PROJET</a>
-          <a href="#statistiques">STATISTICS</a>
-          <a href="#images">LES IMAGES</a>
-          <a href="#contact">CONTACT</a>
+          <a href="#images">GALLERY</a>
+          <a href="#statistiques">STATISTIQUES</a>
+          <a href="#parcours">AFRICA TOUR</a>
         </nav>
       </div>
 
@@ -46,7 +45,7 @@ export function MinimalistHairArt() {
           <p>
             Originaire de l’île de La Réunion, Floww a ensuite évolué en région parisienne.
           </p>
-          <a href="#living-hair-art">Découvrir le projet <span aria-hidden="true">↗</span></a>
+          <a href="#images">Découvrir la galerie <span aria-hidden="true">↗</span></a>
         </motion.div>
       </motion.div>
 

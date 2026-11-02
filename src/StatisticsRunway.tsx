@@ -56,9 +56,7 @@ export function StatisticsRunway() {
       id="statistiques"
       aria-labelledby="statistics-title"
     >
-      <h2 className="sr-only" id="statistics-title">
-        Statistiques de BRAIDSPLACE en trois tableaux
-      </h2>
+      <h2 className="statistics-heading shell" id="statistics-title">Statistiques</h2>
       <ol className="sr-only">
         {frames.map((frame) => (
           <li key={frame.src}>
@@ -86,7 +84,7 @@ export function StatisticsRunway() {
             </div>
           )}
           <div className="statistics-runway-mobile-copy">
-            <strong>STATISTICS</strong>
+            <strong>STATISTIQUES</strong>
             <p>{frames[active].label}</p>
             <span>{frames[active].value}</span>
           </div>
