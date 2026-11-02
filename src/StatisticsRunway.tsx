@@ -9,19 +9,19 @@ import {
 
 const frames = [
   {
-    src: "/images/statistics-rose.webp",
+    src: "/images/statistics-rose.jpg",
     model: "Le modèle en rose ouvre le défilé.",
     label: "Vues cumulées",
     value: "270K+",
   },
   {
-    src: "/images/statistics-blanc.webp",
+    src: "/images/statistics-blanc.jpg",
     model: "Le modèle en blanc prend le premier plan.",
     label: "Record d’interactions",
     value: "7,7K+",
   },
   {
-    src: "/images/statistics-jaune.webp",
+    src: "/images/statistics-jaune.jpg",
     model: "Le modèle en jaune clôt le défilé.",
     label: "Pays touchés",
     value: "Réunion · France · Afrique du Sud · Canada",
@@ -56,7 +56,7 @@ export function StatisticsRunway() {
       id="statistiques"
       aria-labelledby="statistics-title"
     >
-      <h2 className="statistics-heading shell" id="statistics-title">Statistiques</h2>
+      <h2 className="sr-only" id="statistics-title">Chiffres clés</h2>
       <ol className="sr-only">
         {frames.map((frame) => (
           <li key={frame.src}>
@@ -84,7 +84,6 @@ export function StatisticsRunway() {
             </div>
           )}
           <div className="statistics-runway-mobile-copy">
-            <strong>STATISTIQUES</strong>
             <p>{frames[active].label}</p>
             <span>{frames[active].value}</span>
           </div>
