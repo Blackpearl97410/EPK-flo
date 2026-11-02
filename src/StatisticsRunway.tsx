@@ -1,11 +1,5 @@
-import { useRef, useState } from "react";
-import {
-  motion,
-  useMotionValueEvent,
-  useReducedMotion,
-  useScroll,
-  useTransform,
-} from "motion/react";
+import { useState } from "react";
+import { motion, useReducedMotion } from "motion/react";
 
 const frames = [
   {
@@ -29,26 +23,8 @@ const frames = [
 ] as const;
 
 export function StatisticsRunway() {
-  const track = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
   const [active, setActive] = useState(0);
-  const { scrollYProgress } = useScroll({
-    target: track,
-    offset: ["start start", "end end"],
-  });
-  const roseOpacity = useTransform(scrollYProgress, [0, 0.31, 0.39, 1], [1, 1, 0, 0]);
-  const blancOpacity = useTransform(
-    scrollYProgress,
-    [0, 0.31, 0.39, 0.64, 0.72, 1],
-    [0, 0, 1, 1, 0, 0],
-  );
-  const jauneOpacity = useTransform(scrollYProgress, [0, 0.64, 0.72, 1], [0, 0, 1, 1]);
-  const opacities = [roseOpacity, blancOpacity, jauneOpacity];
-
-  useMotionValueEvent(scrollYProgress, "change", (progress) => {
-    const next = progress < 0.35 ? 0 : progress < 0.68 ? 1 : 2;
-    setActive((current) => (current === next ? current : next));
-  });
 
   return (
     <section
@@ -64,29 +40,44 @@ export function StatisticsRunway() {
           </li>
         ))}
       </ol>
-      <div className="statistics-runway-track" ref={track}>
-        <div className="statistics-runway-stage" aria-hidden="true">
-          {frames.map((frame, index) => (
-            <motion.img
-              key={frame.src}
-              className="statistics-runway-frame"
-              src={frame.src}
-              alt=""
-              loading={index === 0 ? "eager" : "lazy"}
-              decoding="async"
-              style={reduceMotion ? undefined : { opacity: opacities[index] }}
-            />
-          ))}
-          {!reduceMotion && (
-            <div className="statistics-runway-counter">
-              <span>Défiler pour découvrir ↓</span>
-            </div>
-          )}
-          <div className="statistics-runway-mobile-copy">
-            <strong>STATISTIQUES</strong>
-            <p>{frames[active].label}</p>
-            <span>{frames[active].value}</span>
-          </div>
+      <div className="statistics-runway-stage">
+        {frames.map((frame, index) => (
+          <motion.img
+            key={frame.src}
+            className="statistics-runway-frame"
+            src={frame.src}
+            alt=""
+            loading={index === 0 ? "eager" : "lazy"}
+            decoding="async"
+            initial={false}
+            animate={{ opacity: active === index ? 1 : 0 }}
+            transition={{ duration: reduceMotion ? 0 : 0.45, ease: "easeInOut" }}
+            aria-hidden={active !== index}
+          />
+        ))}
+        <div className="statistics-runway-mobile-copy" aria-live="polite">
+          <strong>STATISTIQUES</strong>
+          <p>{frames[active].label}</p>
+          <span>{frames[active].value}</span>
+        </div>
+        <div className="statistics-runway-controls" role="group" aria-label="Faire défiler les statistiques">
+          <button
+            type="button"
+            aria-label="Statistique précédente"
+            disabled={active === 0}
+            onClick={() => setActive((index) => Math.max(0, index - 1))}
+          >
+            ←
+          </button>
+          <span aria-live="polite">{active + 1} / {frames.length}</span>
+          <button
+            type="button"
+            aria-label="Statistique suivante"
+            disabled={active === frames.length - 1}
+            onClick={() => setActive((index) => Math.min(frames.length - 1, index + 1))}
+          >
+            →
+          </button>
         </div>
       </div>
     </section>

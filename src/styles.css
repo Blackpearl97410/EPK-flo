@@ -297,12 +297,11 @@ h2 span {
   letter-spacing: .035em;
 }
 .tour-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(310px, .7fr);
-  align-items: center;
-  gap: clamp(28px, 5vw, 90px);
+  display: block;
 }
 .tour-map-frame {
+  width: min(100%, 800px);
+  margin-inline: auto;
   overflow: hidden;
   border: 1px solid rgba(58, 41, 31, .22);
   background: #f8f2e9;
@@ -313,20 +312,41 @@ h2 span {
   width: 100%;
   height: auto;
 }
-.tour-route-guide,
-.tour-route-line {
+.tour-route-dots {
   fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-.tour-route-guide {
-  stroke: #fff7e6;
-  stroke-width: 10;
-  opacity: .9;
-}
-.tour-route-line {
   stroke: var(--clay);
   stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1 14;
+  animation: tour-dots 2s linear infinite;
+}
+@keyframes tour-dots {
+  to { stroke-dashoffset: -30; }
+}
+.tour-map-leader {
+  stroke: var(--clay);
+  stroke-width: 2;
+  stroke-dasharray: 3 5;
+}
+.tour-map-label-panel {
+  fill: #fffaf1;
+  stroke: rgba(58, 41, 31, .35);
+  stroke-width: 1;
+  opacity: .97;
+}
+.tour-map-label-place {
+  fill: var(--brown);
+  font: 400 18px var(--display);
+  font-variation-settings: "YEAR" 1979;
+}
+.tour-map-label-date,
+.tour-map-label-status {
+  fill: var(--brown);
+  font: 400 20px "Cochin", var(--editorial), Georgia, serif;
+}
+.tour-map-label-status {
+  fill: var(--clay);
 }
 .tour-map-halo {
   fill: #f8f2e9;
@@ -337,6 +357,15 @@ h2 span {
   fill: var(--clay);
 }
 .tour-stops {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
   display: grid;
   gap: clamp(18px, 3vw, 44px);
   margin: 0;
@@ -377,14 +406,23 @@ h2 span {
   color: var(--clay);
 }
 @media (max-width: 900px) {
-  .tour-layout {
-    grid-template-columns: 1fr;
-  }
-  .tour-map-frame,
-  .tour-stops {
+  .tour-map-frame {
     width: min(100%, 680px);
-    margin-inline: auto;
   }
+}
+@media (max-width: 600px) {
+  .tour-stops {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 32px 0 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tour-route-dots { animation: none; }
 }
 .visuals {
   display: block;
@@ -743,7 +781,7 @@ h2 span {
   .video-hero-link:hover { transform: none; }
 }
 
-/* Trois tableaux sur une scène fixe, pilotés par la position du défilement. */
+/* Trois tableaux sur une scène fixe, pilotés par les boutons de navigation. */
 .statistics-runway {
   background: #20130e;
   color: var(--ivory);
@@ -755,13 +793,8 @@ h2 span {
   font-variation-settings: "YEAR" 1979;
   letter-spacing: .035em;
 }
-.statistics-runway-track {
-  height: 320vh;
-  height: 320svh;
-}
 .statistics-runway-stage {
-  position: sticky;
-  top: 0;
+  position: relative;
   isolation: isolate;
   width: 100%;
   height: 100vh;
@@ -778,19 +811,42 @@ h2 span {
   object-position: center;
   pointer-events: none;
 }
-.statistics-runway-counter {
+.statistics-runway-controls {
   position: absolute;
   z-index: 2;
   right: clamp(18px, 3vw, 52px);
-  bottom: clamp(22px, 3vw, 48px);
+  top: clamp(18px, 3vw, 48px);
   display: flex;
   align-items: center;
-  gap: 22px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  text-shadow: 0 1px 6px #20130e;
+  gap: 14px;
+  padding: 8px;
+  border: 1px solid rgba(255, 250, 241, .3);
+  border-radius: 100px;
+  background: rgba(32, 19, 14, .86);
+  color: var(--ivory);
+  font: 700 13px/1 var(--body);
+}
+.statistics-runway-controls button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--ivory);
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: 400 24px/1 var(--body);
+}
+.statistics-runway-controls button:hover:not(:disabled) {
+  background: var(--ivory);
+  color: #20130e;
+}
+.statistics-runway-controls button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+.statistics-runway-controls button:disabled {
+  opacity: .35;
+  cursor: not-allowed;
 }
 .statistics-runway-mobile-copy {
   display: none;
@@ -799,14 +855,15 @@ h2 span {
   .statistics-runway-frame {
     object-fit: contain;
   }
-  .statistics-runway-counter {
-    display: none;
+  .statistics-runway-controls {
+    right: 18px;
+    top: 18px;
   }
   .statistics-runway-mobile-copy {
     position: absolute;
     z-index: 2;
     right: 18px;
-    bottom: 5%;
+    bottom: 94px;
     left: 18px;
     display: block;
     border-top: 1px solid var(--gold);
@@ -831,41 +888,34 @@ h2 span {
     font: 400 clamp(23px, 6vw, 34px)/1.2 var(--editorial);
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  .statistics-runway-track {
-    height: auto;
-  }
-  .statistics-runway-stage {
-    position: relative;
-    display: grid;
-    height: auto;
-  }
-  .statistics-runway-frame {
-    position: relative;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1586 / 992;
-    object-fit: contain;
-    opacity: 1 !important;
-  }
-  .statistics-runway-mobile-copy {
-    display: none;
-  }
-}
-
 .film-photo-section {
+  position: relative;
+  isolation: isolate;
   display: grid;
-  grid-template-columns: minmax(0, 45%) minmax(0, 55%);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   min-height: 100vh;
   min-height: 100svh;
   overflow: hidden;
-  background: var(--cream);
+  background: #211913;
+  color: var(--cream);
+}
+.film-photo-section::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  content: "";
+  background: linear-gradient(90deg, transparent 30%, rgba(26, 20, 16, .32) 49%, rgba(26, 20, 16, .88) 100%);
 }
 .film-photo-copy {
+  position: relative;
+  z-index: 2;
+  grid-column: 2;
   align-self: center;
-  max-width: 760px;
-  padding: clamp(38px, 5vw, 86px);
-  font: 400 clamp(21px, 2.1vw, 32px)/1.34 var(--editorial);
+  justify-self: end;
+  max-width: 690px;
+  padding: clamp(28px, 4.5vw, 82px);
+  font: 400 clamp(19px, 2vw, 30px)/1.33 var(--editorial);
+  text-shadow: 0 2px 16px rgba(20, 14, 11, .75);
 }
 .film-photo-copy p:last-child {
   margin-bottom: 0;
@@ -874,12 +924,13 @@ h2 span {
   margin-top: .85em;
 }
 .film-photo-copy strong {
-  color: var(--clay);
+  color: #f2c587;
   font-weight: 700;
 }
 .film-photo-frame {
-  height: 100vh;
-  height: 100svh;
+  position: absolute;
+  z-index: 0;
+  inset: 0;
   overflow: hidden;
 }
 .film-photo-section img {
@@ -887,20 +938,24 @@ h2 span {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 37% center;
+  object-position: center;
 }
 @media (max-width: 760px) {
   .film-photo-section {
     grid-template-columns: 1fr;
+    min-height: 100svh;
+    align-items: end;
+  }
+  .film-photo-section::after {
+    background: linear-gradient(180deg, rgba(22, 16, 12, .08) 10%, rgba(22, 16, 12, .5) 38%, rgba(22, 16, 12, .94) 100%);
   }
   .film-photo-copy {
-    padding: 72px 24px 44px;
-  }
-  .film-photo-frame {
-    height: min(72vh, 690px);
+    grid-column: 1;
+    padding: 36px 24px 42px;
+    font-size: clamp(17px, 4.4vw, 21px);
   }
   .film-photo-section img {
-    object-position: 34% center;
+    object-position: 36% center;
   }
 }
 
@@ -1084,7 +1139,7 @@ h2 span {
 .minimalist-hair-portrait {
   position: absolute;
   z-index: 1;
-  top: -3%;
+  top: calc(-3% + 140px);
   left: -4%;
   display: block;
   width: min(90vw, 1150px);
@@ -1096,9 +1151,9 @@ h2 span {
   position: relative;
   z-index: 2;
   grid-column: 2;
-  align-self: end;
+  align-self: center;
   min-width: 0;
-  margin: 0 clamp(24px, 3.8vw, 64px) clamp(42px, 7vw, 96px) 8px;
+  margin: 0 clamp(24px, 3.8vw, 64px) 0 clamp(34px, 4vw, 56px);
   font-size: clamp(14px, 1.3vw, 19px);
   line-height: 1.55;
 }
@@ -1133,8 +1188,10 @@ h2 span {
     font-size: 10px;
   }
   .minimalist-hair-copy {
-    margin-bottom: 45px;
     font-size: 13px;
+  }
+  .minimalist-hair-copy h2 {
+    font-size: clamp(18px, 2.5vw, 27px);
   }
 }
 @media (max-width: 600px) {
