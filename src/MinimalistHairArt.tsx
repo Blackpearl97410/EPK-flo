@@ -9,9 +9,9 @@ export function MinimalistHairArt() {
     <section className="minimalist-hair" id="artiste" aria-labelledby="minimalist-hair-title">
       <div className="minimalist-hair-header">
         <a className="minimalist-hair-brand" href="#accueil">BRAIDSPLACE</a>
-        <nav className="minimalist-hair-nav" aria-label="Explorer l’EPK">
+        <nav className="minimalist-hair-nav" aria-label="Explore the E-Press Kit">
           <a href="#images">GALLERY</a>
-          <a href="#statistiques">STATISTIQUES</a>
+          <a href="#statistiques">STATISTICS</a>
           <a href="#parcours">AFRICA TOUR</a>
         </nav>
       </div>
@@ -26,7 +26,7 @@ export function MinimalistHairArt() {
         <motion.img
           className="minimalist-hair-portrait"
           src="/images/live-hair-art-portrait.webp"
-          alt="Portrait noir et blanc d’une personne à la coiffure sculpturale, devant un panneau brun incliné."
+          alt="Black-and-white portrait of a person with a sculptural hairstyle in front of a tilted brown panel."
           loading="lazy"
           decoding="async"
           variants={{
@@ -41,21 +41,21 @@ export function MinimalistHairArt() {
             visible: { opacity: 1, x: 0, transition: { ...transition, duration: 0.75 } },
           }}
         >
-          <h2 id="minimalist-hair-title">L’ARTISTE</h2>
+          <h2 id="minimalist-hair-title">THE ARTIST</h2>
           <p>
-            Originaire de La Réunion, je puise mon inspiration dans mes racines, mes voyages et les cultures qui m’entourent.
+            Originally from Réunion Island, I draw inspiration from my roots, my travels and the cultures around me.
           </p>
           <p>
-            À travers l’art capillaire, je cherche à raconter des histoires, à faire dialoguer les identités et à repousser les frontières de la création.
+            Through hair art, I seek to tell stories, bring identities into dialogue and push the boundaries of creation.
           </p>
           <p>
-            Mon envie : partager un art vivant, libre et sans frontières, qui rassemble, transmet et fait ressentir.
+            My wish: to share a living art, free and without borders, that brings people together, conveys meaning and stirs emotion.
           </p>
         </motion.div>
       </motion.div>
 
       <div className="minimalist-hair-footer">
-        <span>BRAIDSPLACE · LA RÉUNION</span>
+        <span>BRAIDSPLACE · RÉUNION ISLAND</span>
       </div>
     </section>
   );

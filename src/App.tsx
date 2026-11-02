@@ -26,19 +26,19 @@ function Reveal({
 const photographs = [
   {
     src: "/images/tableau-tresses-graphiques.webp",
-    alt: "Modèle appuyé à une rambarde, coiffure tressée en grandes courbes devant un panneau clair.",
+    alt: "Model leaning against a railing, with braids sweeping in large curves in front of a light panel.",
   },
   {
     src: "/images/tableau-fleur.webp",
-    alt: "Portrait d'un modèle à la coiffure volumineuse, avec une fleur rose et une tenue aux couleurs vives.",
+    alt: "Portrait of a model with a voluminous hairstyle, a pink flower and a brightly colored outfit.",
   },
   {
     src: "/images/tableau-portrait-nb-femme.webp",
-    alt: "Portrait noir et blanc d'un modèle à la coiffure afro volumineuse, devant un panneau clair.",
+    alt: "Black-and-white portrait of a model with a voluminous Afro hairstyle in front of a light panel.",
   },
   {
     src: "/images/tableau-portrait-nb-homme.webp",
-    alt: "Portrait noir et blanc d'un modèle en chemise blanche, avec une coiffure afro sculpturale.",
+    alt: "Black-and-white portrait of a model in a white shirt with a sculptural Afro hairstyle.",
   },
 ];
 
@@ -75,7 +75,7 @@ function App() {
   return (
     <>
       <a className="skip-link" href="#contenu">
-        Aller au contenu
+        Skip to content
       </a>
       <main id="contenu">
         <section
@@ -110,27 +110,29 @@ function App() {
         <motion.section
           className="film-photo-section"
           id="portrait"
-          aria-label="Bienvenue dans l’EPK"
+          aria-labelledby="press-kit-title"
           initial={reduceMotion ? false : { opacity: 0 }}
           whileInView={reduceMotion ? undefined : { opacity: 1 }}
           viewport={{ once: true, amount: 0.16 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <div className="film-photo-copy">
+            <p className="film-photo-kicker">E-PRESS KIT</p>
+            <h2 id="press-kit-title">Flow</h2>
             <p>
-              Bienvenue dans cet EPK, une invitation à entrer dans l’univers de <strong>Flo</strong>, artiste capillaire et directrice artistique, où la coiffure dépasse sa fonction première pour devenir une véritable forme d’expression.
+              Welcome to this E-Press Kit, an invitation to enter the world of <strong>Flow</strong>, hair artist and art director, where hairstyling goes beyond its original purpose to become a true form of expression.
             </p>
             <p>
-              À travers ses créations, Flo explore les liens entre <strong>art, culture, identité et mouvement</strong>.
+              Through her creations, Flow explores the connections between <strong>art, culture, identity and movement</strong>.
             </p>
             <p>
-              Un univers singulier où chaque création raconte une histoire, où les cheveux deviennent matière artistique et où l’art ne se regarde pas seulement, mais se vit.
+              A singular world where every creation tells a story, hair becomes an artistic medium, and art is not merely seen, but lived.
             </p>
           </div>
           <div className="film-photo-frame">
             <img
               src="/images/portrait-adriiii.webp"
-              alt="Portrait d’une personne devant un panneau blanc, avec de longues tresses sculpturales."
+              alt="Portrait of a person in front of a white panel, with long sculptural braids."
               decoding="async"
             />
           </div>
@@ -144,17 +146,17 @@ function App() {
         >
           <Reveal className="section-heading">
             <h2 id="visuals-title">
-              Un concept :
+              A concept:
               <br />
-              <span>rendre les choses vivante</span>
+              <span>bringing things to life</span>
             </h2>
             <p className="kicker gallery-subtitle">GALLERY</p>
           </Reveal>
           <Reveal className="visual-note">
-            <div className="gallery-controls" aria-label="Commandes de la galerie">
+            <div className="gallery-controls" aria-label="Gallery controls">
               <button
                 type="button"
-                aria-label="Photo précédente"
+                aria-label="Previous photo"
                 onClick={() => moveGallery(-1)}
                 disabled={activePhoto === 0}
               >
@@ -162,7 +164,7 @@ function App() {
               </button>
               <button
                 type="button"
-                aria-label="Photo suivante"
+                aria-label="Next photo"
                 onClick={() => moveGallery(1)}
                 disabled={activePhoto === photographs.length - 1}
               >
@@ -173,7 +175,7 @@ function App() {
               className="photo-grid"
               ref={galleryRef}
               role="region"
-              aria-label="Photographies de Living Hair Art"
+              aria-label="Live Hair Art photographs"
               tabIndex={0}
               onScroll={updateActivePhoto}
             >
@@ -188,15 +190,15 @@ function App() {
         <StatisticsRunway />
         <AfricaTour />
         <div className="intro-worknote shell">
-          <span>BRAIDSPLACE · LA RÉUNION</span>
+          <span>BRAIDSPLACE · RÉUNION ISLAND</span>
         </div>
       </main>
       <footer className="site-footer shell">
         <a className="brand" href="#accueil">
           BRAIDSPLACE
         </a>
-        <p>EPK en préparation · Contenus et visuels à valider avec Flo</p>
-        <a href="#accueil">Retour en haut ↑</a>
+        <p>Work in progress · Content and visuals pending Flow’s approval</p>
+        <a href="#accueil">Back to top ↑</a>
       </footer>
     </>
   );

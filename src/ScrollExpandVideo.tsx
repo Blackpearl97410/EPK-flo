@@ -70,12 +70,12 @@ export function ScrollExpandVideo() {
             muted
             loop
             controls
-            aria-label="Film en couleur BRAIDSPLACE : coiffures, modèles et préparation artistique"
+            aria-label="BRAIDSPLACE color film: hairstyles, models and artistic preparation"
           />
         </motion.div>
         <motion.p className="scroll-video-prompt" style={reduceMotion ? undefined : { opacity: promptOpacity }}>
           <span>BRAIDSPLACE / FILM</span>
-          <span>DÉFILER POUR AGRANDIR ↓</span>
+          <span>SCROLL TO EXPAND ↓</span>
         </motion.p>
       </div>
     </section>

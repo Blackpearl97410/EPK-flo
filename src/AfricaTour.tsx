@@ -3,9 +3,9 @@ import { motion, useReducedMotion } from "motion/react";
 // Cape Town: UNGEGN/SAGNS; Johannesburg: Statistics South Africa;
 // Tanzania: Natural Earth country label point. Projected onto africa-tour-map.svg.
 const destinations = [
-  { place: "Cape Town", date: "Mars 2027", status: "Validé", x: 357.6, y: 679.7, labelX: 52, labelY: 622, labelWidth: 248, leaderX: 300, leaderY: 679.7 },
-  { place: "Johannesburg", date: "Avril 2027", status: "À venir", x: 437.2, y: 611.2, labelX: 462, labelY: 548, labelWidth: 218, leaderX: 462, leaderY: 611.2 },
-  { place: "Tanzanie", date: "Avril 2027", status: "À venir", x: 494.3, y: 432.1, labelX: 438, labelY: 320, labelWidth: 242, leaderX: 494.3, leaderY: 418 },
+  { place: "Cape Town", date: "March 2027", status: "Confirmed", x: 357.6, y: 679.7, labelX: 52, labelY: 622, labelWidth: 248, leaderX: 300, leaderY: 679.7 },
+  { place: "Johannesburg", date: "April 2027", status: "Upcoming", x: 437.2, y: 611.2, labelX: 462, labelY: 548, labelWidth: 218, leaderX: 462, leaderY: 611.2 },
+  { place: "Tanzania", date: "April 2027", status: "Upcoming", x: 494.3, y: 432.1, labelX: 438, labelY: 320, labelWidth: 242, leaderX: 494.3, leaderY: 418 },
 ] as const;
 
 const route = "M 357.6 679.7 C 388 671, 415 641, 437.2 611.2 C 466 566, 487 496, 494.3 432.1";
@@ -29,9 +29,9 @@ export function AfricaTour() {
               role="img"
               aria-labelledby="tour-map-title tour-map-description"
             >
-              <title id="tour-map-title">Parcours BRAIDSPLACE en Afrique</title>
+              <title id="tour-map-title">BRAIDSPLACE tour route across Africa</title>
               <desc id="tour-map-description">
-                Un chemin en pointillés relie Cape Town, mars 2027, validé, à Johannesburg et à la Tanzanie, avril 2027, à venir.
+                A dotted route connects Cape Town, March 2027, confirmed, to Johannesburg and Tanzania, April 2027, upcoming.
               </desc>
               <image href="/images/africa-tour-map.svg" width="700" height="760" />
               <motion.path
@@ -81,7 +81,7 @@ export function AfricaTour() {
             </svg>
           </div>
 
-          <ol className="tour-stops" aria-label="Étapes de la tournée">
+          <ol className="tour-stops" aria-label="Tour stops">
             {destinations.map((destination, index) => (
               <motion.li
                 className="tour-stop"
