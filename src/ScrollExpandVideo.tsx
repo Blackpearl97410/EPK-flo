@@ -12,10 +12,10 @@ export function ScrollExpandVideo() {
     target: sectionRef,
     offset: ["start start", "end end"],
   });
+  const frameTop = useTransform(scrollYProgress, [0, 0.72], ["61%", "50%"]);
   const frameWidth = useTransform(scrollYProgress, [0, 0.72], [narrowScreen ? "62%" : "32%", "100%"]);
-  const frameHeight = useTransform(scrollYProgress, [0, 0.72], [narrowScreen ? "48%" : "58%", narrowScreen ? "70%" : "86%"]);
+  const frameHeight = useTransform(scrollYProgress, [0, 0.72], [narrowScreen ? "52%" : "48%", narrowScreen ? "70%" : "86%"]);
   const frameRadius = useTransform(scrollYProgress, [0, 0.72], ["18px", "0px"]);
-  const frameZIndex = useTransform(scrollYProgress, (progress) => (progress < 0.16 ? 1 : 3));
   const promptOpacity = useTransform(scrollYProgress, [0, 0.18, 0.4], [1, 1, 0]);
 
   useEffect(() => {
@@ -54,9 +54,12 @@ export function ScrollExpandVideo() {
   return (
     <section className="scroll-video-section" id="film" ref={sectionRef} aria-labelledby="film-title">
       <div className="scroll-video-stage">
+        <h2 className="scroll-video-title" id="film-title">
+          <span>Live</span><span>Hair Art</span>
+        </h2>
         <motion.div
           className="scroll-video-frame"
-          style={reduceMotion ? undefined : { width: frameWidth, height: frameHeight, borderRadius: frameRadius, zIndex: frameZIndex }}
+          style={reduceMotion ? undefined : { top: frameTop, width: frameWidth, height: frameHeight, borderRadius: frameRadius }}
         >
           <video
             ref={videoRef}
@@ -70,9 +73,6 @@ export function ScrollExpandVideo() {
             aria-label="Film en couleur BRAIDSPLACE : coiffures, modèles et préparation artistique"
           />
         </motion.div>
-        <h2 className="scroll-video-title" id="film-title">
-          <span>Live</span><span>Hair Art</span>
-        </h2>
         <motion.p className="scroll-video-prompt" style={reduceMotion ? undefined : { opacity: promptOpacity }}>
           <span>BRAIDSPLACE / FILM</span>
           <span>DÉFILER POUR AGRANDIR ↓</span>
