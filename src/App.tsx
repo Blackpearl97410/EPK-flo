@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from "react";
+import { useRef, useState, type PropsWithChildren } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { ScrollExpandVideo } from "./ScrollExpandVideo";
 import { MinimalistHairArt } from "./MinimalistHairArt";
@@ -44,27 +44,51 @@ const photographs = [
   {
     src: "/images/tableau-tresses-graphiques.webp",
     alt: "Modèle appuyé à une rambarde, coiffure tressée en grandes courbes devant un panneau clair.",
-    label: "01 / Lignes capillaires",
   },
   {
     src: "/images/tableau-fleur.webp",
     alt: "Portrait d'un modèle à la coiffure volumineuse, avec une fleur rose et une tenue aux couleurs vives.",
-    label: "02 / Corps et couleur",
   },
   {
     src: "/images/tableau-portrait-nb-femme.webp",
     alt: "Portrait noir et blanc d'un modèle à la coiffure afro volumineuse, devant un panneau clair.",
-    label: "03 / Portrait en clair-obscur",
   },
   {
     src: "/images/tableau-portrait-nb-homme.webp",
     alt: "Portrait noir et blanc d'un modèle en chemise blanche, avec une coiffure afro sculpturale.",
-    label: "04 / Volume et contraste",
   },
 ];
 
 function App() {
   const reduceMotion = useReducedMotion();
+  const galleryRef = useRef<HTMLDivElement>(null);
+  const [activePhoto, setActivePhoto] = useState(0);
+
+  const moveGallery = (direction: -1 | 1) => {
+    const gallery = galleryRef.current;
+    if (!gallery) return;
+
+    const cards = gallery.querySelectorAll<HTMLElement>(".photo-card");
+    if (!cards.length) return;
+    const next = Math.max(0, Math.min(cards.length - 1, activePhoto + direction));
+    gallery.scrollTo({
+      left: cards[next].offsetLeft - cards[0].offsetLeft,
+      behavior: reduceMotion ? "auto" : "smooth",
+    });
+    setActivePhoto(next);
+  };
+
+  const updateActivePhoto = () => {
+    const gallery = galleryRef.current;
+    if (!gallery) return;
+
+    const cards = gallery.querySelectorAll<HTMLElement>(".photo-card");
+    if (cards.length < 2) return;
+    const step = cards[1].offsetLeft - cards[0].offsetLeft;
+    const atEnd = gallery.scrollLeft >= gallery.scrollWidth - gallery.clientWidth - 2;
+    setActivePhoto(atEnd ? cards.length - 1 : Math.round(gallery.scrollLeft / step));
+  };
+
   return (
     <>
       <a className="skip-link" href="#contenu">
@@ -123,19 +147,38 @@ function App() {
             <p className="kicker gallery-subtitle">GALLERY</p>
           </Reveal>
           <Reveal className="visual-note">
-            <div className="photo-grid">
+            <div className="gallery-controls" aria-label="Commandes de la galerie">
+              <button
+                type="button"
+                aria-label="Photo précédente"
+                onClick={() => moveGallery(-1)}
+                disabled={activePhoto === 0}
+              >
+                ←
+              </button>
+              <button
+                type="button"
+                aria-label="Photo suivante"
+                onClick={() => moveGallery(1)}
+                disabled={activePhoto === photographs.length - 1}
+              >
+                →
+              </button>
+            </div>
+            <div
+              className="photo-grid"
+              ref={galleryRef}
+              role="region"
+              aria-label="Photographies de Living Hair Art"
+              tabIndex={0}
+              onScroll={updateActivePhoto}
+            >
               {photographs.map((photo) => (
                 <figure className="photo-card" key={photo.src}>
                   <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
-                  <figcaption>{photo.label}</figcaption>
                 </figure>
               ))}
             </div>
-            <p>
-              Sélection de travail issue des photographies fournies pour
-              l’EPK. Crédits et autorisations d’image à confirmer avant
-              publication.
-            </p>
           </Reveal>
         </section>
         <StatisticsRunway />
