@@ -15,7 +15,7 @@ export function ScrollExpandVideo() {
   const frameWidth = useTransform(scrollYProgress, [0, 0.72], [narrowScreen ? "62%" : "32%", "100%"]);
   const frameHeight = useTransform(scrollYProgress, [0, 0.72], [narrowScreen ? "48%" : "58%", narrowScreen ? "70%" : "86%"]);
   const frameRadius = useTransform(scrollYProgress, [0, 0.72], ["18px", "0px"]);
-  const titleOpacity = useTransform(scrollYProgress, [0, 0.28, 0.52], [1, 1, 0]);
+  const frameZIndex = useTransform(scrollYProgress, (progress) => (progress < 0.16 ? 1 : 3));
   const promptOpacity = useTransform(scrollYProgress, [0, 0.18, 0.4], [1, 1, 0]);
 
   useEffect(() => {
@@ -56,7 +56,7 @@ export function ScrollExpandVideo() {
       <div className="scroll-video-stage">
         <motion.div
           className="scroll-video-frame"
-          style={reduceMotion ? undefined : { width: frameWidth, height: frameHeight, borderRadius: frameRadius }}
+          style={reduceMotion ? undefined : { width: frameWidth, height: frameHeight, borderRadius: frameRadius, zIndex: frameZIndex }}
         >
           <video
             ref={videoRef}
@@ -70,13 +70,9 @@ export function ScrollExpandVideo() {
             aria-label="Film en couleur BRAIDSPLACE : coiffures, modèles et préparation artistique"
           />
         </motion.div>
-        <motion.h2
-          className="scroll-video-title"
-          id="film-title"
-          style={reduceMotion ? undefined : { opacity: titleOpacity }}
-        >
+        <h2 className="scroll-video-title" id="film-title">
           <span>Live</span><span>Hair Art</span>
-        </motion.h2>
+        </h2>
         <motion.p className="scroll-video-prompt" style={reduceMotion ? undefined : { opacity: promptOpacity }}>
           <span>BRAIDSPLACE / FILM</span>
           <span>DÉFILER POUR AGRANDIR ↓</span>
