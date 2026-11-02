@@ -781,7 +781,7 @@ h2 span {
   .video-hero-link:hover { transform: none; }
 }
 
-/* Trois tableaux sur une scène fixe, pilotés par la position du défilement. */
+/* Trois tableaux sur une scène fixe, pilotés par les boutons de navigation. */
 .statistics-runway {
   background: #20130e;
   color: var(--ivory);
@@ -793,13 +793,8 @@ h2 span {
   font-variation-settings: "YEAR" 1979;
   letter-spacing: .035em;
 }
-.statistics-runway-track {
-  height: 320vh;
-  height: 320svh;
-}
 .statistics-runway-stage {
-  position: sticky;
-  top: 0;
+  position: relative;
   isolation: isolate;
   width: 100%;
   height: 100vh;
@@ -816,19 +811,42 @@ h2 span {
   object-position: center;
   pointer-events: none;
 }
-.statistics-runway-counter {
+.statistics-runway-controls {
   position: absolute;
   z-index: 2;
   right: clamp(18px, 3vw, 52px);
-  bottom: clamp(22px, 3vw, 48px);
+  top: clamp(18px, 3vw, 48px);
   display: flex;
   align-items: center;
-  gap: 22px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  text-shadow: 0 1px 6px #20130e;
+  gap: 14px;
+  padding: 8px;
+  border: 1px solid rgba(255, 250, 241, .3);
+  border-radius: 100px;
+  background: rgba(32, 19, 14, .86);
+  color: var(--ivory);
+  font: 700 13px/1 var(--body);
+}
+.statistics-runway-controls button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--ivory);
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: 400 24px/1 var(--body);
+}
+.statistics-runway-controls button:hover:not(:disabled) {
+  background: var(--ivory);
+  color: #20130e;
+}
+.statistics-runway-controls button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+.statistics-runway-controls button:disabled {
+  opacity: .35;
+  cursor: not-allowed;
 }
 .statistics-runway-mobile-copy {
   display: none;
@@ -837,14 +855,15 @@ h2 span {
   .statistics-runway-frame {
     object-fit: contain;
   }
-  .statistics-runway-counter {
-    display: none;
+  .statistics-runway-controls {
+    right: 18px;
+    top: 18px;
   }
   .statistics-runway-mobile-copy {
     position: absolute;
     z-index: 2;
     right: 18px;
-    bottom: 5%;
+    bottom: 94px;
     left: 18px;
     display: block;
     border-top: 1px solid var(--gold);
@@ -869,28 +888,6 @@ h2 span {
     font: 400 clamp(23px, 6vw, 34px)/1.2 var(--editorial);
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  .statistics-runway-track {
-    height: auto;
-  }
-  .statistics-runway-stage {
-    position: relative;
-    display: grid;
-    height: auto;
-  }
-  .statistics-runway-frame {
-    position: relative;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1586 / 992;
-    object-fit: contain;
-    opacity: 1 !important;
-  }
-  .statistics-runway-mobile-copy {
-    display: none;
-  }
-}
-
 .film-photo-section {
   position: relative;
   isolation: isolate;
