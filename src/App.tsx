@@ -197,7 +197,7 @@ function App() {
         <a className="brand" href="#accueil">
           BRAIDSPLACE
         </a>
-        <p>Work in progress · Content and visuals pending Flow’s approval</p>
+        <p>Live Hair Art · E-Press Kit</p>
         <a href="#accueil">Back to top ↑</a>
       </footer>
     </>
