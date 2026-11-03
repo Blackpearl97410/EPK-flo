@@ -41,6 +41,11 @@ Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Gi
 - `public/videos/` : exports vidéo web (couverture 1174 × 782, film de la quatrième section 1080p) et leurs images d’attente.
 - `public/images/` : versions web légères des photographies sélectionnées pour la maquette.
 - [`contenu/selection-photos.md`](contenu/selection-photos.md) : correspondance entre versions web et originaux.
+- [`docs/hebergement.md`](docs/hebergement.md) : procédure de mise en ligne sur `www.braidsplace.com` après validation.
+
+## Hébergement préparé
+
+Un workflow GitHub Actions manuel compile `main` pour GitHub Pages. Il ne se lance pas lors des pushes. Les réglages Pages et DNS restent à appliquer lors de la publication validée par Flo ; voir le [guide d’hébergement](docs/hebergement.md). La balise `noindex` et la mention de travail restent en place jusque-là.
 
 ## Introduction vidéo
 
@@ -87,4 +92,5 @@ Remplacer les éléments « à compléter » par des contenus approuvés. Vérif
 - [ ] Identité, textes, visuels, dates et contact validés avec droits d'utilisation
 - [ ] Composants 21st.dev choisis et adaptés si utiles
 - [ ] Version personnalisée relue par Flo
-- [ ] Hébergement et maintenance décidés, puis publication
+- [x] Déploiement GitHub Pages manuel préparé pour `www.braidsplace.com`
+- [ ] Accès DNS, configuration Pages, maintenance et publication validés
