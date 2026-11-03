@@ -4,7 +4,7 @@
 
 Le site React/Vite est prévu pour être publié sur GitHub Pages depuis `main` avec un workflow Actions **manuel** (`.github/workflows/deploy-pages.yml`). La base Vite est `/`, adaptée au domaine personnalisé. Le workflow installe les dépendances avec `npm ci`, compile avec `npm run build`, puis publie `dist/`. Aucun push ne déclenche une publication.
 
-Le 3 novembre 2026, `www.braidsplace.com` résolvait vers `103.169.142.0` et redirigeait vers `braidsplace.com`, qui répondait 404. Ces réglages DNS et la redirection restent à modifier au moment de la mise en ligne. Le domaine racine n’est pas inclus dans cette préparation.
+Le 3 novembre 2026, Flo a validé la version actuelle de l’EPK et confirmé les droits de publication des médias et des personnes représentées. La balise `noindex` et la mention de travail ont été retirées de la branche de publication. Le dernier état connu de `www.braidsplace.com` pointait vers `103.169.142.0` et redirigeait vers `braidsplace.com`, qui répondait 404. La configuration DNS doit être vérifiée dans IONOS avant modification. Le domaine racine n’est pas inclus dans cette préparation.
 
 ## Mise en ligne, après validation par Flo
 

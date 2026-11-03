@@ -2,7 +2,7 @@
 
 Dépôt partagé pour construire l'EPK web de Flo. **Choix technique validé : React + Vite + TypeScript + Tailwind CSS**, avec Motion pour les animations. Vite produit une page statique déployable ; aucun serveur applicatif n'est nécessaire.
 
-La page actuelle est une **maquette de travail** pour BRAIDSPLACE / Living Hair Art. Le projet est une performance visuelle ; les contenus, visuels et coordonnées doivent être confirmés par Flo avant publication. Le dépôt GitHub est actuellement public.
+Le site présente l’EPK BRAIDSPLACE / Live Hair Art. Flo a confirmé le 3 novembre 2026 la version actuelle et les droits de publication des médias et des personnes représentées. Le dépôt GitHub est public.
 
 ## Démarrer
 
@@ -43,9 +43,9 @@ Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Gi
 - [`contenu/selection-photos.md`](contenu/selection-photos.md) : correspondance entre versions web et originaux.
 - [`docs/hebergement.md`](docs/hebergement.md) : procédure de mise en ligne sur `www.braidsplace.com` après validation.
 
-## Hébergement préparé
+## Publication sur www.braidsplace.com
 
-Un workflow GitHub Actions manuel compile `main` pour GitHub Pages. Il ne se lance pas lors des pushes. Les réglages Pages et DNS restent à appliquer lors de la publication validée par Flo ; voir le [guide d’hébergement](docs/hebergement.md). La balise `noindex` et la mention de travail restent en place jusque-là.
+Un workflow GitHub Actions manuel compile `main` pour GitHub Pages. Il ne se lance pas lors des pushes. Flo a validé la publication ; les réglages Pages et DNS restent à appliquer selon le [guide d’hébergement](docs/hebergement.md). La balise `noindex` et la mention de travail ont été retirées de la version préparée pour publication.
 
 ## Introduction vidéo
 
@@ -53,7 +53,7 @@ La première vue reprend la composition et les phrases du [modèle Canva transmi
 
 Dans le manifeste de l'ouverture, « ARTISTIC WORLDS. » et « A LIVING EXPERIENCE WHERE ART COMES TO LIFE. » sont surlignés en ocre selon la capture de référence fournie par Flo.
 
-La couverture utilise la dernière vidéo de cinq secondes fournie par Flo. La source reste locale et ignorée par Git ; son export H.264 suivi dans le dépôt a été allégé et sa piste audio retirée. La vidéo se lance muette en boucle derrière les textes existants ; l’image d’attente reste visible si la lecture automatique est bloquée ou si la réduction du mouvement est activée. Le portrait `adriiii bg.png` remplit la deuxième section en plein écran, avec le texte d’accueil fourni par Flo à droite sur un dégradé sombre ; la section apparaît en fondu. La vidéo en couleur de la quatrième section, après « L’ARTISTE », reste sur fond ivoire : son export 1080p s’agrandit au défilement, puis l’EPK reprend. Le titre « Live Hair Art » en Climate Crisis reprend l'ocre du surlignage de l'ouverture derrière les mots, avec les initiales en majuscules. Les couleurs prélevées sur la capture de Flo sont l’ocre `#AF8C5C`, le brun `#372A20` et l’ivoire `#F6F2EC`. La vidéo de la quatrième section possède des commandes de lecture et reste fixe quand la réduction du mouvement est activée. Les sources, les droits, les personnes filmées et les crédits restent à confirmer avant une publication publique.
+La couverture utilise la dernière vidéo de cinq secondes fournie par Flo. La source reste locale et ignorée par Git ; son export H.264 suivi dans le dépôt a été allégé et sa piste audio retirée. La vidéo se lance muette en boucle derrière les textes existants ; l’image d’attente reste visible si la lecture automatique est bloquée ou si la réduction du mouvement est activée. Le portrait `adriiii bg.png` remplit la deuxième section en plein écran, avec le texte d’accueil fourni par Flo à droite sur un dégradé sombre ; la section apparaît en fondu. La vidéo en couleur de la quatrième section, après « L’ARTISTE », reste sur fond ivoire : son export 1080p s’agrandit au défilement, puis l’EPK reprend. Le titre « Live Hair Art » en Climate Crisis reprend l'ocre du surlignage de l'ouverture derrière les mots, avec les initiales en majuscules. Les couleurs prélevées sur la capture de Flo sont l’ocre `#AF8C5C`, le brun `#372A20` et l’ivoire `#F6F2EC`. La vidéo de la quatrième section possède des commandes de lecture et reste fixe quand la réduction du mouvement est activée. Flo a confirmé les droits de publication des médias et des personnes représentées pour cette version le 3 novembre 2026 ; les crédits restent modifiables dans le dépôt.
 
 La deuxième section affiche maintenant « E-PRESS KIT » et « Flow ». Toute l’interface visible est en anglais, y compris les textes alternatifs, les commandes, les dates de la tournée et les métadonnées. Sur mobile, le texte d’accueil se place en haut du portrait pour garder le visage visible. Les maquettes originales des statistiques contiennent des libellés français incorporés dans les JPG : des cartouches HTML opaques les masquent et affichent la traduction anglaise modifiable. Pour la version finale, demander des visuels sans texte incorporé.
 
@@ -89,7 +89,7 @@ Remplacer les éléments « à compléter » par des contenus approuvés. Vérif
 - [x] Pile React + Vite + TypeScript + Tailwind CSS choisie
 - [x] Maquette responsive migrée sur cette pile et fusionnée dans `main`
 - [ ] Accès de Flo comme collaboratrice GitHub confirmé
-- [ ] Identité, textes, visuels, dates et contact validés avec droits d'utilisation
+- [x] Version actuelle et droits de publication validés par Flo le 3 novembre 2026
 - [ ] Composants 21st.dev choisis et adaptés si utiles
 - [ ] Version personnalisée relue par Flo
 - [x] Déploiement GitHub Pages manuel préparé pour `www.braidsplace.com`
