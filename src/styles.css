@@ -340,6 +340,9 @@ h2 span {
   font: 400 18px var(--display);
   font-variation-settings: "YEAR" 1979;
 }
+.tour-map-origin-place {
+  font-size: 13px;
+}
 .tour-map-label-date,
 .tour-map-label-status {
   fill: var(--brown);
@@ -351,6 +354,16 @@ h2 span {
 .tour-map-halo {
   fill: #f8f2e9;
   stroke: var(--clay);
+  stroke-width: 3;
+}
+.tour-island-shape {
+  fill: var(--clay);
+  stroke: #f8f2e9;
+  stroke-width: 1;
+}
+.tour-map-origin-ring {
+  fill: none;
+  stroke: var(--brown);
   stroke-width: 3;
 }
 .tour-map-dot {
