@@ -1,6 +1,7 @@
 import { useRef, useState, type PropsWithChildren } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { ScrollStory } from "./ScrollStory";
+import { annexLinks } from "./ExploreMore";
 import { StatisticsRunway } from "./StatisticsRunway";
 
 function Reveal({ children, className = "" }: PropsWithChildren<{ className?: string }>) {
@@ -14,25 +15,6 @@ const photographs = [
   { src: "/images/tableau-portrait-nb-femme.webp", alt: "Black-and-white portrait of a model with a voluminous Afro hairstyle in front of a light panel." },
   { src: "/images/tableau-portrait-nb-homme.webp", alt: "Black-and-white portrait of a model in a white shirt with a sculptural Afro hairstyle." },
 ];
-
-const annexes = [
-  { href: "/?page=film", label: "THE FILM", detail: "Live Hair Art", image: "/videos/braidsplace-couleur-poster.jpg" },
-  { href: "/?page=galerie", label: "GALLERY", detail: "Living tableaux", image: photographs[0].src },
-  { href: "/?page=statistiques", label: "STATISTICS", detail: "BRAIDSPLACE in numbers", image: "/images/statistics-rose.jpg" },
-];
-
-function AnnexNavigation() {
-  return <section className="annex-navigation section-pad" id="annexes" aria-labelledby="annexes-title"><div className="shell">
-    <p className="kicker">BRAIDSPLACE / E-PRESS KIT</p>
-    <h2 id="annexes-title">Explore more</h2>
-    <div className="annex-grid">{annexes.map((annex, index) => <a className="annex-card" href={annex.href} key={annex.href}>
-      <img src={annex.image} alt="" loading="lazy" decoding="async" />
-      <span className="annex-card-number">0{index + 1}</span>
-      <span className="annex-card-text"><strong>{annex.label}</strong><small>{annex.detail}</small></span>
-      <span className="annex-card-arrow" aria-hidden="true">↗</span>
-    </a>)}</div>
-  </div></section>;
-}
 
 function GalleryPage() {
   const reduceMotion = useReducedMotion();
@@ -69,18 +51,18 @@ function GalleryPage() {
 
 function AnnexHeader({ current }: { current: string }) {
   return <header className="annex-header shell"><a className="brand" href="/">BRAIDSPLACE</a><nav aria-label="Explore the E-Press Kit">
-    <a href="/">HOME</a>{annexes.filter((annex) => annex.label !== current).map((annex) => <a href={annex.href} key={annex.href}>{annex.label}</a>)}
+    <a href="/">HOME</a>{annexLinks.filter((annex) => annex.label !== current).map((annex) => <a href={annex.href} key={annex.href}>{annex.label}</a>)}
   </nav></header>;
 }
 
 function AnnexPage({ page }: { page: "film" | "galerie" | "statistiques" }) {
-  const label = page === "film" ? "THE FILM" : page === "galerie" ? "GALLERY" : "STATISTICS";
+  const label = annexLinks.find((annex) => annex.page === page)?.label ?? "BACKSTAGE";
   return <>
     <a className="skip-link" href="#contenu">Skip to content</a>
     <AnnexHeader current={label} />
     <main id="contenu" className="annex-page">
       {page === "film" && <section className="annex-film shell" aria-labelledby="annex-film-title">
-        <p className="kicker">BRAIDSPLACE / FILM</p><h1 id="annex-film-title">Live Hair Art</h1>
+        <p className="kicker">BRAIDSPLACE / BACKSTAGE</p><h1 id="annex-film-title">Live Hair Art</h1>
         <video src="/videos/braidsplace-couleur.mp4" poster="/videos/braidsplace-couleur-poster.jpg" controls playsInline preload="metadata" aria-label="BRAIDSPLACE color film: hairstyles, models and artistic preparation" />
       </section>}
       {page === "galerie" && <><h1 className="sr-only">Gallery</h1><GalleryPage /></>}
@@ -99,7 +81,6 @@ function HomePage() {
         <div className="home-backdrop" aria-hidden="true"><video src="/videos/braidsplace-cover.mp4" poster="/videos/braidsplace-cover-poster.jpg" autoPlay={!reduceMotion} muted loop playsInline preload="metadata" tabIndex={-1} /></div>
         <ScrollStory />
       </div>
-      <AnnexNavigation />
     </main>
     <footer className="site-footer shell"><a className="brand" href="#accueil">BRAIDSPLACE</a><p>Live Hair Art · E-Press Kit</p><a href="#accueil">Back to top ↑</a></footer>
   </>;

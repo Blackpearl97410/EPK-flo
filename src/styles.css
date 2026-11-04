@@ -1359,11 +1359,12 @@ html:has(.scroll-story) {
 .scroll-story {
   position: relative;
   z-index: 1;
-  height: 765vh;
-  height: 765svh;
+  height: 860vh;
+  height: 860svh;
 }
 .scroll-story-artist-anchor,
-.scroll-story-tour-anchor {
+.scroll-story-tour-anchor,
+.scroll-story-explore-anchor {
   position: absolute;
   left: 0;
   width: 1px;
@@ -1376,6 +1377,10 @@ html:has(.scroll-story) {
 .scroll-story-tour-anchor {
   top: 575vh;
   top: 575svh;
+}
+.scroll-story-explore-anchor {
+  top: 670vh;
+  top: 670svh;
 }
 .scroll-story-stage {
   position: sticky;
@@ -1567,79 +1572,35 @@ html:has(.scroll-story) {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
 }
-.annex-navigation {
-  background: var(--film-ivory);
-}
-.annex-navigation h2 {
-  margin-bottom: clamp(28px, 4vw, 60px);
-  font: 400 clamp(42px, 6vw, 84px)/1 var(--display);
-  font-variation-settings: 'YEAR' 1979;
-}
-.annex-grid {
+.explore-more {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(12px, 2vw, 28px);
+  place-items: center;
+  min-height: 100svh;
+  padding: clamp(28px, 6vw, 100px);
+  background: var(--film-ivory);
+  color: var(--brown);
 }
-.annex-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: clamp(380px, 42vw, 620px);
-  overflow: hidden;
-  padding: clamp(18px, 2vw, 30px);
-  color: #fff5e0;
+.explore-more-links {
+  display: grid;
+  width: min(100%, 1150px);
 }
-.annex-card::after {
-  position: absolute;
-  inset: 0;
-  content: '';
-  background: linear-gradient(180deg, rgba(20, 14, 11, .34), transparent 35%, rgba(20, 14, 11, .82));
-}
-.annex-card img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .45s ease;
-}
-.annex-card:hover img,
-.annex-card:focus-visible img {
-  transform: scale(1.04);
-}
-.annex-card-number,
-.annex-card-text,
-.annex-card-arrow {
-  position: relative;
-  z-index: 1;
-}
-.annex-card-number {
-  font: 800 13px/1 var(--body);
-  letter-spacing: .15em;
-}
-.annex-card-text {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: auto;
-}
-.annex-card-text strong {
-  font: 400 clamp(25px, 2.7vw, 40px)/1.05 var(--display);
+.explore-more-links a {
+  display: block;
+  padding-block: clamp(17px, 3.2vh, 32px);
+  border-bottom: 1px solid var(--line);
+  font: 400 clamp(25px, 7.4vw, 106px)/1.05 var(--display);
   font-variation-settings: 'YEAR' 1979;
+  letter-spacing: .012em;
+  transition: color .25s ease;
 }
-.annex-card-text small {
-  font: 400 clamp(20px, 2vw, 29px)/1.1 var(--editorial);
+.explore-more-links a:first-child {
+  border-top: 1px solid var(--line);
 }
-.annex-card-arrow {
-  position: absolute;
-  right: 24px;
-  top: 18px;
-  font-size: 26px;
+.explore-more-links a:hover {
+  color: var(--clay);
 }
-.annex-card:focus-visible {
-  outline: 4px solid var(--clay);
-  outline-offset: 4px;
+.explore-more-links a:focus-visible {
+  outline-color: var(--clay);
 }
 .annex-header {
   display: flex;
@@ -1694,9 +1655,6 @@ html:has(.scroll-story) {
   .minimalist-hair--immersive .minimalist-hair-copy {
     font-size: clamp(18px, 2.3vw, 24px);
   }
-  .annex-grid {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 @media (max-width: 600px) {
   .scroll-story-message {
@@ -1729,12 +1687,6 @@ html:has(.scroll-story) {
   .minimalist-hair--immersive .minimalist-hair-copy h2 {
     font-size: 36px;
   }
-  .annex-grid {
-    grid-template-columns: 1fr;
-  }
-  .annex-card {
-    min-height: 430px;
-  }
   .annex-header {
     align-items: flex-start;
     flex-direction: column;
@@ -1744,7 +1696,5 @@ html:has(.scroll-story) {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .home-backdrop video { display: none; }
-  .annex-card img { transition: none; }
-  .annex-card:hover img,
-  .annex-card:focus-visible img { transform: none; }
+  .explore-more-links a { transition: none; }
 }
