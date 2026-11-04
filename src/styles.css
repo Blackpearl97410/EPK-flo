@@ -1584,8 +1584,8 @@ html:has(.scroll-story) {
   gap: clamp(18px, 3vh, 36px);
   min-height: 100svh;
   padding: clamp(28px, 6vw, 100px);
-  background: var(--film-ivory);
-  color: var(--brown);
+  background: rgba(17, 12, 8, .52);
+  color: var(--film-ivory);
 }
 .explore-more-title {
   width: min(100%, 1150px);
@@ -1601,20 +1601,20 @@ html:has(.scroll-story) {
 .explore-more-links a {
   display: block;
   padding-block: clamp(17px, 3.2vh, 32px);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(246, 242, 236, .55);
   font: 400 clamp(25px, 7.4vw, 106px)/1.05 var(--display);
   font-variation-settings: 'YEAR' 1979;
   letter-spacing: .012em;
   transition: color .25s ease;
 }
 .explore-more-links a:first-child {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(246, 242, 236, .55);
 }
 .explore-more-links a:hover {
-  color: var(--clay);
+  color: #f5c78b;
 }
 .explore-more-links a:focus-visible {
-  outline-color: var(--clay);
+  outline-color: var(--film-ivory);
 }
 .contact-finale {
   position: relative;
