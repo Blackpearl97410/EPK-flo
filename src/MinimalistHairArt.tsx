@@ -1,17 +1,26 @@
 import { motion, useReducedMotion } from "motion/react";
 
 /** Composition adaptée du « Minimalist Hero » de @ravikatiyar162 sur 21st.dev. */
-export function MinimalistHairArt() {
+export function MinimalistHairArt({ immersive = false }: { immersive?: boolean }) {
   const reduceMotion = useReducedMotion();
   const transition = { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const };
 
   return (
-    <section className="minimalist-hair" id="artiste" aria-labelledby="minimalist-hair-title">
+    <motion.section
+      className={`minimalist-hair${immersive ? " minimalist-hair--immersive" : ""}`}
+      id="artiste"
+      aria-labelledby="minimalist-hair-title"
+      initial={reduceMotion ? false : { opacity: 0, x: "12vw" }}
+      whileInView={reduceMotion ? undefined : { opacity: 1, x: 0 }}
+      viewport={{ once: true, amount: 0.16 }}
+      transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+    >
       <div className="minimalist-hair-header">
         <a className="minimalist-hair-brand" href="#accueil">BRAIDSPLACE</a>
         <nav className="minimalist-hair-nav" aria-label="Explore the E-Press Kit">
-          <a href="#images">GALLERY</a>
-          <a href="#statistiques">STATISTICS</a>
+          <a href="/?page=film">FILM</a>
+          <a href="/?page=galerie">GALLERY</a>
+          <a href="/?page=statistiques">STATISTICS</a>
           <a href="#parcours">AFRICA TOUR</a>
         </nav>
       </div>
@@ -30,8 +39,8 @@ export function MinimalistHairArt() {
           loading="lazy"
           decoding="async"
           variants={{
-            hidden: { opacity: 0, y: 70, scale: 0.94 },
-            visible: { opacity: 1, y: 0, scale: 1, transition },
+            hidden: { opacity: 0, x: -70, scale: 0.94 },
+            visible: { opacity: 1, x: 0, scale: 1, transition },
           }}
         />
         <motion.div
@@ -57,6 +66,6 @@ export function MinimalistHairArt() {
       <div className="minimalist-hair-footer">
         <span>BRAIDSPLACE · RÉUNION ISLAND</span>
       </div>
-    </section>
+    </motion.section>
   );
 }

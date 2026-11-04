@@ -1330,3 +1330,336 @@ h2 span {
     font-size: 9px;
   }
 }
+
+/* The cover film stays in place while the opening text changes, then remains
+   behind Flow's presentation. Only the chapter content moves on scroll. */
+.home-immersive {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background: #211913;
+  color: #fff5e0;
+}
+html:has(.scroll-story) {
+  scroll-behavior: auto;
+}
+.home-backdrop {
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  height: 100vh;
+  height: 100svh;
+  margin-bottom: -100vh;
+  margin-bottom: -100svh;
+  overflow: hidden;
+  background: #483b31 url('/videos/braidsplace-cover-poster.jpg') center / cover no-repeat;
+}
+.home-backdrop video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.home-backdrop::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background: linear-gradient(180deg, rgba(0, 0, 0, .22), rgba(0, 0, 0, .34) 55%, rgba(0, 0, 0, .58));
+  pointer-events: none;
+}
+.scroll-story {
+  position: relative;
+  z-index: 1;
+  height: 575vh;
+  height: 575svh;
+}
+.scroll-story-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+.scroll-story-content {
+  position: absolute;
+  inset: 0;
+}
+.scroll-story-brand {
+  position: absolute;
+  top: 31.2%;
+  left: 6.6%;
+  max-width: 88%;
+  margin: 0;
+  font: 400 clamp(34px, 8.9vw, 144px)/.91 var(--display);
+  font-variation-settings: 'YEAR' 1979;
+  letter-spacing: -.02em;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, .65);
+  white-space: nowrap;
+}
+.scroll-story-message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(28px, 8vw, 140px);
+  background: rgba(20, 14, 11, .18);
+  text-shadow: 0 2px 22px rgba(0, 0, 0, .75);
+}
+.scroll-story-eyebrow,
+.scroll-story-count,
+.scroll-story-cue {
+  font: 800 clamp(11px, 1vw, 14px)/1.4 var(--body);
+  letter-spacing: .18em;
+}
+.scroll-story-eyebrow {
+  margin-bottom: clamp(25px, 5vw, 70px);
+}
+.scroll-story-message h2 {
+  max-width: 1150px;
+  margin: 0;
+  font: 400 clamp(48px, 7vw, 108px)/1.03 var(--editorial);
+  text-wrap: balance;
+}
+.scroll-story-message h2 em {
+  color: #f2c587;
+  font-weight: 400;
+}
+.scroll-story-count {
+  margin-top: clamp(30px, 6vw, 80px);
+}
+.scroll-story-cue {
+  position: absolute;
+  right: clamp(22px, 4vw, 64px);
+  bottom: clamp(22px, 4vw, 50px);
+  left: clamp(22px, 4vw, 64px);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.scroll-story-content ~ .scroll-story-cue {
+  right: auto;
+}
+.minimalist-hair--immersive {
+  z-index: 1;
+  min-height: 100svh;
+  background: transparent;
+  color: #fff5e0;
+}
+.minimalist-hair--immersive::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background: linear-gradient(90deg, rgba(23, 15, 12, .25), rgba(23, 15, 12, .62));
+  pointer-events: none;
+}
+.minimalist-hair--immersive .minimalist-hair-header,
+.minimalist-hair--immersive .minimalist-hair-footer,
+.minimalist-hair--immersive .minimalist-hair-stage {
+  position: relative;
+  z-index: 1;
+}
+.minimalist-hair--immersive .minimalist-hair-stage {
+  grid-template-columns: minmax(0, 58%) minmax(0, 42%);
+  min-height: 700px;
+}
+.minimalist-hair--immersive .minimalist-hair-portrait {
+  top: 6%;
+  left: 3%;
+  width: min(58vw, 860px);
+  max-height: 84%;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, .35));
+}
+.minimalist-hair--immersive .minimalist-hair-copy {
+  margin-left: 0;
+  padding: clamp(24px, 3vw, 46px);
+  background: rgba(24, 16, 12, .72);
+  font-size: clamp(20px, 2vw, 29px);
+  line-height: 1.28;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, .16);
+}
+.minimalist-hair--immersive .minimalist-hair-copy h2 {
+  font-size: clamp(30px, 3.6vw, 54px);
+}
+.minimalist-hair--immersive .minimalist-hair-footer {
+  color: #fff5e0;
+}
+.minimalist-hair--immersive a:focus-visible {
+  outline-color: #fff5e0;
+}
+.annex-navigation {
+  background: var(--film-ivory);
+}
+.annex-navigation h2 {
+  margin-bottom: clamp(28px, 4vw, 60px);
+  font: 400 clamp(42px, 6vw, 84px)/1 var(--display);
+  font-variation-settings: 'YEAR' 1979;
+}
+.annex-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 28px);
+}
+.annex-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: clamp(380px, 42vw, 620px);
+  overflow: hidden;
+  padding: clamp(18px, 2vw, 30px);
+  color: #fff5e0;
+}
+.annex-card::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background: linear-gradient(180deg, rgba(20, 14, 11, .34), transparent 35%, rgba(20, 14, 11, .82));
+}
+.annex-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .45s ease;
+}
+.annex-card:hover img,
+.annex-card:focus-visible img {
+  transform: scale(1.04);
+}
+.annex-card-number,
+.annex-card-text,
+.annex-card-arrow {
+  position: relative;
+  z-index: 1;
+}
+.annex-card-number {
+  font: 800 13px/1 var(--body);
+  letter-spacing: .15em;
+}
+.annex-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+.annex-card-text strong {
+  font: 400 clamp(25px, 2.7vw, 40px)/1.05 var(--display);
+  font-variation-settings: 'YEAR' 1979;
+}
+.annex-card-text small {
+  font: 400 clamp(20px, 2vw, 29px)/1.1 var(--editorial);
+}
+.annex-card-arrow {
+  position: absolute;
+  right: 24px;
+  top: 18px;
+  font-size: 26px;
+}
+.annex-card:focus-visible {
+  outline: 4px solid var(--clay);
+  outline-offset: 4px;
+}
+.annex-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  min-height: 96px;
+  border-bottom: 1px solid var(--line);
+}
+.annex-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(14px, 2vw, 32px);
+  font: 800 11px/1.4 var(--body);
+  letter-spacing: .12em;
+}
+.annex-header nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: .3em;
+}
+.annex-page {
+  min-height: calc(100svh - 231px);
+}
+.annex-film {
+  padding-block: clamp(60px, 9vw, 120px);
+}
+.annex-film h1 {
+  font: 400 clamp(44px, 8vw, 120px)/1 var(--display);
+  font-variation-settings: 'YEAR' 1979;
+}
+.annex-film video {
+  display: block;
+  width: 100%;
+  max-height: 85svh;
+  background: #211913;
+  aspect-ratio: 16 / 9;
+}
+@media (max-width: 700px) {
+  .scroll-story-brand {
+    top: 30%;
+    left: 5%;
+    max-width: 90%;
+    font-size: 8.2vw;
+  }
+}
+@media (max-width: 900px) {
+  .minimalist-hair--immersive .minimalist-hair-copy {
+    font-size: clamp(18px, 2.3vw, 24px);
+  }
+  .annex-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .scroll-story-message {
+    padding: 32px 25px;
+  }
+  .scroll-story-message h2 {
+    font-size: clamp(44px, 11vw, 68px);
+  }
+  .scroll-story-cue {
+    font-size: 10px;
+  }
+  .minimalist-hair--immersive .minimalist-hair-stage {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .minimalist-hair--immersive .minimalist-hair-portrait {
+    top: 0;
+    left: -8%;
+    width: 116%;
+    max-height: none;
+  }
+  .minimalist-hair--immersive .minimalist-hair-copy {
+    align-self: stretch;
+    max-width: none;
+    margin: 0 16px 32px;
+    font-size: 20px;
+  }
+  .minimalist-hair--immersive .minimalist-hair-copy h2 {
+    font-size: 36px;
+  }
+  .annex-grid {
+    grid-template-columns: 1fr;
+  }
+  .annex-card {
+    min-height: 430px;
+  }
+  .annex-header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-block: 22px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .home-backdrop video { display: none; }
+  .annex-card img { transition: none; }
+  .annex-card:hover img,
+  .annex-card:focus-visible img { transform: none; }
+}
