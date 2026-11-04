@@ -18,15 +18,15 @@ const photographs = [
 ];
 
 const annexes = [
-  { href: "/?page=film", label: "LE FILM", detail: "Live Hair Art", image: "/videos/braidsplace-couleur-poster.jpg" },
-  { href: "/?page=galerie", label: "GALERIE", detail: "Les tableaux vivants", image: photographs[0].src },
-  { href: "/?page=statistiques", label: "STATISTIQUES", detail: "BRAIDSPLACE en chiffres", image: "/images/statistics-rose.jpg" },
+  { href: "/?page=film", label: "THE FILM", detail: "Live Hair Art", image: "/videos/braidsplace-couleur-poster.jpg" },
+  { href: "/?page=galerie", label: "GALLERY", detail: "Living tableaux", image: photographs[0].src },
+  { href: "/?page=statistiques", label: "STATISTICS", detail: "BRAIDSPLACE in numbers", image: "/images/statistics-rose.jpg" },
 ];
 
 function AnnexNavigation() {
   return <section className="annex-navigation section-pad" id="annexes" aria-labelledby="annexes-title"><div className="shell">
     <p className="kicker">BRAIDSPLACE / E-PRESS KIT</p>
-    <h2 id="annexes-title">Les annexes</h2>
+    <h2 id="annexes-title">Explore more</h2>
     <div className="annex-grid">{annexes.map((annex, index) => <a className="annex-card" href={annex.href} key={annex.href}>
       <img src={annex.image} alt="" loading="lazy" decoding="async" />
       <span className="annex-card-number">0{index + 1}</span>
@@ -70,25 +70,25 @@ function GalleryPage() {
 }
 
 function AnnexHeader({ current }: { current: string }) {
-  return <header className="annex-header shell"><a className="brand" href="/">BRAIDSPLACE</a><nav aria-label="Annexes de l’EPK">
-    <a href="/">ACCUEIL</a>{annexes.filter((annex) => annex.label !== current).map((annex) => <a href={annex.href} key={annex.href}>{annex.label}</a>)}
+  return <header className="annex-header shell"><a className="brand" href="/">BRAIDSPLACE</a><nav aria-label="Explore the E-Press Kit">
+    <a href="/">HOME</a>{annexes.filter((annex) => annex.label !== current).map((annex) => <a href={annex.href} key={annex.href}>{annex.label}</a>)}
   </nav></header>;
 }
 
 function AnnexPage({ page }: { page: "film" | "galerie" | "statistiques" }) {
-  const label = page === "film" ? "LE FILM" : page === "galerie" ? "GALERIE" : "STATISTIQUES";
+  const label = page === "film" ? "THE FILM" : page === "galerie" ? "GALLERY" : "STATISTICS";
   return <>
     <a className="skip-link" href="#contenu">Skip to content</a>
     <AnnexHeader current={label} />
     <main id="contenu" className="annex-page">
       {page === "film" && <section className="annex-film shell" aria-labelledby="annex-film-title">
-        <p className="kicker">BRAIDSPLACE / ANNEXE 01</p><h1 id="annex-film-title">Live Hair Art</h1>
+        <p className="kicker">BRAIDSPLACE / FILM</p><h1 id="annex-film-title">Live Hair Art</h1>
         <video src="/videos/braidsplace-couleur.mp4" poster="/videos/braidsplace-couleur-poster.jpg" controls playsInline preload="metadata" aria-label="BRAIDSPLACE color film: hairstyles, models and artistic preparation" />
       </section>}
-      {page === "galerie" && <><h1 className="sr-only">Galerie</h1><GalleryPage /></>}
-      {page === "statistiques" && <><h1 className="sr-only">Statistiques</h1><StatisticsRunway /></>}
+      {page === "galerie" && <><h1 className="sr-only">Gallery</h1><GalleryPage /></>}
+      {page === "statistiques" && <><h1 className="sr-only">Statistics</h1><StatisticsRunway /></>}
     </main>
-    <footer className="site-footer shell"><a href="/">← Retour à l’EPK</a><p>BRAIDSPLACE · LIVE HAIR ART</p></footer>
+    <footer className="site-footer shell"><a href="/">← Back to the E-Press Kit</a><p>BRAIDSPLACE · LIVE HAIR ART</p></footer>
   </>;
 }
 
@@ -101,8 +101,8 @@ function HomePage() {
         <div className="home-backdrop" aria-hidden="true"><video src="/videos/braidsplace-cover.mp4" poster="/videos/braidsplace-cover-poster.jpg" autoPlay={!reduceMotion} muted loop playsInline preload="metadata" tabIndex={-1} /></div>
         <ScrollStory />
         <MinimalistHairArt immersive />
+        <AfricaTour />
       </div>
-      <AfricaTour />
       <AnnexNavigation />
     </main>
     <footer className="site-footer shell"><a className="brand" href="#accueil">BRAIDSPLACE</a><p>Live Hair Art · E-Press Kit</p><a href="#accueil">Back to top ↑</a></footer>

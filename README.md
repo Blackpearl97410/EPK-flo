@@ -24,7 +24,7 @@ Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Gi
 
 ## Nouvelle maquette à valider
 
-Sur la branche de navigation par chapitres, la vidéo de couverture reste fixe et boucle pendant que les phrases proposées par Flo se succèdent au défilement. Elle reste visible derrière la présentation de Flow, qui arrive latéralement. L'Africa Tour suit sur la page principale ; le film, la galerie et les statistiques s'ouvrent chacun dans une page annexe via `?page=film`, `?page=galerie` et `?page=statistiques`. Cette direction et la formulation finale des phrases attendent la validation de Flo. Les descriptions détaillées plus bas conservent l'historique de la maquette précédente.
+Sur la branche de navigation par chapitres, la vidéo de couverture reste fixe et boucle pendant que les phrases anglaises proposées par Flo se succèdent de gauche à droite au défilement. Elle reste visible derrière la présentation de Flow, dont le portrait original est agrandi et dont le panneau brun est rendu blanc par un filtre sélectif. L'Africa Tour entre de droite à gauche sur ce même fond ; sa carte et son itinéraire en pointillés restent fixes. Les étapes affichées sont Réunion Island, Cape Town (International Jazz Festival), Johannesburg et Tanzania. Le film, la galerie et les statistiques s'ouvrent chacun dans une page annexe via `?page=film`, `?page=galerie` et `?page=statistiques`. La direction et les formulations finales attendent la validation de Flo. Les descriptions détaillées plus bas conservent l'historique de la maquette précédente.
 
 ## Organisation
 

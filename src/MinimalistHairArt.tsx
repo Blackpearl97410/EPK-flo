@@ -15,6 +15,22 @@ export function MinimalistHairArt({ immersive = false }: { immersive?: boolean }
       viewport={{ once: true, amount: 0.16 }}
       transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
     >
+      <svg className="portrait-filter-defs" aria-hidden="true" focusable="false">
+        <defs>
+          <filter id="portrait-white-panel" colorInterpolationFilters="sRGB">
+            <feColorMatrix
+              in="SourceGraphic"
+              type="matrix"
+              values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  8 0 -8 0 -0.2"
+              result="brown-panel-mask"
+            />
+            <feComposite in="SourceGraphic" in2="brown-panel-mask" operator="out" result="portrait-only" />
+            <feFlood floodColor="#fffdf8" result="white" />
+            <feComposite in="white" in2="brown-panel-mask" operator="in" result="white-panel" />
+            <feMerge><feMergeNode in="portrait-only" /><feMergeNode in="white-panel" /></feMerge>
+          </filter>
+        </defs>
+      </svg>
       <div className="minimalist-hair-header">
         <a className="minimalist-hair-brand" href="#accueil">BRAIDSPLACE</a>
         <nav className="minimalist-hair-nav" aria-label="Explore the E-Press Kit">
@@ -35,7 +51,7 @@ export function MinimalistHairArt({ immersive = false }: { immersive?: boolean }
         <motion.img
           className="minimalist-hair-portrait"
           src="/images/live-hair-art-portrait.webp"
-          alt="Black-and-white portrait of a person with a sculptural hairstyle in front of a tilted brown panel."
+          alt="Black-and-white portrait of a person with a sculptural hairstyle in front of a tilted white panel."
           loading="lazy"
           decoding="async"
           variants={{
