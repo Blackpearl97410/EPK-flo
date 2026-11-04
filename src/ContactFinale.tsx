@@ -6,10 +6,13 @@ export function ContactFinale() {
         src="/videos/braidsplace-cover-poster.jpg"
         alt="Four models with sculptural braided hairstyles in the Live Hair Art film."
       />
-      <div className="contact-finale-details">
-        <a href="tel:+2620693829316">+262 0693829316</a>
-        <a href="mailto:BRAIDSPLACE.ZA@GMAIL.COM">BRAIDSPLACE.ZA@GMAIL.COM</a>
-        <span>IG BRAIDSPLACE</span>
+      <div className="contact-finale-content">
+        <h2>CONTACT</h2>
+        <div className="contact-finale-details">
+          <a href="tel:+2620693829316">+262 0693829316</a>
+          <a href="mailto:BRAIDSPLACE.ZA@GMAIL.COM">BRAIDSPLACE.ZA@GMAIL.COM</a>
+          <span>IG BRAIDSPLACE</span>
+        </div>
       </div>
     </section>
   );
