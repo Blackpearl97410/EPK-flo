@@ -10,9 +10,9 @@ export function MinimalistHairArt({ immersive = false }: { immersive?: boolean }
       className={`minimalist-hair${immersive ? " minimalist-hair--immersive" : ""}`}
       id="artiste"
       aria-labelledby="minimalist-hair-title"
-      initial={reduceMotion ? false : { opacity: 0, x: "12vw" }}
+      initial={reduceMotion ? false : { opacity: 0, x: "72vw" }}
       whileInView={reduceMotion ? undefined : { opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.16 }}
+      viewport={{ once: true, amount: 0.12 }}
       transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
     >
       <svg className="portrait-filter-defs" aria-hidden="true" focusable="false">
@@ -55,7 +55,7 @@ export function MinimalistHairArt({ immersive = false }: { immersive?: boolean }
           loading="lazy"
           decoding="async"
           variants={{
-            hidden: { opacity: 0, x: -70, scale: 0.94 },
+            hidden: { opacity: 0, x: 70, scale: 0.94 },
             visible: { opacity: 1, x: 0, scale: 1, transition },
           }}
         />

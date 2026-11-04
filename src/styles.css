@@ -1407,12 +1407,14 @@ html:has(.scroll-story) {
 .scroll-story-message h2 {
   max-width: 1150px;
   margin: 0;
-  font: 400 clamp(48px, 7vw, 108px)/1.03 var(--editorial);
+  font: 400 clamp(32px, 5.5vw, 84px)/1.1 var(--display);
+  font-variation-settings: 'YEAR' 1979;
+  letter-spacing: .012em;
   text-wrap: balance;
 }
 .scroll-story-message h2 em {
   color: #f2c587;
-  font-weight: 400;
+  font: inherit;
 }
 .scroll-story-count {
   margin-top: clamp(30px, 6vw, 80px);
@@ -1668,7 +1670,7 @@ html:has(.scroll-story) {
     padding: 32px 25px;
   }
   .scroll-story-message h2 {
-    font-size: clamp(44px, 11vw, 68px);
+    font-size: clamp(28px, 8vw, 44px);
   }
   .scroll-story-cue {
     font-size: 10px;
