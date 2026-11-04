@@ -22,12 +22,17 @@ npm run preview
 
 Le dossier `dist/` est généré par le build et ne doit pas être ajouté à Git.
 
+## Nouvelle maquette à valider
+
+Sur la branche de navigation par chapitres, la vidéo de couverture reste fixe et boucle pendant que les phrases anglaises proposées par Flo se succèdent de gauche à droite au défilement. Leurs titres utilisent Climate Crisis, y compris les mots colorés, avec Manrope pour les repères. Juste après « Live Canvas », la présentation de Flow remplace le texte sur ce même écran fixe en entrant de droite à gauche ; son portrait original est agrandi, remonté et son panneau brun est rendu blanc par un filtre sélectif. L'Africa Tour constitue le chapitre suivant et entre aussi de droite à gauche sur le même fond ; sa carte et son itinéraire en pointillés restent fixes. Les étapes affichées sont Réunion Island, Cape Town (International Jazz Festival), Johannesburg et Tanzania. Le film, la galerie et les statistiques s'ouvrent chacun dans une page annexe via `?page=film`, `?page=galerie` et `?page=statistiques`. La direction et les formulations finales attendent la validation de Flo. Les descriptions détaillées plus bas conservent l'historique de la maquette précédente.
+
 ## Organisation
 
 - `index.html` : point d'entrée HTML et métadonnées.
-- `src/App.tsx` : sections et textes de l'EPK.
-- `src/ScrollExpandVideo.tsx` : section du film en couleur et animation au défilement.
-- `src/MinimalistHairArt.tsx` : portrait et présentation « L’ARTISTE » en troisième section.
+- `src/App.tsx` : accueil, navigation et pages annexes de l'EPK.
+- `src/ScrollStory.tsx` : phrases successives sur la vidéo fixe de couverture.
+- `src/ScrollExpandVideo.tsx` : prototype précédent de l'expansion du film, conservé dans le dépôt mais non affiché dans la nouvelle maquette.
+- `src/MinimalistHairArt.tsx` : portrait et présentation de Flow sur la vidéo de couverture.
 - `src/StatisticsRunway.tsx` : section de statistiques en trois tableaux, pilotée par les boutons précédent/suivant.
 - `src/styles.css` : identité visuelle responsive et Tailwind.
 - `src/main.tsx` : montage de l'application React.

@@ -1,37 +1,63 @@
 import { motion, useReducedMotion } from "motion/react";
 
 /** Composition adaptée du « Minimalist Hero » de @ravikatiyar162 sur 21st.dev. */
-export function MinimalistHairArt() {
+export function MinimalistHairArt({ immersive = false, pinned = false }: { immersive?: boolean; pinned?: boolean }) {
   const reduceMotion = useReducedMotion();
   const transition = { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const };
 
   return (
-    <section className="minimalist-hair" id="artiste" aria-labelledby="minimalist-hair-title">
+    <motion.section
+      className={`minimalist-hair${immersive ? " minimalist-hair--immersive" : ""}`}
+      id={pinned ? undefined : "artiste"}
+      aria-labelledby="minimalist-hair-title"
+      initial={reduceMotion || pinned ? false : { opacity: 0, x: "72vw" }}
+      whileInView={reduceMotion || pinned ? undefined : { opacity: 1, x: 0 }}
+      viewport={{ once: true, amount: 0.12 }}
+      transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <svg className="portrait-filter-defs" aria-hidden="true" focusable="false">
+        <defs>
+          <filter id="portrait-white-panel" colorInterpolationFilters="sRGB">
+            <feColorMatrix
+              in="SourceGraphic"
+              type="matrix"
+              values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  8 0 -8 0 -0.2"
+              result="brown-panel-mask"
+            />
+            <feComposite in="SourceGraphic" in2="brown-panel-mask" operator="out" result="portrait-only" />
+            <feFlood floodColor="#fffdf8" result="white" />
+            <feComposite in="white" in2="brown-panel-mask" operator="in" result="white-panel" />
+            <feMerge><feMergeNode in="portrait-only" /><feMergeNode in="white-panel" /></feMerge>
+          </filter>
+        </defs>
+      </svg>
       <div className="minimalist-hair-header">
         <a className="minimalist-hair-brand" href="#accueil">BRAIDSPLACE</a>
         <nav className="minimalist-hair-nav" aria-label="Explore the E-Press Kit">
-          <a href="#images">GALLERY</a>
-          <a href="#statistiques">STATISTICS</a>
+          <a href="/?page=film">FILM</a>
+          <a href="/?page=galerie">GALLERY</a>
+          <a href="/?page=statistiques">STATISTICS</a>
           <a href="#parcours">AFRICA TOUR</a>
         </nav>
       </div>
 
       <motion.div
         className="minimalist-hair-stage"
-        initial={reduceMotion ? false : "hidden"}
-        whileInView={reduceMotion ? undefined : "visible"}
+        initial={reduceMotion || pinned ? false : "hidden"}
+        animate={pinned ? "visible" : undefined}
+        whileInView={reduceMotion || pinned ? undefined : "visible"}
         viewport={{ once: true, amount: 0.15 }}
         variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.18, delayChildren: 0.08 } } }}
       >
         <motion.img
           className="minimalist-hair-portrait"
           src="/images/live-hair-art-portrait.webp"
-          alt="Black-and-white portrait of a person with a sculptural hairstyle in front of a tilted brown panel."
+          alt="Black-and-white portrait of a person with a sculptural hairstyle in front of a tilted white panel."
           loading="lazy"
           decoding="async"
           variants={{
-            hidden: { opacity: 0, y: 70, scale: 0.94 },
-            visible: { opacity: 1, y: 0, scale: 1, transition },
+            hidden: { opacity: 0, x: 70, scale: 0.94 },
+            visible: { opacity: 1, x: 0, scale: 1, transition },
           }}
         />
         <motion.div
@@ -57,6 +83,6 @@ export function MinimalistHairArt() {
       <div className="minimalist-hair-footer">
         <span>BRAIDSPLACE · RÉUNION ISLAND</span>
       </div>
-    </section>
+    </motion.section>
   );
 }

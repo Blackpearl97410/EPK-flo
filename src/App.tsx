@@ -1,206 +1,114 @@
 import { useRef, useState, type PropsWithChildren } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import { ScrollExpandVideo } from "./ScrollExpandVideo";
-import { MinimalistHairArt } from "./MinimalistHairArt";
+import { ScrollStory } from "./ScrollStory";
 import { StatisticsRunway } from "./StatisticsRunway";
-import { AfricaTour } from "./AfricaTour";
 
-function Reveal({
-  children,
-  className = "",
-}: PropsWithChildren<{ className?: string }>) {
+function Reveal({ children, className = "" }: PropsWithChildren<{ className?: string }>) {
   const reduceMotion = useReducedMotion();
-  return (
-    <motion.div
-      className={className}
-      initial={reduceMotion ? false : { opacity: 0, y: 24 }}
-      whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.12 }}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-    >
-      {children}
-    </motion.div>
-  );
+  return <motion.div className={className} initial={reduceMotion ? false : { opacity: 0 }} whileInView={reduceMotion ? undefined : { opacity: 1 }} viewport={{ once: true, amount: 0.12 }} transition={{ duration: 0.7 }}>{children}</motion.div>;
 }
 
 const photographs = [
-  {
-    src: "/images/tableau-tresses-graphiques.webp",
-    alt: "Model leaning against a railing, with braids sweeping in large curves in front of a light panel.",
-  },
-  {
-    src: "/images/tableau-fleur.webp",
-    alt: "Portrait of a model with a voluminous hairstyle, a pink flower and a brightly colored outfit.",
-  },
-  {
-    src: "/images/tableau-portrait-nb-femme.webp",
-    alt: "Black-and-white portrait of a model with a voluminous Afro hairstyle in front of a light panel.",
-  },
-  {
-    src: "/images/tableau-portrait-nb-homme.webp",
-    alt: "Black-and-white portrait of a model in a white shirt with a sculptural Afro hairstyle.",
-  },
+  { src: "/images/tableau-tresses-graphiques.webp", alt: "Model leaning against a railing, with braids sweeping in large curves in front of a light panel." },
+  { src: "/images/tableau-fleur.webp", alt: "Portrait of a model with a voluminous hairstyle, a pink flower and a brightly colored outfit." },
+  { src: "/images/tableau-portrait-nb-femme.webp", alt: "Black-and-white portrait of a model with a voluminous Afro hairstyle in front of a light panel." },
+  { src: "/images/tableau-portrait-nb-homme.webp", alt: "Black-and-white portrait of a model in a white shirt with a sculptural Afro hairstyle." },
 ];
 
-function App() {
+const annexes = [
+  { href: "/?page=film", label: "THE FILM", detail: "Live Hair Art", image: "/videos/braidsplace-couleur-poster.jpg" },
+  { href: "/?page=galerie", label: "GALLERY", detail: "Living tableaux", image: photographs[0].src },
+  { href: "/?page=statistiques", label: "STATISTICS", detail: "BRAIDSPLACE in numbers", image: "/images/statistics-rose.jpg" },
+];
+
+function AnnexNavigation() {
+  return <section className="annex-navigation section-pad" id="annexes" aria-labelledby="annexes-title"><div className="shell">
+    <p className="kicker">BRAIDSPLACE / E-PRESS KIT</p>
+    <h2 id="annexes-title">Explore more</h2>
+    <div className="annex-grid">{annexes.map((annex, index) => <a className="annex-card" href={annex.href} key={annex.href}>
+      <img src={annex.image} alt="" loading="lazy" decoding="async" />
+      <span className="annex-card-number">0{index + 1}</span>
+      <span className="annex-card-text"><strong>{annex.label}</strong><small>{annex.detail}</small></span>
+      <span className="annex-card-arrow" aria-hidden="true">↗</span>
+    </a>)}</div>
+  </div></section>;
+}
+
+function GalleryPage() {
   const reduceMotion = useReducedMotion();
   const galleryRef = useRef<HTMLDivElement>(null);
   const [activePhoto, setActivePhoto] = useState(0);
-
   const moveGallery = (direction: -1 | 1) => {
     const gallery = galleryRef.current;
     if (!gallery) return;
-
     const cards = gallery.querySelectorAll<HTMLElement>(".photo-card");
     if (!cards.length) return;
     const next = Math.max(0, Math.min(cards.length - 1, activePhoto + direction));
-    gallery.scrollTo({
-      left: cards[next].offsetLeft - cards[0].offsetLeft,
-      behavior: reduceMotion ? "auto" : "smooth",
-    });
+    gallery.scrollTo({ left: cards[next].offsetLeft - cards[0].offsetLeft, behavior: reduceMotion ? "auto" : "smooth" });
     setActivePhoto(next);
   };
-
   const updateActivePhoto = () => {
     const gallery = galleryRef.current;
     if (!gallery) return;
-
     const cards = gallery.querySelectorAll<HTMLElement>(".photo-card");
     if (cards.length < 2) return;
     const step = cards[1].offsetLeft - cards[0].offsetLeft;
     const atEnd = gallery.scrollLeft >= gallery.scrollWidth - gallery.clientWidth - 2;
     setActivePhoto(atEnd ? cards.length - 1 : Math.round(gallery.scrollLeft / step));
   };
-
-  return (
-    <>
-      <a className="skip-link" href="#contenu">
-        Skip to content
-      </a>
-      <main id="contenu">
-        <section
-          className="video-hero"
-          id="accueil"
-          aria-labelledby="hero-title"
-        >
-          <video
-            className="video-hero-media"
-            src="/videos/braidsplace-cover.mp4"
-            poster="/videos/braidsplace-cover-poster.jpg"
-            autoPlay={!reduceMotion}
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            aria-hidden="true"
-            tabIndex={-1}
-          />
-          <div className="video-hero-content">
-            <p className="video-hero-stamp">THIS IS</p>
-            <h1 id="hero-title">BRAIDSPLACE</h1>
-            <p className="video-hero-manifesto">
-              <span>BEYOND HAIRSTYLING. BEYOND AN EXHIBITION.</span>
-              <span>A MEETING OF <mark>ARTISTIC WORLDS.</mark></span>
-              <span><mark>A LIVING EXPERIENCE WHERE ART COMES TO LIFE.</mark></span>
-              <span>ART THAT IS NOT MERELY SEEN, BUT EXPERIENCED.</span>
-            </p>
-            <a className="video-hero-link" href="#portrait">LEARN MORE</a>
-          </div>
-        </section>
-        <motion.section
-          className="film-photo-section"
-          id="portrait"
-          aria-labelledby="press-kit-title"
-          initial={reduceMotion ? false : { opacity: 0 }}
-          whileInView={reduceMotion ? undefined : { opacity: 1 }}
-          viewport={{ once: true, amount: 0.16 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-        >
-          <div className="film-photo-copy">
-            <p className="film-photo-kicker">E-PRESS KIT</p>
-            <h2 id="press-kit-title">Flow</h2>
-            <p>
-              Welcome to this E-Press Kit, an invitation to enter the world of <strong>Flow</strong>, hair artist and art director, where hairstyling goes beyond its original purpose to become a true form of expression.
-            </p>
-            <p>
-              Through her creations, Flow explores the connections between <strong>art, culture, identity and movement</strong>.
-            </p>
-            <p>
-              A singular world where every creation tells a story, hair becomes an artistic medium, and art is not merely seen, but lived.
-            </p>
-          </div>
-          <div className="film-photo-frame">
-            <img
-              src="/images/portrait-adriiii.webp"
-              alt="Portrait of a person in front of a white panel, with long sculptural braids."
-              decoding="async"
-            />
-          </div>
-        </motion.section>
-        <MinimalistHairArt />
-        <ScrollExpandVideo />
-        <section
-          className="visuals section-pad shell"
-          id="images"
-          aria-labelledby="visuals-title"
-        >
-          <Reveal className="section-heading">
-            <h2 id="visuals-title">
-              A concept:
-              <br />
-              <span>bringing things to life</span>
-            </h2>
-            <p className="kicker gallery-subtitle">GALLERY</p>
-          </Reveal>
-          <Reveal className="visual-note">
-            <div className="gallery-controls" aria-label="Gallery controls">
-              <button
-                type="button"
-                aria-label="Previous photo"
-                onClick={() => moveGallery(-1)}
-                disabled={activePhoto === 0}
-              >
-                ←
-              </button>
-              <button
-                type="button"
-                aria-label="Next photo"
-                onClick={() => moveGallery(1)}
-                disabled={activePhoto === photographs.length - 1}
-              >
-                →
-              </button>
-            </div>
-            <div
-              className="photo-grid"
-              ref={galleryRef}
-              role="region"
-              aria-label="Live Hair Art photographs"
-              tabIndex={0}
-              onScroll={updateActivePhoto}
-            >
-              {photographs.map((photo) => (
-                <figure className="photo-card" key={photo.src}>
-                  <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
-                </figure>
-              ))}
-            </div>
-          </Reveal>
-        </section>
-        <StatisticsRunway />
-        <AfricaTour />
-        <div className="intro-worknote shell">
-          <span>BRAIDSPLACE · RÉUNION ISLAND</span>
-        </div>
-      </main>
-      <footer className="site-footer shell">
-        <a className="brand" href="#accueil">
-          BRAIDSPLACE
-        </a>
-        <p>Work in progress · Content and visuals pending Flow’s approval</p>
-        <a href="#accueil">Back to top ↑</a>
-      </footer>
-    </>
-  );
+  return <section className="visuals section-pad shell" id="images" aria-labelledby="visuals-title">
+    <Reveal className="section-heading"><h2 id="visuals-title">A concept:<br /><span>bringing things to life</span></h2><p className="kicker gallery-subtitle">GALLERY</p></Reveal>
+    <Reveal className="visual-note"><div className="gallery-controls" aria-label="Gallery controls">
+      <button type="button" aria-label="Previous photo" onClick={() => moveGallery(-1)} disabled={activePhoto === 0}>←</button>
+      <button type="button" aria-label="Next photo" onClick={() => moveGallery(1)} disabled={activePhoto === photographs.length - 1}>→</button>
+    </div><div className="photo-grid" ref={galleryRef} role="region" aria-label="Live Hair Art photographs" tabIndex={0} onScroll={updateActivePhoto}>
+      {photographs.map((photo) => <figure className="photo-card" key={photo.src}><img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" /></figure>)}
+    </div></Reveal>
+  </section>;
 }
+
+function AnnexHeader({ current }: { current: string }) {
+  return <header className="annex-header shell"><a className="brand" href="/">BRAIDSPLACE</a><nav aria-label="Explore the E-Press Kit">
+    <a href="/">HOME</a>{annexes.filter((annex) => annex.label !== current).map((annex) => <a href={annex.href} key={annex.href}>{annex.label}</a>)}
+  </nav></header>;
+}
+
+function AnnexPage({ page }: { page: "film" | "galerie" | "statistiques" }) {
+  const label = page === "film" ? "THE FILM" : page === "galerie" ? "GALLERY" : "STATISTICS";
+  return <>
+    <a className="skip-link" href="#contenu">Skip to content</a>
+    <AnnexHeader current={label} />
+    <main id="contenu" className="annex-page">
+      {page === "film" && <section className="annex-film shell" aria-labelledby="annex-film-title">
+        <p className="kicker">BRAIDSPLACE / FILM</p><h1 id="annex-film-title">Live Hair Art</h1>
+        <video src="/videos/braidsplace-couleur.mp4" poster="/videos/braidsplace-couleur-poster.jpg" controls playsInline preload="metadata" aria-label="BRAIDSPLACE color film: hairstyles, models and artistic preparation" />
+      </section>}
+      {page === "galerie" && <><h1 className="sr-only">Gallery</h1><GalleryPage /></>}
+      {page === "statistiques" && <><h1 className="sr-only">Statistics</h1><StatisticsRunway /></>}
+    </main>
+    <footer className="site-footer shell"><a href="/">← Back to the E-Press Kit</a><p>BRAIDSPLACE · LIVE HAIR ART</p></footer>
+  </>;
+}
+
+function HomePage() {
+  const reduceMotion = useReducedMotion();
+  return <>
+    <a className="skip-link" href="#artiste">Skip to content</a>
+    <main id="contenu">
+      <div className="home-immersive">
+        <div className="home-backdrop" aria-hidden="true"><video src="/videos/braidsplace-cover.mp4" poster="/videos/braidsplace-cover-poster.jpg" autoPlay={!reduceMotion} muted loop playsInline preload="metadata" tabIndex={-1} /></div>
+        <ScrollStory />
+      </div>
+      <AnnexNavigation />
+    </main>
+    <footer className="site-footer shell"><a className="brand" href="#accueil">BRAIDSPLACE</a><p>Live Hair Art · E-Press Kit</p><a href="#accueil">Back to top ↑</a></footer>
+  </>;
+}
+
+function App() {
+  const page = new URLSearchParams(window.location.search).get("page");
+  if (page === "film" || page === "galerie" || page === "statistiques") return <AnnexPage page={page} />;
+  return <HomePage />;
+}
+
 export default App;
