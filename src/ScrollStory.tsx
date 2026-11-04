@@ -66,7 +66,7 @@ export function ScrollStory() {
       <div className="scroll-story-stage">
         <AnimatePresence mode="sync" initial={initialStage !== 0}>
           {active === 0 ? (
-            <motion.div className="video-hero-content scroll-story-content" key="cover" variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 0.65, ease: [0.22, 1, 0.36, 1] }}>
+            <motion.div className="video-hero-content scroll-story-content" key="cover" variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 1.35, ease: [0.22, 1, 0.36, 1] }}>
               <p className="video-hero-stamp">THIS IS</p>
               <p className="scroll-story-brand">BRAIDSPLACE</p>
               <p className="video-hero-manifesto">
@@ -78,23 +78,23 @@ export function ScrollStory() {
               <a className="video-hero-link" href="#artiste">LEARN MORE</a>
             </motion.div>
           ) : active === artistStage ? (
-            <motion.div className="scroll-story-chapter" key="artist" variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 0.9, ease: [0.22, 1, 0.36, 1] }}>
+            <motion.div className="scroll-story-chapter" key="artist" variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 1.5, ease: [0.22, 1, 0.36, 1] }}>
               <MinimalistHairArt immersive pinned />
             </motion.div>
           ) : active === tourStage ? (
-            <motion.div className="scroll-story-chapter" key="tour" variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 0.9, ease: [0.22, 1, 0.36, 1] }}>
+            <motion.div className="scroll-story-chapter" key="tour" variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 1.5, ease: [0.22, 1, 0.36, 1] }}>
               <AfricaTour pinned />
             </motion.div>
           ) : active === exploreStage ? (
-            <motion.div className="scroll-story-chapter" key="explore" variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 0.9, ease: [0.22, 1, 0.36, 1] }}>
+            <motion.div className="scroll-story-chapter" key="explore" variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 1.5, ease: [0.22, 1, 0.36, 1] }}>
               <ExploreMore />
             </motion.div>
           ) : active === contactStage ? (
-            <motion.div className="scroll-story-chapter" key="contact" variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 0.9, ease: [0.22, 1, 0.36, 1] }}>
+            <motion.div className="scroll-story-chapter" key="contact" variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 1.5, ease: [0.22, 1, 0.36, 1] }}>
               <ContactFinale />
             </motion.div>
           ) : (
-            <motion.div className="scroll-story-message" key={active} variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 0.65, ease: [0.22, 1, 0.36, 1] }}>
+            <motion.div className="scroll-story-message" key={active} variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 1.35, ease: [0.22, 1, 0.36, 1] }}>
               <p className="scroll-story-eyebrow">BRAIDSPLACE / LIVE HAIR ART</p>
               <h2>{messages[active - 1]}</h2>
               <span className="scroll-story-count">0{active + 1} / 0{messages.length + 1}</span>

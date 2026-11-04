@@ -1359,8 +1359,9 @@ html:has(.scroll-story) {
 .scroll-story {
   position: relative;
   z-index: 1;
-  height: 960vh;
-  height: 960svh;
+  /* Nine chapters, with 1.6 viewport heights of scroll per chapter. */
+  height: 1540vh;
+  height: 1540svh;
 }
 .scroll-story-artist-anchor,
 .scroll-story-tour-anchor,
@@ -1372,20 +1373,20 @@ html:has(.scroll-story) {
   height: 1px;
 }
 .scroll-story-artist-anchor {
-  top: 520vh;
-  top: 520svh;
+  top: 880vh;
+  top: 880svh;
 }
 .scroll-story-tour-anchor {
-  top: 615vh;
-  top: 615svh;
+  top: 1040vh;
+  top: 1040svh;
 }
 .scroll-story-explore-anchor {
-  top: 710vh;
-  top: 710svh;
+  top: 1200vh;
+  top: 1200svh;
 }
 .scroll-story-contact-anchor {
-  top: 810vh;
-  top: 810svh;
+  top: 1360vh;
+  top: 1360svh;
 }
 .scroll-story-stage {
   position: sticky;
