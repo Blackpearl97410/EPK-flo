@@ -1359,12 +1359,13 @@ html:has(.scroll-story) {
 .scroll-story {
   position: relative;
   z-index: 1;
-  height: 860vh;
-  height: 860svh;
+  height: 960vh;
+  height: 960svh;
 }
 .scroll-story-artist-anchor,
 .scroll-story-tour-anchor,
-.scroll-story-explore-anchor {
+.scroll-story-explore-anchor,
+.scroll-story-contact-anchor {
   position: absolute;
   left: 0;
   width: 1px;
@@ -1381,6 +1382,10 @@ html:has(.scroll-story) {
 .scroll-story-explore-anchor {
   top: 710vh;
   top: 710svh;
+}
+.scroll-story-contact-anchor {
+  top: 810vh;
+  top: 810svh;
 }
 .scroll-story-stage {
   position: sticky;
@@ -1610,6 +1615,53 @@ html:has(.scroll-story) {
 }
 .explore-more-links a:focus-visible {
   outline-color: var(--clay);
+}
+.contact-finale {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 100svh;
+  padding: clamp(28px, 6vw, 100px);
+  isolation: isolate;
+  overflow: hidden;
+  color: var(--film-ivory);
+  background: var(--brown);
+}
+.contact-finale::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: '';
+  background: linear-gradient(180deg, transparent 35%, rgba(17, 12, 8, .86));
+}
+.contact-finale-image {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.contact-finale-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(12px, 2.5vw, 36px);
+  width: 100%;
+  font: 700 clamp(16px, 1.5vw, 20px)/1.5 var(--body);
+  letter-spacing: .045em;
+}
+.contact-finale-details a {
+  text-decoration: underline;
+  text-underline-offset: .25em;
+}
+.contact-finale-details a:hover,
+.contact-finale-details a:focus-visible {
+  color: var(--gold);
+}
+.contact-finale-details a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
 }
 .annex-screen {
   min-height: 100svh;

@@ -3,6 +3,7 @@ import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScro
 import { MinimalistHairArt } from "./MinimalistHairArt";
 import { AfricaTour } from "./AfricaTour";
 import { ExploreMore } from "./ExploreMore";
+import { ContactFinale } from "./ContactFinale";
 
 const messages = [
   <>Welcome to <em>Flow’s artistic world.</em></>,
@@ -20,8 +21,9 @@ const still = { enter: { opacity: 0 }, center: { opacity: 1 }, exit: { opacity: 
 const artistStage = messages.length + 1;
 const tourStage = artistStage + 1;
 const exploreStage = tourStage + 1;
-const stageCount = exploreStage + 1;
-const anchorStages = { artiste: artistStage, parcours: tourStage, annexes: exploreStage } as const;
+const contactStage = exploreStage + 1;
+const stageCount = contactStage + 1;
+const anchorStages = { artiste: artistStage, parcours: tourStage, annexes: exploreStage, contact: contactStage } as const;
 
 function stageFromHash() {
   return anchorStages[window.location.hash.slice(1) as keyof typeof anchorStages] ?? 0;
@@ -37,7 +39,7 @@ export function ScrollStory() {
 
   useMotionValueEvent(scrollYProgress, "change", (progress) => {
     if (deepLinkPending.current) return;
-    setActive(Math.max(0, Math.min(exploreStage, Math.floor(progress * stageCount))));
+    setActive(Math.max(0, Math.min(contactStage, Math.floor(progress * stageCount))));
   });
 
   useEffect(() => {
@@ -60,6 +62,7 @@ export function ScrollStory() {
       <span className="scroll-story-artist-anchor" id="artiste" tabIndex={-1} aria-label="The Artist" />
       <span className="scroll-story-tour-anchor" id="parcours" tabIndex={-1} aria-label="Africa Tour" />
       <span className="scroll-story-explore-anchor" id="annexes" tabIndex={-1} aria-label="Explore more" />
+      <span className="scroll-story-contact-anchor" id="contact" tabIndex={-1} aria-label="Contact" />
       <div className="scroll-story-stage">
         <AnimatePresence mode="sync" initial={initialStage !== 0}>
           {active === 0 ? (
@@ -85,6 +88,10 @@ export function ScrollStory() {
           ) : active === exploreStage ? (
             <motion.div className="scroll-story-chapter" key="explore" variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 0.9, ease: [0.22, 1, 0.36, 1] }}>
               <ExploreMore />
+            </motion.div>
+          ) : active === contactStage ? (
+            <motion.div className="scroll-story-chapter" key="contact" variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 0.9, ease: [0.22, 1, 0.36, 1] }}>
+              <ContactFinale />
             </motion.div>
           ) : (
             <motion.div className="scroll-story-message" key={active} variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 0.65, ease: [0.22, 1, 0.36, 1] }}>
