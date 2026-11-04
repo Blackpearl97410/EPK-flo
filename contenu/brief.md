@@ -34,8 +34,8 @@ Ce fichier rassemble les éléments à confirmer avec Flo. Les quatre PDF dans l
 
 ## Contact et validation
 
-- Contact professionnel à afficher : à valider
-- Liens officiels BRAIDSPLACE : à fournir
+- Contacts fournis par Flo pour la page finale : +262 0693829316, BRAIDSPLACE.ZA@GMAIL.COM, IG BRAIDSPLACE.
+- Lien officiel Instagram BRAIDSPLACE : à fournir si le libellé doit devenir cliquable.
 - Public principal de l'EPK : lieux, programmateurs, partenaires et presse, à hiérarchiser avec Flo
 - Direction graphique de travail : voir charte-graphique.md, à approuver après visualisation
 - Hébergement et adresse finale : à décider après validation des contenus
