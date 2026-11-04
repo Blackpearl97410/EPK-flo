@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
 import { MinimalistHairArt } from "./MinimalistHairArt";
 import { AfricaTour } from "./AfricaTour";
+import { ExploreMore } from "./ExploreMore";
 
 const messages = [
   <>Welcome to <em>Flow’s artistic world.</em></>,
@@ -27,7 +28,8 @@ const chapterSlide = {
 const still = { enter: { opacity: 0 }, center: { opacity: 1 }, exit: { opacity: 0 } };
 const artistStage = messages.length + 1;
 const tourStage = artistStage + 1;
-const stageCount = tourStage + 1;
+const exploreStage = tourStage + 1;
+const stageCount = exploreStage + 1;
 
 export function ScrollStory() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -36,7 +38,7 @@ export function ScrollStory() {
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end end"] });
 
   useMotionValueEvent(scrollYProgress, "change", (progress) => {
-    const next = Math.min(tourStage, Math.floor(progress * stageCount));
+    const next = Math.min(exploreStage, Math.floor(progress * stageCount));
     setStage((current) => next === current.active ? current : { active: next, direction: next > current.active ? 1 : -1 });
   });
 
@@ -49,6 +51,7 @@ export function ScrollStory() {
       </ol>
       <span className="scroll-story-artist-anchor" id="artiste" tabIndex={-1} aria-label="The Artist" />
       <span className="scroll-story-tour-anchor" id="parcours" tabIndex={-1} aria-label="Africa Tour" />
+      <span className="scroll-story-explore-anchor" id="annexes" tabIndex={-1} aria-label="Explore more" />
       <div className="scroll-story-stage">
         <AnimatePresence custom={direction} mode="sync" initial={false}>
           {active === 0 ? (
@@ -70,6 +73,10 @@ export function ScrollStory() {
           ) : active === tourStage ? (
             <motion.div className="scroll-story-chapter" key="tour" custom={direction} variants={reduceMotion ? still : chapterSlide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 0.9, ease: [0.22, 1, 0.36, 1] }}>
               <AfricaTour pinned />
+            </motion.div>
+          ) : active === exploreStage ? (
+            <motion.div className="scroll-story-chapter" key="explore" custom={direction} variants={reduceMotion ? still : chapterSlide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 0.9, ease: [0.22, 1, 0.36, 1] }}>
+              <ExploreMore />
             </motion.div>
           ) : (
             <motion.div className="scroll-story-message" key={active} custom={direction} variants={reduceMotion ? still : active === messages.length ? finalMessageSlide : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 0.65, ease: [0.22, 1, 0.36, 1] }}>
