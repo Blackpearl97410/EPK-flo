@@ -10,7 +10,7 @@ export function MinimalistHairArt({ immersive = false, pinned = false }: { immer
       className={`minimalist-hair${immersive ? " minimalist-hair--immersive" : ""}`}
       id={pinned ? undefined : "artiste"}
       aria-labelledby="minimalist-hair-title"
-      initial={reduceMotion || pinned ? false : { opacity: 0, x: "72vw" }}
+      initial={reduceMotion || pinned ? false : { opacity: 0, x: "-72vw" }}
       whileInView={reduceMotion || pinned ? undefined : { opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.12 }}
       transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
@@ -56,14 +56,14 @@ export function MinimalistHairArt({ immersive = false, pinned = false }: { immer
           loading="lazy"
           decoding="async"
           variants={{
-            hidden: { opacity: 0, x: 70, scale: 0.94 },
+            hidden: { opacity: 0, x: -70, scale: 0.94 },
             visible: { opacity: 1, x: 0, scale: 1, transition },
           }}
         />
         <motion.div
           className="minimalist-hair-copy"
           variants={{
-            hidden: { opacity: 0, x: 35 },
+            hidden: { opacity: 0, x: -35 },
             visible: { opacity: 1, x: 0, transition: { ...transition, duration: 0.75 } },
           }}
         >
