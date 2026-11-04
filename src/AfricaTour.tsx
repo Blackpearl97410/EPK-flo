@@ -17,15 +17,15 @@ const destinations = [
 
 const route = "M 666.5 565.5 C 620 585, 549 607, 500 625 C 443 651, 401 694, 357.6 679.7 C 388 671, 415 641, 437.2 611.2 C 466 566, 487 496, 494.3 432.1";
 
-export function AfricaTour() {
+export function AfricaTour({ pinned = false }: { pinned?: boolean }) {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="journey journey--immersive section-pad" id="parcours" aria-labelledby="journey-title">
+    <section className={`journey journey--immersive section-pad${pinned ? " journey--pinned" : ""}`} id={pinned ? undefined : "parcours"} aria-labelledby="journey-title">
       <motion.div
         className="shell tour-panel"
-        initial={reduceMotion ? false : { opacity: 0, x: "35vw" }}
-        whileInView={reduceMotion ? undefined : { opacity: 1, x: 0 }}
+        initial={reduceMotion || pinned ? false : { opacity: 0, x: "35vw" }}
+        whileInView={reduceMotion || pinned ? undefined : { opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.12 }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
       >

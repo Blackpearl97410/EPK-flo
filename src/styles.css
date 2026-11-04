@@ -1359,8 +1359,23 @@ html:has(.scroll-story) {
 .scroll-story {
   position: relative;
   z-index: 1;
-  height: 575vh;
-  height: 575svh;
+  height: 765vh;
+  height: 765svh;
+}
+.scroll-story-artist-anchor,
+.scroll-story-tour-anchor {
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 1px;
+}
+.scroll-story-artist-anchor {
+  top: 480vh;
+  top: 480svh;
+}
+.scroll-story-tour-anchor {
+  top: 575vh;
+  top: 575svh;
 }
 .scroll-story-stage {
   position: sticky;
@@ -1368,6 +1383,12 @@ html:has(.scroll-story) {
   height: 100vh;
   height: 100svh;
   overflow: hidden;
+}
+.scroll-story-chapter {
+  position: absolute;
+  inset: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .scroll-story-content {
   position: absolute;
@@ -1455,7 +1476,7 @@ html:has(.scroll-story) {
   min-height: 700px;
 }
 .minimalist-hair--immersive .minimalist-hair-portrait {
-  top: calc(2% + 35px);
+  top: calc(2% - 115px);
   left: -12%;
   width: min(110vw, 1300px);
   max-height: none;
@@ -1533,6 +1554,18 @@ html:has(.scroll-story) {
 }
 .journey--immersive .tour-stop p {
   color: #fff5e0;
+}
+.journey--pinned {
+  min-height: 100svh;
+}
+.journey--pinned .tour-stops {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 }
 .annex-navigation {
   background: var(--film-ivory);
@@ -1654,7 +1687,7 @@ html:has(.scroll-story) {
 }
 @media (max-width: 900px) {
   .minimalist-hair--immersive .minimalist-hair-portrait {
-    top: calc(16% + 45px);
+    top: calc(16% - 105px);
     left: -15%;
     width: 115vw;
   }
@@ -1685,7 +1718,7 @@ html:has(.scroll-story) {
     left: -8%;
     width: 116%;
     max-height: none;
-    margin-top: 48px;
+    margin-top: 0;
   }
   .minimalist-hair--immersive .minimalist-hair-copy {
     align-self: stretch;

@@ -1,17 +1,17 @@
 import { motion, useReducedMotion } from "motion/react";
 
 /** Composition adaptée du « Minimalist Hero » de @ravikatiyar162 sur 21st.dev. */
-export function MinimalistHairArt({ immersive = false }: { immersive?: boolean }) {
+export function MinimalistHairArt({ immersive = false, pinned = false }: { immersive?: boolean; pinned?: boolean }) {
   const reduceMotion = useReducedMotion();
   const transition = { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const };
 
   return (
     <motion.section
       className={`minimalist-hair${immersive ? " minimalist-hair--immersive" : ""}`}
-      id="artiste"
+      id={pinned ? undefined : "artiste"}
       aria-labelledby="minimalist-hair-title"
-      initial={reduceMotion ? false : { opacity: 0, x: "72vw" }}
-      whileInView={reduceMotion ? undefined : { opacity: 1, x: 0 }}
+      initial={reduceMotion || pinned ? false : { opacity: 0, x: "72vw" }}
+      whileInView={reduceMotion || pinned ? undefined : { opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.12 }}
       transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
     >
@@ -43,8 +43,9 @@ export function MinimalistHairArt({ immersive = false }: { immersive?: boolean }
 
       <motion.div
         className="minimalist-hair-stage"
-        initial={reduceMotion ? false : "hidden"}
-        whileInView={reduceMotion ? undefined : "visible"}
+        initial={reduceMotion || pinned ? false : "hidden"}
+        animate={pinned ? "visible" : undefined}
+        whileInView={reduceMotion || pinned ? undefined : "visible"}
         viewport={{ once: true, amount: 0.15 }}
         variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.18, delayChildren: 0.08 } } }}
       >

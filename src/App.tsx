@@ -1,9 +1,7 @@
 import { useRef, useState, type PropsWithChildren } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { ScrollStory } from "./ScrollStory";
-import { MinimalistHairArt } from "./MinimalistHairArt";
 import { StatisticsRunway } from "./StatisticsRunway";
-import { AfricaTour } from "./AfricaTour";
 
 function Reveal({ children, className = "" }: PropsWithChildren<{ className?: string }>) {
   const reduceMotion = useReducedMotion();
@@ -100,8 +98,6 @@ function HomePage() {
       <div className="home-immersive">
         <div className="home-backdrop" aria-hidden="true"><video src="/videos/braidsplace-cover.mp4" poster="/videos/braidsplace-cover-poster.jpg" autoPlay={!reduceMotion} muted loop playsInline preload="metadata" tabIndex={-1} /></div>
         <ScrollStory />
-        <MinimalistHairArt immersive />
-        <AfricaTour />
       </div>
       <AnnexNavigation />
     </main>
