@@ -24,7 +24,7 @@ export function AfricaTour({ pinned = false }: { pinned?: boolean }) {
     <section className={`journey journey--immersive section-pad${pinned ? " journey--pinned" : ""}`} id={pinned ? undefined : "parcours"} aria-labelledby="journey-title">
       <motion.div
         className="shell tour-panel"
-        initial={reduceMotion || pinned ? false : { opacity: 0, x: "35vw" }}
+        initial={reduceMotion || pinned ? false : { opacity: 0, x: "-35vw" }}
         whileInView={reduceMotion || pinned ? undefined : { opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.12 }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}

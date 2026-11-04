@@ -50,14 +50,15 @@ function GalleryPage() {
 }
 
 function AnnexHeader({ current }: { current: string }) {
-  return <header className="annex-header shell"><a className="brand" href="/">BRAIDSPLACE</a><nav aria-label="Explore the E-Press Kit">
-    <a href="/">HOME</a>{annexLinks.filter((annex) => annex.label !== current).map((annex) => <a href={annex.href} key={annex.href}>{annex.label}</a>)}
+  return <header className="annex-header shell"><a className="brand" href="/#annexes">BRAIDSPLACE</a><nav aria-label="Explore the E-Press Kit">
+    <a href="/#annexes">EXPLORE MORE</a>{annexLinks.filter((annex) => annex.label !== current).map((annex) => <a href={annex.href} key={annex.href}>{annex.label}</a>)}
   </nav></header>;
 }
 
 function AnnexPage({ page }: { page: "film" | "galerie" | "statistiques" }) {
+  const reduceMotion = useReducedMotion();
   const label = annexLinks.find((annex) => annex.page === page)?.label ?? "BACKSTAGE";
-  return <>
+  return <motion.div className="annex-screen" initial={reduceMotion ? false : { opacity: 0, x: "-100vw" }} animate={{ opacity: 1, x: 0 }} transition={{ duration: reduceMotion ? 0 : 0.8, ease: [0.22, 1, 0.36, 1] }}>
     <a className="skip-link" href="#contenu">Skip to content</a>
     <AnnexHeader current={label} />
     <main id="contenu" className="annex-page">
@@ -68,8 +69,8 @@ function AnnexPage({ page }: { page: "film" | "galerie" | "statistiques" }) {
       {page === "galerie" && <><h1 className="sr-only">Gallery</h1><GalleryPage /></>}
       {page === "statistiques" && <><h1 className="sr-only">Statistics</h1><StatisticsRunway /></>}
     </main>
-    <footer className="site-footer shell"><a href="/">← Back to the E-Press Kit</a><p>BRAIDSPLACE · LIVE HAIR ART</p></footer>
-  </>;
+    <footer className="site-footer shell"><a href="/#annexes">← Back to Explore More</a><p>BRAIDSPLACE · LIVE HAIR ART</p></footer>
+  </motion.div>;
 }
 
 function HomePage() {

@@ -7,7 +7,7 @@ export const annexLinks = [
 ] as const;
 
 const linkVariants = {
-  hidden: { opacity: 0, x: 70 },
+  hidden: { opacity: 0, x: -70 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
@@ -16,7 +16,13 @@ export function ExploreMore() {
 
   return (
     <section className="explore-more" aria-labelledby="explore-more-title">
-      <h2 className="sr-only" id="explore-more-title">Explore more</h2>
+      <motion.h2
+        className="explore-more-title"
+        id="explore-more-title"
+        initial={reduceMotion ? false : "hidden"}
+        animate="visible"
+        variants={linkVariants}
+      >Explore More</motion.h2>
       <motion.nav
         className="explore-more-links"
         aria-label="Explore more"

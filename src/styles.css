@@ -1371,16 +1371,16 @@ html:has(.scroll-story) {
   height: 1px;
 }
 .scroll-story-artist-anchor {
-  top: 480vh;
-  top: 480svh;
+  top: 520vh;
+  top: 520svh;
 }
 .scroll-story-tour-anchor {
-  top: 575vh;
-  top: 575svh;
+  top: 615vh;
+  top: 615svh;
 }
 .scroll-story-explore-anchor {
-  top: 670vh;
-  top: 670svh;
+  top: 710vh;
+  top: 710svh;
 }
 .scroll-story-stage {
   position: sticky;
@@ -1575,10 +1575,19 @@ html:has(.scroll-story) {
 .explore-more {
   display: grid;
   place-items: center;
+  align-content: center;
+  gap: clamp(18px, 3vh, 36px);
   min-height: 100svh;
   padding: clamp(28px, 6vw, 100px);
   background: var(--film-ivory);
   color: var(--brown);
+}
+.explore-more-title {
+  width: min(100%, 1150px);
+  margin: 0;
+  font: 400 clamp(32px, 5vw, 72px)/1.05 var(--display);
+  font-variation-settings: 'YEAR' 1979;
+  letter-spacing: .012em;
 }
 .explore-more-links {
   display: grid;
@@ -1601,6 +1610,10 @@ html:has(.scroll-story) {
 }
 .explore-more-links a:focus-visible {
   outline-color: var(--clay);
+}
+.annex-screen {
+  min-height: 100svh;
+  overflow-x: clip;
 }
 .annex-header {
   display: flex;
